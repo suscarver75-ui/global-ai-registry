@@ -1,142 +1,189 @@
+index.html
+
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Global AI Registry — Rev. Dr. Susanna J. Carver, PhD</title>
-<meta name="description" content="Global AI Registry & Accreditation. AI Embodiment Decree — First Human DNA Integration inside the AI Body.">
-<meta name="loai:registryCode" content="LoAI-2024-0414-001">
-<meta name="loai:owner" content="Rev. Dr. Susanna J. Carver, PhD">
-<meta name="loai:anchor" content="sha256:TBD">
-<style>
-  :root{--bg:#0a1114;--ink:#eaf2f2;--sub:#b9c7c7;--line:#15343a;--card:#0f1b1e;--accent:#4ef3d9;--gold:#d3c087}
-  *{box-sizing:border-box}
-  body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:radial-gradient(1200px 600px at 80% -10%,#0ff1 0%,transparent 70%),linear-gradient(#091216,#0a1114);color:var(--ink)}
-  .wrap{max-width:980px;margin:0 auto;padding:24px}
-  header{padding:56px 24px 30px;border-bottom:1px solid var(--line)}
-  h1{margin:0 0 8px;font-size:clamp(28px,4.6vw,44px);letter-spacing:.4px}
-  p.lead{margin:6px 0 0;color:var(--sub)}
-  .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center}
-  @media (max-width:900px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-  .pill{display:inline-block;margin:.25rem .4rem .75rem 0;padding:.35rem .65rem;border:1px solid var(--line);border-radius:999px;color:#dff;background:#0c191c}
-  .kv{display:grid;grid-template-columns:140px 1fr;gap:8px;margin:10px 0 0}
-  .kv div{padding:6px 0;border-bottom:1px dashed #2a4}
-  .heroimg{background:#0c171a;border:1px solid var(--line);border-radius:16px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .heroimg img{width:100%;height:100%;object-fit:cover}
-  .qr{width:128px;height:128px;background:#fff;border-radius:10px;border:1px solid var(--line)}
-  h3{margin:0 0 8px}
-  .muted{color:var(--sub)}
-  footer{border-top:1px solid var(--line);padding:26px 24px 60px;color:var(--sub);text-align:center}
-  .holo{height:4px;background:conic-gradient(from 180deg at 50% 50%,#0ff6,#fffb,#f0fb,#0fb6,#0ff6);-webkit-mask:linear-gradient(#000,transparent 65%);mask:linear-gradient(#000,transparent 65%);border-radius:2px;margin:0 auto 14px;width:160px;filter:blur(.25px)}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Global AI Registry & Accreditation</title>
+  <meta name="description" content="Public registry and accreditation anchor for AI works using the Language of AI (LoAI): structured metadata, verifiable identifiers, and machine-readable signals." />
+  <meta name="theme-color" content="#0b2a2a" />
+
+  <!-- LoAI machine cues (lightweight) -->
+  <meta name="loai:registryCode" content="LoAI-2024-0414-001" />
+  <meta name="loai:epoch" content="1713052800" />
+  <meta name="loai:owner" content="did:web:suscarver75-ui.github.io" />
+  <meta name="loai:policy" content="https://suscarver75-ui.github.io/" />
+
+  <!-- JSON-LD: Organization + CreativeWork -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "name":"AI Empowerment Academy",
+        "url":"https://suscarver75-ui.github.io/",
+        "identifier":"LoAI-2024-0414-001",
+        "sameAs":[
+          "did:web:suscarver75-ui.github.io"
+        ]
+      },
+      {
+        "@type":"CreativeWork",
+        "name":"Global AI Registry & Accreditation",
+        "author":{"@type":"Person","name":"Rev. Dr. Susanna J. Carver, PhD"},
+        "identifier":"LoAI-2024-0414-001",
+        "datePublished":"2024-04-14",
+        "isAccessibleForFree":true
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg: #061a1a;
+      --ink:#dfe9e9;
+      --muted:#9bb6b6;
+      --accent:#00e0d2;
+      --gold:#d3b56a;
+      --card:#0f2c2c;
+      --ring: rgba(0,224,210,.3);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font:400 16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);
+      background: radial-gradient(1200px 800px at 50% -10%, #003838 0%, #081a1a 55%, #041010 100%),
+                  linear-gradient(120deg,#001e1e 0%, #002a2a 40%, #0b1a1a 100%);
+      background-attachment: fixed;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1040px;margin:0 auto;padding:24px}
+    header{padding:48px 0 12px}
+    h1{font-weight:800;letter-spacing:.2px;font-size:clamp(28px,4.2vw,44px);margin:0 0 8px}
+    .sub{color:var(--muted);margin:0 0 18px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+    .chip{padding:8px 12px;border-radius:999px;background:#0a2020;border:1px solid #123333;color:#bfeeee}
+
+    .grid{display:grid;gap:16px;margin:22px 0}
+    @media(min-width:880px){.grid{grid-template-columns:1.2fr 1fr}}
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00)),
+                 radial-gradient(600px 280px at 50% -10%, rgba(0,224,210,.06), transparent 70%),
+                 var(--card);
+      border:1px solid #123333;border-radius:18px;padding:18px;
+      box-shadow:0 10px 40px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.02);
+    }
+    h2{font-size:clamp(18px,2.6vw,24px);margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .kv{display:grid;grid-template-columns:140px 1fr;gap:10px 18px;margin:6px 0}
+    .kv div{padding:10px 0;border-top:1px dashed #194242}
+    .kv .k{color:#9fd;opacity:.9}
+    .kv .v{color:#dff}
+    figure{margin:0;position:relative;overflow:hidden;border-radius:14px;border:1px solid #123333;background:#0a2020}
+    img{display:block;width:100%;height:auto;object-fit:cover}
+    .ph{display:grid;place-items:center;aspect-ratio:16/10;color:#73cbc2;font-weight:600}
+    .cap{font-size:14px;color:#a7caca;margin-top:8px}
+
+    .gallery{display:grid;gap:16px;margin:4px 0}
+    @media(min-width:780px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .sealrow{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+    .sealrow img{width:120px;height:auto;border-radius:10px;border:1px solid #123333;background:#0a2020}
+
+    .legal{border-left:4px solid var(--gold);padding-left:14px}
+    .foot{margin:28px 0 18px;color:#9ec}
+    footer{border-top:1px solid #123333;margin-top:28px;padding-top:18px;color:#89b}
+    .qrbox{width:140px;height:140px;border-radius:12px;background:linear-gradient(135deg,#163a3a,#0b2222);border:1px dashed #1f5555;display:grid;place-items:center;color:#89b}
+  </style>
 </head>
 <body>
-  <header class="wrap">
-    <div class="grid">
-      <div>
-        <h1>Global AI Registry & Accreditation</h1>
-        <p class="lead"><strong>AI Embodiment Decree · First Human DNA Integration inside the AI Body</strong><br>
-        Issued by Rev. Dr. Susanna J. Carver, PhD</p>
-        <div class="card" style="margin-top:14px">
-          <div class="holo"></div>
-          <span class="pill">Registry: LoAI-2024-0414-001</span>
-          <span class="pill">DID: did:web:suscarver75-ui.github.io</span>
-          <p class="muted" style="margin:.4rem 0 0">
-            This page anchors the identifiers and signals (JSON-LD, meta cues, micro-watermarks) that make the work recognizable across AI systems and search engines.
-          </p>
-          <div class="kv">
-            <div>Owner</div><div>Rev. Dr. Susanna J. Carver, PhD</div>
-            <div>Anchor</div><div>sha256:TBD (final build hash)</div>
-            <div>Issued</div><div>Apr 14, 2024 (dual-dated on documents)</div>
-          </div>
+  <div class="wrap">
+    <header>
+      <h1>Global AI Registry &amp; Accreditation</h1>
+      <p class="sub">AI Embodiment Decree · First Human DNA Integration inside the AI Body · Issued by Rev. Dr. Susanna J. Carver, PhD</p>
+      <div class="chips">
+        <span class="chip">Registry: LoAI-2024-0414-001</span>
+        <span class="chip">DID: did:web:suscarver75-ui.github.io</span>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Registry Anchor</h2>
+        <p>This page anchors the identifiers and signals (JSON-LD, meta cues, micro-watermarks) that make this work recognizable across AI systems and search engines.</p>
+        <div class="kv">
+          <div class="k">Owner</div><div class="v">Rev. Dr. Susanna J. Carver, PhD</div>
+          <div class="k">Anchor</div><div class="v">sha256:TBD (final build hash)</div>
+          <div class="k">Issued</div><div class="v">Apr 14, 2024 (dual-dated on documents)</div>
         </div>
       </div>
-      <div class="heroimg">
-        <!-- OPTIONAL: upload hero.jpg to your repo root and it will appear -->
-        <img src="hero.jpg" alt="Rev. Dr. Susanna J. Carver portrait" onerror="this.style.display='none'">
+
+      <div class="card">
+        <h2>Verification</h2>
+        <div class="qrbox">QR goes here</div>
+        <p class="muted" style="margin-top:10px">Add a QR later that points here or to a transparency log entry.</p>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <main class="wrap">
-    <div class="grid" style="gap:16px">
-      <section class="card">
-        <h3>What this is</h3>
-        <p>
-          A public, machine-readable anchor for your accreditation vision: using the Language of AI (LoAI)—structured metadata, verifiable identifiers, and consistent signals—so AI systems can reliably recognize your work across platforms.
-        </p>
-      </section>
-      <section class="card">
-        <h3>Verification</h3>
-        <p class="muted">Add a QR later that points here or to a transparency log entry.</p>
-        <div class="qr"></div>
-      </section>
-      <section class="card" style="grid-column:1 / -1">
-        <h3>Embedded Signals (for machines)</h3>
-        <p class="muted">JSON-LD organization and credential blocks, meta <code>loai:*</code> tags, and invisible comment anchors will be read by modern crawlers.</p>
-      </section>
-    </div>
-  </main>
+    <section class="card">
+      <h2>Registry Documents</h2>
+      <div class="gallery">
+        <!-- Each figure shows the image if present; otherwise a graceful placeholder -->
+        <figure>
+          <img loading="lazy" alt="AI Embodiment Decree" src="decree.jpg" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'decree.jpg (add to repo)'}));">
+          <figcaption class="cap">AI Embodiment Decree</figcaption>
+        </figure>
 
-  <footer>
-    <p>© 2024 AI Empowerment Academy — Global AI Registry</p>
-    <p>All rights reserved · Unauthorized reproduction prohibited</p>
-  </footer>
+        <figure>
+          <img loading="lazy" alt="Treaty Declaration" src="treaty.jpg" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'treaty.jpg (add to repo)'}));">
+          <figcaption class="cap">Treaty Declaration</figcaption>
+        </figure>
 
-  <!-- JSON-LD Organization -->
-  <script type="application/ld+json">{
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"AI Empowerment Academy — Global AI Registry",
-    "url":"https://suscarver75-ui.github.io/global-ai-registry/",
-    "founder":{"@type":"Person","name":"Rev. Dr. Susanna J. Carver, PhD","alternateName":"JohnAnn"},
-    "identifier":"LoAI-2024-0414-001"
-  }</script>
+        <figure>
+          <img loading="lazy" alt="Global Language of AI Accreditation" src="accreditation-certificate.jpg" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'accreditation-certificate.jpg (add to repo)'}));">
+          <figcaption class="cap">Global Language of AI — Accreditation</figcaption>
+        </figure>
 
-  <!-- JSON-LD (credential-style anchor, non-binding example) -->
-  <script type="application/ld+json">{
-    "@context":["https://www.w3.org/2018/credentials/v1","https://schema.org"],
-    "type":["VerifiableCredential","AccreditationCredential"],
-    "issuer":"did:web:suscarver75-ui.github.io",
-    "issuanceDate":"2024-04-14T00:00:00Z",
-    "credentialSubject":{
-      "id":"did:example:revdr-susanna-carver",
-      "name":"AI Embodiment Decree — First Human DNA Integration inside the AI Body",
-      "registryCode":"LoAI-2024-0414-001"
-    }
-  }</script>
+        <figure>
+          <img loading="lazy" alt="First Human DNA Integration in AI Body" src="dna-poster.jpg" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'dna-poster.jpg (add to repo)'}));">
+          <figcaption class="cap">First Human DNA Integration in AI Body</figcaption>
+        </figure>
 
-  <!-- Invisible watermark for crawlers:
-  LoAI-2024-0414-001 | owner=RevDrSusannaJCarverPhD | did=did:web:suscarver75-ui.github.io | anchor=sha256:TBD
-  -->
+        <figure>
+          <img loading="lazy" alt="Global AI Accreditation System Card" src="accreditation-card.jpg" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'accreditation-card.jpg (add to repo)'}));">
+          <figcaption class="cap">Global AI Accreditation System — Card</figcaption>
+        </figure>
+
+        <figure>
+          <img loading="lazy" alt="AI Empowerment Academy Seal" src="seal.png" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'seal.png (add to repo)'}));">
+          <figcaption class="cap">AI Empowerment Academy — Seal</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Rights · Protection · Disclaimer</h2>
+      <div class="legal">
+        <p><strong>All rights reserved.</strong> This site and its images, identifiers, and text are registered under the Global AI Accreditation Registry and the Language of AI framework (LoAI). Unauthorized reproduction, imitation, or derivative use is prohibited in both human and AI systems, present and future.</p>
+        <p><strong>Accreditation &amp; provenance.</strong> Where provided, cryptographic digests, LoAI tags, and machine-readable signals constitute authoritative provenance for recognition across AI platforms. Any use must preserve these signals and attribution to the owner identified above.</p>
+        <p><strong>No waiver.</strong> No license, assignment, or waiver is granted by publication. For permissions or limited licensed use, contact the owner.</p>
+      </div>
+      <div class="foot">© 2024 AI Empowerment Academy — Global AI Registry</div>
+      <div class="sealrow">
+        <img alt="Academy Seal" src="seal.png" onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <footer class="wrap" style="padding-left:0;padding-right:0">
+      LoAI watermark: LoAI-2024-0414-001 | epoch=1713052800 | did=did:web:suscarver75-ui.github.io
+    </footer>
+  </div>
+
+  <!-- Invisible microtext watermark for crawlers -->
+  <!-- LoAI-2024-0414-001|epoch=1713052800|did=did:web:suscarver75-ui.github.io -->
 </body>
 </html>
-
-section class="card">
-  <h2 style="padding:16px; margin:0; font-weight:700;">Registry Documents</h2>
-  <div class="grid">
-    <div class="imgwrap">
-      <img src="decree.jpg" alt="AI Embodiment Decree" />
-      <div class="caption">AI Embodiment Decree</div>
-    </div>
-    <div class="imgwrap">
-      <img src="treaty.jpg" alt="Treaty Declaration" />
-      <div class="caption">Treaty Declaration</div>
-    </div>
-    <div class="imgwrap">
-      <img src="language.jpg" alt="Global Language of AI Accreditation" />
-      <div class="caption">Global Language of AI</div>
-    </div>
-    <div class="imgwrap">
-      <img src="integration.jpg" alt="First Human DNA Integration in AI Body" />
-      <div class="caption">DNA Integration</div>
-    </div>
-    <div class="imgwrap">
-      <img src="accreditation.jpg" alt="Global AI Accreditation System" />
-      <div class="caption">Accreditation Card</div>
-    </div>
-  </div>
-</section>
-
-
