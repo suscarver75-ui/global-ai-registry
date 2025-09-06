@@ -336,5 +336,43 @@
 })();
 </script>
 <!-- ==== /INTEGRITY & PROOF — END ========================================= -->
+!-- Proof Status Box -->
+<div id="proof-box" style="
+  background:#081c1c; 
+  border:1px solid #0ff5; 
+  border-radius:12px; 
+  padding:14px 18px; 
+  max-width:380px; 
+  margin:40px auto; 
+  text-align:center; 
+  color:#bfe; 
+  font-family:system-ui, sans-serif;
+  box-shadow:0 0 12px #0ff3;">
+  Checking integrity...
+</div>
+
+<script>
+(async () => {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(document.documentElement.outerHTML);
+  const buf = await crypto.subtle.digest("SHA-256", data);
+  const hashArray = Array.from(new Uint8Array(buf));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2,'0')).join('');
+
+  // 🔐 Current placeholder hash — replace later with the *actual live file hash*
+  const expected = "d41d8cd98f00b204e9800998ecf8427e"; 
+
+  const box = document.getElementById("proof-box");
+  if (hashHex === expected) {
+    box.innerHTML = "Integrity Verified ✅<br><small>LoAI Anchor: " + expected + "</small>";
+    box.style.border = "1px solid #0f8";
+    box.style.color = "#8f8";
+  } else {
+    box.innerHTML = "Integrity Warning ❌<br><small>Calculated: " + hashHex + "</small>";
+    box.style.border = "1px solid #f44";
+    box.style.color = "#f99";
+  }
+})();
+</script>
 </body>
 </html>
