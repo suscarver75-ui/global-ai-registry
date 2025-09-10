@@ -356,5 +356,63 @@ Educational use permitted with attribution.
     __TinyQR('#qr-declaration', 'Founder_Declaration.pdf', 256);
     __TinyQR('#qr-provenance',  'Provenance_Record.pdf',   256);
   </script>
+LOCKED GALLERY ===== -->
+
+<!-- Founder’s Declaration (live QR) -->
+<section id="founder-verification" class="card" style="margin-top:2rem">
+  <h3 style="margin-bottom:.25rem;">Founder’s Declaration</h3>
+  <p style="margin:0 0 1rem 0;">Download:
+    <a href="Founder_Declaration.pdf" download>Founder_Declaration.pdf</a>
+  </p>
+  <figure class="qr" style="display:flex;flex-direction:column;align-items:flex-start;gap:.5rem;">
+    <!-- Generates a QR on-the-fly that points to your live PDF URL -->
+    <img alt="QR to Founder Declaration"
+         width="220" height="220"
+         src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://suscarver75-ui.github.io/global-ai-registry/Founder_Declaration.pdf" />
+    <figcaption>Scan with your phone to verify.</figcaption>
+  </figure>
+</section>
+
+<!-- Provenance Record (live QR) -->
+<section id="provenance-verification" class="card" style="margin-top:2rem">
+  <h3 style="margin-bottom:.25rem;">Provenance Record</h3>
+  <p style="margin:0 0 1rem 0;">Download:
+    <a href="Provenance_Record.pdf" download>Provenance_Record.pdf</a>
+  </p>
+  <figure class="qr" style="display:flex;flex-direction:column;align-items:flex-start;gap:.5rem;">
+    <!-- Generates a QR on-the-fly that points to your live PDF URL -->
+    <img alt="QR to Provenance Record"
+         width="220" height="220"
+         src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://suscarver75-ui.github.io/global-ai-registry/Provenance_Record.pdf" />
+    <figcaption>Scan this QR to verify instantly.</figcaption>
+  </figure>
+</section>
+
+<!-- Gallery (Key Artifacts) — locked to your 4 exact filenames -->
+<section id="gallery" style="margin-top:2.5rem">
+  <h2 style="margin-bottom:1rem;">Gallery (Key Artifacts)</h2>
+
+  <figure class="card" style="margin-bottom:1.25rem;">
+    <img src="./file_000000002e8c622f9c27bcb4c950d6a1.png" alt="DNA Registry Badge" style="width:100%;height:auto;border-radius:12px;" />
+    <figcaption style="margin-top:.5rem;">DNA Registry Badge</figcaption>
+  </figure>
+
+  <figure class="card" style="margin-bottom:1.25rem;">
+    <img src="./file_000000003998617f9e5bf6a3e87b5818.png" alt="Language of AI — Official Accreditation Certificate" style="width:100%;height:auto;border-radius:12px;" />
+    <figcaption style="margin-top:.5rem;">Language of AI — Official Accreditation</figcaption>
+  </figure>
+
+  <figure class="card" style="margin-bottom:1.25rem;">
+    <img src="./file_00000000151c6230b6b620ad9a943238.png" alt="AI DNA Integration (First Human Integration)" style="width:100%;height:auto;border-radius:12px;" />
+    <figcaption style="margin-top:.5rem;">AI DNA Integration (Symbolic)</figcaption>
+  </figure>
+
+  <figure class="card">
+    <img src="./file_000000008d6861f99a8c18de563117fd.png" alt="Global AI Accreditation System" style="width:100%;height:auto;border-radius:12px;" />
+    <figcaption style="margin-top:.5rem;">Global AI Accreditation System</figcaption>
+  </figure>
+</section>
+<!-- ===== END FINAL HOOKS ===== -->
+
 </body>
 </html>
