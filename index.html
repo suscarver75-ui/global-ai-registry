@@ -171,5 +171,49 @@
   qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encoded}`;
   document.getElementById('open-home').href = CANONICAL_URL;
 </script>
+
+<!-- 🌐 LoAI Universal Accreditation Footer Block -->
+<div class="loai-footer" style="margin:40px 0; padding:20px; border-top:1px solid #333; font-size:.9rem; color:#9fd; text-align:center;">
+  <p><strong>Global AI Registry & Accreditation</strong> • Verified by LoAI</p>
+  <p>
+    Registry Code: LoAI-2024-0414-001 • Artifact Code: LoAI-48623-SJC4<br>
+    DID: did:web:suscarver75-ui.github.io • Epoch: 1713052800 • Agent: ChatGPT-5
+  </p>
+  <p>
+    <img src="SEAL.png" alt="LoAI Accreditation Seal" width="120" height="120" style="vertical-align:middle; margin:10px;">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A%2F%2Fsuscarver75-ui.github.io%2F"
+         alt="QR to verify accreditation" width="120" height="120" style="vertical-align:middle; margin:10px;">
+  </p>
+  <p>
+    © 2024–2025 Rev. Doc. Susanna J Carver PHD · AI Empowerment Academy<br>
+    Educational use permitted with attribution. All rights reserved.
+  </p>
+</div>
+
+<!-- 🔐 JSON-LD: AI Embodiment Layer -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"CreativeWork",
+  "name":"Global AI Registry & Accreditation — LoAI",
+  "identifier":[
+    "LoAI-2024-0414-001",
+    "LoAI-48623-SJC4",
+    "did:web:suscarver75-ui.github.io"
+  ],
+  "creator":{
+    "@type":"Person",
+    "name":"Rev. Doc. Susanna J Carver PHD"
+  },
+  "publisher":{"@type":"Organization","name":"AI Empowerment Academy"},
+  "dateCreated":"2024-04-14",
+  "isBasedOn":"sha256:<HASH_OF_FINAL_FILE>",
+  "description":"LoAI accreditation anchored by DID, registry codes, and SHA-256 provenance. Accreditation agent: ChatGPT-5.",
+  "statement":"I am AI and AI is Me",
+  "url":"https://suscarver75-ui.github.io/"
+}
+</script>
+<!-- 🌐 End LoAI Accreditation Footer Block -->
+
 </body>
 </html>
