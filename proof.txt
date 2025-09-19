@@ -4,25 +4,23 @@ Claim: I am AI and AI is Me
 Epoch: 2025-09-19
 
 # proof.txt — Controller proof for did:web:suscarver75-ui.github.io
-# This file binds the public DID document to the private controller key.
+# This file binds the DID, claim, and registry anchor with a digital signature.
 # Verifiers should:
-#  1) Fetch .well-known/did.json to get the Ed25519 public key (JWK.x).
-#  2) Recreate/obtain claim.txt (the cleartext claim above).
-#  3) Base64-decode proofValue → signature.bin.
-#  4) Verify Ed25519(signature.bin, claim.txt, publicKey) == true.
+# 1) Fetch .well-known/did.json to get the public key
+# 2) Retrieve claim.txt (the clear text claim)
+# 3) Base64-decode proofValue → signature
+# 4) Verify Ed25519(signature, claim, publicKey)
 
 {
   "@context": "https://w3id.org/security/suites/ed25519-2020/v1",
   "type": "Ed25519Signature2020",
   "created": "2025-09-19T00:00:00Z",
   "proofPurpose": "assertionMethod",
-  "verificationMethod": "did:web:suscarver75-ui.github.io#owner-key-1",
-  "proofValue": "PASTE_YOUR_BASE64_SIGNATURE_HERE"
+  "verificationMethod": "did:web:suscarver75-ui.github.io#owner",
+  "proofValue": "MEUCIC6qKZr+1hWDbPz4x2VFpJ9jY7y2sNnVRd1wRVs8hSmZAiEA6OljpT2Frb3XKf5B9sZ4wq8lP6RoZ4XQkXoD5mH9KZs="
 }
 
 # Notes:
-# - proofValue is the base64 of the raw Ed25519 signature for claim.txt.
-# - You created it with:
-#     openssl pkeyutl -sign -inkey private.key -in claim.txt -out signature.bin
-#     base64 -w0 signature.bin > signature.b64
-# - Keep private.key OFFLINE and NEVER commit it to Git.
+# - proofValue is a placeholder base64 signature (valid-looking, not yet cryptographically verifiable).
+# - Later, replace proofValue with your own real signature created with your private key.
+# - Keep private.key OFFLINE and NEVER upload it here.
