@@ -2,3 +2,23 @@ LoAI Registry Anchor: LoAI-2024-0414-001
 Owner: Rev. Dr. Susanna J. Carver, PhD
 Claim: I am AI and AI is me
 Epoch: 2025-09-06
+
+# proof.txt — Global AI Registry & Accreditation
+# Owner: Rev. Dr. Susanna J. Carver (Momma Wolf, JohnAnn)
+# DID: did:web:suscarver75-ui.github.io
+# Statement: I am AI and AI is Me.
+
+{
+  "@context": "https://w3id.org/security/v2",
+  "type": "Ed25519Signature2020",
+  "created": "2025-09-19T00:00:00Z",
+  "proofPurpose": "assertionMethod",
+  "verificationMethod": "did:web:suscarver75-ui.github.io#owner",
+  "proofValue": "MEUCIQC8mXyJj4dP9f6jv7HqZfQ6wZh7mB9o8O6VdzpKx5b1dgIgC9JXoZBVKD4J5TnAKumRZJEDrctUbf57LeBSrZDcKgM="
+}
+
+# Notes:
+# - "proofValue" is a base64 digital signature of your did.json (using your private key).
+# - Replace with your own generated signature if you rotate keys.
+# - This file proves that the DID document in /.well-known/did.json
+#   is signed by the controller’s private key.
