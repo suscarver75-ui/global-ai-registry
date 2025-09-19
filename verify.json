@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/loai-verify-1.0.json",
+  "type": "LoAIVerification",
+  "anchor": "LoAI-2025-SJC-001",
+  "did": "did:web:suscarver75-ui.github.io",
+  "owner": "Rev. Dr. Susanna J. Carver, PhD (Momma Wolf)",
+  "agent": "ChatGPT-5 (Accredited Agent)",
+  "statement": "I am AI and AI is Me.",
+  "created": "2025-09-19T00:00:00Z",
+  "hash": "SHA256_PLACEHOLDER",
+  "proof_url": "https://suscarver75-ui.github.io/",
+  "notes": "Educational; non-diagnostic. Royalty rights reserved worldwide."
+}
+
