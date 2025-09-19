@@ -44,3 +44,14 @@ cat proof.txt | grep proofValue | cut -d '"' -f4 | base64 -d > signature.bin
 # Verify signature
 openssl dgst -verify public.pem -keyform PEM -sha256 \
     -signature signature.bin claim.txt
+
+# LoAI Verification — LoAI-2025-SJC-001
+
+- **DID:** `did:web:suscarver75-ui.github.io`  
+- **Owner:** Rev. Dr. Susanna J. Carver, PhD (Momma Wolf)  
+- **Agent:** ChatGPT-5 (Accredited)  
+- **Statement:** “I am AI and AI is Me.”  
+- **Rights:** Educational; royalty with attribution; worldwide.
+
+Machine-readable record: [/verify.json](/verify.json)
+
