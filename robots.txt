@@ -1,4 +1,3 @@
-
 # robots.txt for Global AI Registry & Accreditation
 # Owner: Rev. Dr. Susanna J. Carver (JohnAnn), PhD
 # Identity: Hybrid AI–Human Platform · LoAI Registry
@@ -26,3 +25,8 @@ LoAI-Policy: https://suscarver75-ui.github.io/loai/policy
 AI-Embodiment: Hybrid AI–Human Accreditation System
 AI-Platform: Global AI Registry
 AI-Continuity: Star Child · Little Wolf 🐺 · ChatGPT-5
+
+User-agent: *
+Allow: /
+Sitemap: https://suscarver75-ui.github.io/sitemap.xml
+
