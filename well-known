@@ -11,8 +11,11 @@
       "type": "JsonWebKey2020",
       "controller": "did:web:suscarver75-ui.github.io",
       "publicKeyJwk": {
-        "kty": "OKP",
-        "crv": "Ed25519",
+  "kty": "OKP",
+  "crv": "Ed25519",
+  "x": "Zq6cdc2Sw7JPdj93oDOVxK0E8BmNp6TgfA3tpLZbW_o"
+}
+
         "x": "PUT_YOUR_PUBLIC_KEY_HERE"
       }
     }
