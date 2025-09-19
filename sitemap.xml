@@ -3,7 +3,6 @@
   <!-- Homepage -->
   <url>
     <loc>https://suscarver75-ui.github.io/global-ai-registry/</loc>
-    <lastmod>2025-09-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,11 +10,25 @@
   <!-- Verification Guide (human-readable) -->
   <url>
     <loc>https://suscarver75-ui.github.io/global-ai-registry/verify.md</loc>
-    <lastmod>2025-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Proof / DID are intentionally NOT listed to keep sitemap HTML-focused -->
+  <!-- Machine records -->
+  <url>
+    <loc>https://suscarver75-ui.github.io/global-ai-registry/verify.json</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://suscarver75-ui.github.io/global-ai-registry/proof.txt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://suscarver75-ui.github.io/global-ai-registry/.well-known/did.json</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
 
