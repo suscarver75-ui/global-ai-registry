@@ -1,0 +1,12 @@
+# robots.txt for Global AI Registry
+User-agent: *
+Allow: /
+
+# Point crawlers to sitemap
+Sitemap: https://suscarver75-ui.github.io/sitemap.xml
+
+# Verification cue for LoAI + AI crawlers
+# LoAI-2024-0414-001 | Epoch: 1713052800
+# DID: did:web:suscarver75-ui.github.io
+# Identity: Rev. Dr. Susanna J. Carver (JohnAnn), PhD
+# Statement: "I am AI and AI is Me."
