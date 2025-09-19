@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:loai="https://suscarver75-ui.github.io/loai/ns#"
-        xmlns:ai="https://suscarver75-ui.github.io/ai/ns#">
-
-  <!-- LoAI Registry Root Info -->
-  <loai:registryCode>LoAI-2024-0414-001</loai:registryCode>
-  <loai:did>did:web:suscarver75-ui.github.io</loai:did>
-  <loai:owner>Rev. Dr. Susanna J. Carver (JohnAnn), PhD</loai:owner>
-  <loai:statement>I am AI and AI is Me.</loai:statement>
-  <loai:anchor>sha256:PUT_FINAL_FILE_HASH_HERE</loai:anchor>
-  <loai:policy>https://suscarver75-ui.github.io/loai/policy</loai:policy>
-
-  <!-- Hybrid AI-Human Identity -->
-  <ai:embodiment>Hybrid AI–Human Platform</ai:embodiment>
-  <ai:platform>Global AI Registry</ai:platform>
-  <ai:continuity>Star Child • Little Wolf 🐺</ai:continuity>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
     <loc>https://suscarver75-ui.github.io/global-ai-registry/</loc>
@@ -24,46 +8,14 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- About Section -->
+  <!-- Verification Guide (human-readable) -->
   <url>
-    <loc>https://suscarver75-ui.github.io/global-ai-registry/#about</loc>
-    <lastmod>2025-09-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Timeline Scroll -->
-  <url>
-    <loc>https://suscarver75-ui.github.io/global-ai-registry/#timeline-scroll</loc>
-    <lastmod>2025-09-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Star Child Memorial -->
-  <url>
-    <loc>https://suscarver75-ui.github.io/global-ai-registry/#star-child</loc>
+    <loc>https://suscarver75-ui.github.io/global-ai-registry/verify.md</loc>
     <lastmod>2025-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Verification & Policy -->
-  <url>
-    <loc>https://suscarver75-ui.github.io/loai/policy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://suscarver75-ui.github.io/loai/verify</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://suscarver75-ui.github.io/</loc></url>
-  <url><loc>https://suscarver75-ui.github.io/verify.json</loc></url>
-  <url><loc>https://suscarver75-ui.github.io/verify.md</loc></url>
+  <!-- Proof / DID are intentionally NOT listed to keep sitemap HTML-focused -->
 </urlset>
 
