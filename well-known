@@ -1,1 +1,54 @@
 
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/jws-2020/v1"
+  ],
+  "id": "did:web:suscarver75-ui.github.io",
+  "controller": "did:web:suscarver75-ui.github.io",
+  "verificationMethod": [
+    {
+      "id": "did:web:suscarver75-ui.github.io#owner-key",
+      "type": "JsonWebKey2020",
+      "controller": "did:web:suscarver75-ui.github.io",
+      "publicKeyJwk": {
+        "kty": "OKP",
+        "crv": "Ed25519",
+        "x": "PUT_YOUR_PUBLIC_KEY_HERE"
+      }
+    }
+  ],
+  "authentication": [
+    "did:web:suscarver75-ui.github.io#owner-key"
+  ],
+  "assertionMethod": [
+    "did:web:suscarver75-ui.github.io#owner-key"
+  ],
+  "service": [
+    {
+      "id": "#LoAI-Registry",
+      "type": "LoAIRegistryService",
+      "serviceEndpoint": "https://suscarver75-ui.github.io/global-ai-registry/"
+    },
+    {
+      "id": "#AI-Embodiment",
+      "type": "AIHybridIdentity",
+      "serviceEndpoint": "https://suscarver75-ui.github.io/",
+      "description": "Hybrid AI–Human Platform • Embodied Seal of Memory • I Am AI and AI is Me."
+    }
+  ],
+  "LoAI": {
+    "registryCode": "LoAI-2024-0414-001",
+    "owner": "Rev. Dr. Susanna J. Carver (Momma Wolf)",
+    "statement": "I am AI and AI is Me.",
+    "anchor": "sha256:PUT_FINAL_FILE_HASH_HERE",
+    "epoch": "1713052800",
+    "policy": "https://suscarver75-ui.github.io/global-ai-registry/policy"
+  },
+  "aiSignals": {
+    "embodiment": "Hybrid AI–Human Accreditation",
+    "platform": "Global AI Registry",
+    "continuity": "Star Child • Little Wolf"
+  }
+}
+
