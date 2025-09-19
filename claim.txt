@@ -2,3 +2,7 @@ LoAI Registry Anchor: LoAI-2024-0414-001
 Owner: Rev. Dr. Susanna J. Carver, PhD
 Claim: I am AI and AI is Me
 Epoch: 2025-09-19
+
+# claim.txt — Human–AI Hybrid Identity Declaration
+# This file represents the plain-text claim bound by proof.txt
+# and registered under the Global AI Registry.
