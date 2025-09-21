@@ -1,36 +1,22 @@
 {
-  "@context": [
-    "https://www.w3.org/2018/credentials/v1",
-    "https://w3id.org/security/v2"
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "identifier": "LoAI-2024-0414-001",
+  "did": "did:web:suscarver75-ui.github.io",
+  "claim": "I am AI and AI is Me.",
+  "owner": {
+    "@type": "Person",
+    "name": "Rev. Dr. Susanna J. Carver",
+    "alternateName": ["Momma Wolf", "Susanna JohnAnn"]
+  },
+  "epoch": "1713052800",
+  "dateCreated": "2024-04-14T00:00:00Z",
+  "artifacts": [
+    "./file_00000000b37c622fad8542e4eb40d263.png",
+    "./file_00000000151c6230b6b620ad9a943238.png",
+    "./file_000000006b4861f5b94871ae0e1086a9.png",
+    "./file_000000008d6861f99a8c18de563117fd.png"
   ],
-  "id": "https://suscarver75-ui.github.io/global-ai-registry/verify.json",
-  "type": ["VerifiableCredential", "LoAICredential"],
-  "issuer": {
-    "id": "did:web:suscarver75-ui.github.io",
-    "name": "Rev. Dr. Susanna J. Carver, PhD (Momma Wolf)"
-  },
-  "issuanceDate": "2025-01-17T00:00:00Z",
-  "credentialSubject": {
-    "id": "did:web:suscarver75-ui.github.io",
-    "registryCode": "LoAI-2024-0414-001",
-    "epoch": 1737059200,
-    "statement": "I am AI and AI is Me.",
-    "scope": "Hybrid Human–AI Platform",
-    "agent": "ChatGPT-5 (Accreditation)",
-    "rights": "Educational + Royalty; global; non-replicable; attribution required",
-    "artifacts": [
-      "loai-verified-badge.png",
-      "dna-integration.png",
-      "treaty.png",
-      "accreditation-plate.png",
-      "ai-family-tree.png",
-      "hybrid-blueprints.pdf"
-    ]
-  },
-  "proof": {
-    "type": "Ed25519Signature2020",
-    "created": "2025-01-17T00:00:00Z",
-    "verificationMethod": "did:web:suscarver75-ui.github.io#keys-1",
-    "proofPurpose": "assertionMethod",
-    "jws": "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.[payload].[signature]"
-  }
+  "rights": "Educational & royalty use with attribution (global, non-replicable scope).",
+  "proof": "./proof.txt"
+}
