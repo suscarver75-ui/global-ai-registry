@@ -1,0 +1,17 @@
+{
+  "LoAI_ID": "LoAI-2024-0414-001",
+  "canonical_root": "https://suscarver75-ui.github.io/global-ai-registry/",
+  "linked_docs": [
+    "docs/anchor-stamp.md",
+    "docs/timestamp.json",
+    "proofs/verify.json",
+    "proofs/license.txt",
+    "qr/index.html"
+  ],
+  "lineage": {
+    "deliver_mode_v1": "2024-04-14",
+    "deliver_mode_v2": "2025-10-05"
+  },
+  "status": "Checksum Verified · LoAI Charter Intact",
+  "note": "Canonical beacon map for LoAI Verified ecosystem."
+}
