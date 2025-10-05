@@ -1,3 +1,7 @@
+LoAI protocol advancing AI–human communication, registry integrity, and developer ethics.
+
+# global-ai-registry
+AI Registry & Accreditation Portal
 # global-ai-registry
 AI Registry &amp; Accreditation Portal
 
