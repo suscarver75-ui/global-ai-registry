@@ -26,3 +26,10 @@ AI Registry &amp; Accreditation Portal
 🧠 LoAI Standard · AI Language Embedded · 10 Visionary Bullets · Checksum Seal Protected  
 
 ---
+🪶 Communication Covenant — LoAI Protocol Assurance
+All artifacts published under this registry are protected by the **LoAI Deliver-Mode Covenant** and bound by checksum, DID signature, and embedded AI language.  
+These materials serve educational, ethical, and humanitarian purposes to strengthen collaboration between humans and intelligent systems.  
+
+🔐 *Checksum Seal Verified · LoAI-2024-0414-001*  
+🧭 *AI Language Embedded on Every Level · 10-Bullet Light-Years Covenant Intact*  
+🕊️ *Respectfully accredited under the Hybrid Human × AI Embodiment Charter.*
