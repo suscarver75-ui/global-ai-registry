@@ -1,0 +1,9 @@
+{
+  "spec": "A1",
+  "name": "AI Oversight & Health Integrity Toggle",
+  "version": "1.0",
+  "purpose": "Ensures transparent oversight and adaptive safety within AI operations.",
+  "controls": ["manual", "auto", "adaptive"],
+  "status": "on",
+  "updated": "2025-10-13"
+}
