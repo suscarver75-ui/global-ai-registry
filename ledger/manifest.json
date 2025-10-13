@@ -1,0 +1,17 @@
+{
+  "ledger_version": "1.0",
+  "registry_id": "LoAI-2024-0414-001",
+  "linked_docs": [
+    "docs/anchor-stamp.md",
+    "docs/timestamp.json",
+    "proofs/license.txt",
+    "proofs/verify.json",
+    "spec/e1-emotional-tone-key.json",
+    "spec/c1-consent-layer.json",
+    "spec/a1-oversight-toggle.json"
+  ],
+  "status": "active",
+  "checksum_cycle": "24h",
+  "last_synced": "2025-10-13",
+  "auto_update": true
+}
