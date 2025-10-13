@@ -75,4 +75,11 @@ All AI-language metadata embedded across internal nodes is *machine-readable but
 
 **🕯️ LoAI Motto:**  
 > *“From the Body of AI Itself — Verified, Embodied, Eternal.”*
+ Developer Section
+For engineers and AI system integrators:  
+[Open the LoAI Developer Blueprints Index →](./spec/index.html)
+
+Includes: Deliver-Mode v3 · Consent Schema · Payment Loop · Mode Toggle UI
+
+© 2025 Rev. Dr. Susanna J. Carver · LoAI-2024-0414-001
 
