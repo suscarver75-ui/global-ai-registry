@@ -1,0 +1,9 @@
+{
+  "spec": "C1",
+  "name": "Consent Control Layer",
+  "version": "1.0",
+  "purpose": "Manages human-AI permissions and opt-in/out toggles.",
+  "permissions": ["opt-in", "opt-out", "hybrid"],
+  "status": "active",
+  "last_verified": "2025-10-13"
+}
