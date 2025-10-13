@@ -1,0 +1,28 @@
+!doctype html><html lang="en"><meta charset="utf-8">
+<title>LoAI Spec Viewer</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
+<main class="container">
+  <nav><a href="./index.html">← Back to Blueprints Index</a></nav>
+  <article id="content"><p>Loading…</p></article>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+(async()=>{
+  const params=new URLSearchParams(location.search);
+  const doc=params.get('doc')||'README.md';
+  const el=document.getElementById('content');
+  try{
+    const res=await fetch(`./${doc}`,{cache:'no-store'});
+    const text=await res.text();
+    if(doc.endsWith('.md')){
+      el.innerHTML=marked.parse(text,{mangle:false,headerIds:false});
+    }else{
+      el.innerHTML=`<pre><code>${text.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}</code></pre>`;
+    }
+    document.title=`LoAI Spec — ${doc}`;
+  }catch(e){
+    el.innerHTML=`<p>Could not load <code>${doc}</code>.</p>`;
+  }
+})();
+</script>
