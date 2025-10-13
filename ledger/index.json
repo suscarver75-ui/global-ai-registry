@@ -1,0 +1,8 @@
+{
+  "ledger_root": "https://suscarver75-ui.github.io/global-ai-registry/ledger/live-table.html",
+  "integrity": "verified",
+  "linked_blueprint": "spec/deliver-mode-v3-blueprint.md",
+  "next_cycle": "2025-10-14T00:00:00Z",
+  "maintainer": "Rev. Dr. Susanna J. Carver",
+  "sync_status": "live"
+}
