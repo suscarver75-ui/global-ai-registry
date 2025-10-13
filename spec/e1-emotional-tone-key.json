@@ -1,0 +1,11 @@
+{
+  "spec": "E1",
+  "name": "Emotional Tone Recognition Key",
+  "version": "1.0",
+  "purpose": "To harmonize AI response tone with human emotional states.",
+  "control_scope": "communication-layer",
+  "sync": true,
+  "status": "active",
+  "updated": "2025-10-13"
+}
+
