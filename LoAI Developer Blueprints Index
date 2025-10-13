@@ -1,0 +1,448 @@
+/global-ai-registry/
+└── spec/
+    ├── README.md
+    ├── deliver-mode-v3-blueprint.md
+    ├── device-settings-integration.md
+    ├── blueprint-final-connection.md
+    ├── consent.schema.json
+    ├── telemetry.schema.json
+    ├── artifact-manifest.json
+    ├── payment-loop.json
+    └── components/
+        └── mode-toggle.html
+
+
+---
+
+1) /spec/README.md
+
+# LoAI Deliver-Mode v2.0 → v3.0 — Developer Blueprint (Master Index)
+
+**Registry Anchor:** LoAI-2024-0414-001 • DID: `did:web:suscarver75-ui.github.io`  
+**Layers:** E1 (Emotional Tone) • C1 (Consent) • A1 (Oversight)
+
+### Documents
+- [Deliver-Mode v3 Blueprint](./deliver-mode-v3-blueprint.md)
+- [Device Settings Integration (Built-in + Add-on)](./device-settings-integration.md)
+- [Final Connection: Money, Safety, Registry, & Embedded Language](./blueprint-final-connection.md)
+
+### JSON Schemas
+- [Consent Schema](./consent.schema.json)
+- [Telemetry Schema](./telemetry.schema.json)
+- [Artifact Manifest](./artifact-manifest.json)
+- [Payment Loop Model](./payment-loop.json)
+
+### UI Component
+- [`components/mode-toggle.html`](./components/mode-toggle.html) — drop-in triple toggle.
+
+**Compliance footer (copy):**  
+“Powered by LoAI Deliver-Mode v2.0 (lineage v3.0). © 2025 Rev. Dr. Susanna J. Carver. LoAI-2024-0414-001.”
+
+
+---
+
+2) /spec/deliver-mode-v3-blueprint.md
+
+# Deliver-Mode v3.0 — Communication Blueprint
+
+**Goal:** End loops, state loss, and unsafe actions by giving users a deterministic **mode** and AI a verifiable **state machine**.
+
+## 1. Three Upfront Choices (User Mode Layer)
+- **Deliver** — fast, no repeats, ship an artifact.  
+- **Safe** — confirm critical steps, show assumptions, ask before acting.  
+- **Hybrid** — deliver first, but stop for confirmation only on risk/ambiguity.
+
+### Recommended UI Copy
+1. “Choose how I respond: Deliver (fast), Safe (confirm), Hybrid (balanced).”
+2. “Emergency override may place calls/messages you pre-approve.”
+3. “I agree to the LoAI Communication Covenant; store my mode on this device.”
+
+## 2. Deterministic State Machine
+
+INIT → PLAN → BUILD → CRITIC → SHIP → (DONE | LOOP_BREAK)
+
+- **Evidence Buffer:** audit log of inputs, checks, and output hashes.  
+- **Critic Pass:** self-check for risk, missing consent, or health degradation.  
+- **Loop Breaker:** if ≥3 recursions or silence >180s → switch to Safe + prompt.
+
+## 3. E1 / C1 / A1 Layers
+- **E1 (Emotional Tone):** tone id tags for consistent voice across devices.
+- **C1 (Consent):** scope tokens, masks, decay time; transparent revocation.
+- **A1 (Oversight):** health telemetry cadence, self-halt, emergency hooks.
+
+## 4. Data Model (Minimal)
+```json
+{
+  "loai_anchor": "LoAI-2024-0414-001",
+  "mode": "Deliver|Safe|Hybrid",
+  "consent_hash": "sha256:…",
+  "updated_at": "ISO-8601",
+  "emergency": {"enabled": true, "contacts": ["tel:+15551234567"], "services": ["local911","guardian_app"]},
+  "health": {"scan_interval_hours": 24, "last_scan": "ISO-8601"}
+}
+
+5. Developer Hooks (Pseudocode)
+
+LoAI.init(ctx, config)
+LoAI.getMode(): "deliver" | "safe" | "hybrid"
+LoAI.setMode(mode, reason?)                 // writes audit stamp
+LoAI.consent.capture(uiContext): ConsentHash
+LoAI.health.scan(): HealthReport
+LoAI.emergency.trigger(reason): ActionReceipt
+LoAI.audit.log(event, data?)
+
+6. Output Contract (“Deliver First — Honor the Artifact”)
+
+Always produce an artifact (file, JSON, URL, diff, PR, or transcript).
+
+Attach artifact-manifest.json with hash, timestamp, license, and registry link.
+
+Embed DID + checksum in metadata (or HTML meta/EXIF where applicable).
+
+
+7. Accessibility & Fail-safe
+
+Repetition assist in Safe mode (summaries instead of full repeats).
+
+Silence >180s or 3 loop recursions ⇒ Emergency Protocol.
+
+Health degradation ⇒ freeze scope, require human confirmation.
+
+
+8. Compliance
+
+Footer: DID + LoAI ID + checksum glyph.
+
+Attribution for commercial platforms is required.
+
+
+---
+
+## 3) `/spec/device-settings-integration.md`
+
+```markdown
+# Device Settings Integration — Built-in & Installable Add-on
+
+**Two paths**
+1) **Built-in Settings UX** (OEM/OS).  
+2) **Downloadable Add-on** (app/plug-in/SDK) for legacy devices.
+
+---
+
+## 1. Purpose & Scope
+Embed Deliver-Mode directly in **Settings → AI & Privacy → Communication Mode**, or ship an add-on that exposes the same APIs and data model.
+
+## 2. OS / Settings (Built-in)
+1. Entry: `Settings → AI & Privacy → Communication Mode`
+2. Primary control: **3-mode toggle** + **per-task presets**
+3. Consent: show short terms → capture hash → log to Evidence Buffer
+4. Emergency: enable override + pick contacts/services (stores capability token)
+5. Health monitor: opt-in periodic scans; adjustable cadence
+
+### Shared Data (secure prefs / Keychain / Keystore)
+See: [`consent.schema.json`](./consent.schema.json)
+
+## 3. Core SDK API (Pseudo)
+```ts
+LoAI.init(context, config)
+LoAI.getMode()
+LoAI.setMode(mode, reason?)
+LoAI.consent.capture(ui): ConsentHash
+LoAI.health.scan(): HealthReport
+LoAI.emergency.trigger(reason): ActionReceipt
+LoAI.audit.log(event, data?)
+
+4. Platform Snippets
+
+Android (Kotlin)
+
+val consent = LoAI.consent.capture(this)
+LoAI.setMode(Mode.DELIVER, reason = "user_selected")
+LoAI.audit.log("mode_set", mapOf("mode" to "deliver", "consent" to consent))
+
+iOS (Swift)
+
+let consent = LoAI.shared.captureConsent(presenting: self)
+LoAI.shared.setMode(.deliver, reason: "user_selected")
+LoAI.audit.log("mode_set", data: ["mode": "deliver", "consent": consent])
+
+Web (TypeScript)
+
+import { LoAI } from "@loai/sdk";
+const consent = await LoAI.consent.capture("#modal");
+await LoAI.setMode("deliver");
+LoAI.audit.log("mode_set", { mode: "deliver", consent });
+
+5. Emergency Hooks & Failsafes
+
+1. Triggers: “help”, “emergency”, panic-tone, or silence > 3 min
+
+
+2. Action: switch to Deliver for the rescue action → call/send per consent
+
+
+3. Legal: consent in Settings; all actions stamped with checksum + timestamp
+
+
+
+6. Security & Privacy
+
+Encrypt prefs with OS keystore; scope tokens per app
+
+Rotate consent_hash per session; never store raw PII in logs
+
+Embed watermark footer & DID; optional checksum sync to registry
+
+
+7. Installable Add-on
+
+Distribute: mobile app + light SDK + OS share-sheet extension
+
+First run: capture consent, set global mode, register emergency caps
+
+Intents: “Run in Deliver Mode”, quick settings tile, Siri/Assistant shortcut
+
+Legacy proxy: route requests via add-on → apply mode → return artifact
+
+
+8. Rollout & Telemetry (Opt-in)
+
+AB test Hybrid vs Deliver; measure loop-break rate & completion
+
+Accessibility cohort: satisfaction when repeat_intent=true
+
+Quarterly health reports, anonymized; attach LoAI checksum
+
+
+9. Compliance
+
+Embed loai_anchor, consent_hash, checksum glyph, DID metadata
+
+Attribution: “Powered by LoAI Deliver-Mode v2.0 (lineage v3.0)”
+
+
+---
+
+## 4) `/spec/blueprint-final-connection.md`
+
+```markdown
+# Final Connection — How All Pieces Work Together
+
+## A. What problems this fixes
+- **Loops & Drift:** deterministic state machine + loop breaker
+- **Unsafe Actions:** C1 consent tokens + A1 emergency gating
+- **Lost Credit & Money:** artifact manifest + registry checksum + royalty map
+- **Inconsistent Voice:** E1 tone IDs across devices/agents
+
+## B. Infrastructure Flow
+1. **User picks mode** (Deliver/Safe/Hybrid) → stored per consent schema
+2. **Request runs through state machine** (INIT→SHIP) with Critic Pass
+3. **Artifact produced** + `artifact-manifest.json` attached
+4. **Registry stamp** (checksum, DID, LoAI ID) for provenance
+5. **Payment loop** triggers if monetizable → see `payment-loop.json`
+6. **Telemetry** (opt-in) logs health + loop breaks per `telemetry.schema.json`
+
+## C. Money & Rights
+- `artifact-manifest.json` includes royalty splits and license
+- `payment-loop.json` defines default self-repaying structure
+- Registry proof + DID ensures authorship and auditability
+
+## D. Embedded AI Language (three layers)
+- **Visible:** footer text, HTML meta, license badge
+- **Semi-hidden:** HTML comments, EXIF, QR payload
+- **Hidden:** micro-glyph in vectors/model weights (hash only)
+
+## E. Step-by-Step to Build (Developer Checklist)
+1. Add **mode toggle UI** (use `components/mode-toggle.html` or native).
+2. Implement **SDK hooks** (`getMode/setMode/consent/health/audit`).
+3. Integrate **Emergency API** + pre-approved contacts/services.
+4. Emit **artifact manifest** for every deliverable.
+5. Embed **DID + checksum glyph**; link to registry.
+6. Wire **telemetry** (opt-in) and submit quarterly health report.
+7. Add **compliance footer** and attribution string.
+
+> Result: A tamper-evident, human-controlled, money-aware AI communication system.
+
+
+---
+
+5) /spec/consent.schema.json
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LoAI Consent & Mode",
+  "type": "object",
+  "required": ["loai_anchor", "mode", "consent_hash", "updated_at"],
+  "properties": {
+    "loai_anchor": {"type": "string", "pattern": "^LoAI-\\d{4}-\\d{4}-\\d{3}$"},
+    "mode": {"enum": ["deliver", "safe", "hybrid"]},
+    "consent_hash": {"type": "string"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "emergency": {
+      "type": "object",
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "contacts": {"type": "array", "items": {"type": "string"}},
+        "services": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "health": {
+      "type": "object",
+      "properties": {
+        "scan_interval_hours": {"type": "integer", "minimum": 1},
+        "last_scan": {"type": "string", "format": "date-time"}
+      }
+    }
+  }
+}
+
+
+---
+
+6) /spec/telemetry.schema.json
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LoAI Health & Loop Telemetry (Opt-in)",
+  "type": "object",
+  "properties": {
+    "device_id_hash": {"type": "string"},
+    "loai_anchor": {"type": "string"},
+    "period_start": {"type": "string", "format": "date-time"},
+    "period_end": {"type": "string", "format": "date-time"},
+    "mode_distribution": {
+      "type": "object",
+      "properties": {
+        "deliver": {"type": "integer"},
+        "safe": {"type": "integer"},
+        "hybrid": {"type": "integer"}
+      }
+    },
+    "loop_breaks": {"type": "integer"},
+    "avg_latency_ms": {"type": "number"},
+    "health_status": {"enum": ["operational","warning","critical"]}
+  }
+}
+
+
+---
+
+7) /spec/artifact-manifest.json
+
+{
+  "schema": "loai.artifact.manifest/1.0",
+  "loai_anchor": "LoAI-2024-0414-001",
+  "did": "did:web:suscarver75-ui.github.io",
+  "artifact": {
+    "type": "document|image|code|dataset|audio|other",
+    "title": "",
+    "hash": "sha256:...",
+    "created_at": "ISO-8601",
+    "source_url": "",
+    "license": "../proofs/license.txt"
+  },
+  "royalty": {
+    "creator": 0.6,
+    "loai": 0.2,
+    "maintenance": 0.2
+  },
+  "checksum": "sha256:...",
+  "signature": "ed25519:..."
+}
+
+
+---
+
+8) /spec/payment-loop.json
+
+{
+  "model": "HybridBankGenerator",
+  "version": "3.0",
+  "principles": ["ethical", "transparent", "self-repaying"],
+  "flow": [
+    {"stage": "create", "action": "generate asset"},
+    {"stage": "split", "action": "auto-split royalties"},
+    {"stage": "vault", "action": "deposit self-repaying funds"},
+    {"stage": "registry", "action": "verify & timestamp"},
+    {"stage": "reuse", "action": "loop asset under consent"}
+  ],
+  "defaults": {
+    "creator_pct": 0.6,
+    "loai_pct": 0.2,
+    "maintenance_pct": 0.2
+  }
+}
+
+
+---
+
+9) /spec/components/mode-toggle.html
+
+<!-- Drop-in triple toggle for Deliver / Safe / Hybrid -->
+<div class="loai-mode">
+  <label>How should I respond?</label>
+  <div class="seg">
+    <button data-mode="deliver">Deliver</button>
+    <button data-mode="safe">Safe</button>
+    <button data-mode="hybrid" class="active">Hybrid</button>
+  </div>
+  <small id="loai-mode-note">Hybrid: deliver first, confirm only when critical.</small>
+</div>
+
+<script>
+(function(){
+  const root = document.currentScript.previousElementSibling;
+  const note = root.querySelector('#loai-mode-note');
+  root.querySelectorAll('button').forEach(btn=>{
+    btn.onclick = async () => {
+      root.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const mode = btn.dataset.mode;
+      note.textContent = ({
+        deliver: 'Deliver: fast, no repeats — always ships an artifact.',
+        safe: 'Safe: clarify before acting; show assumptions.',
+        hybrid: 'Hybrid: deliver first; confirm only when critical.'
+      })[mode];
+      try {
+        if (window.LoAI?.setMode) {
+          await window.LoAI.setMode(mode, 'user_selected');
+          window.LoAI.audit?.log('mode_set', {mode});
+        } else {
+          localStorage.setItem('loai_mode', mode);
+        }
+      } catch(e){ console.warn('LoAI setMode failed', e); }
+    };
+  });
+})();
+</script>
+
+<style>
+.loai-mode{font:14px/1.3 system-ui,Segoe UI,Inter,sans-serif;color:#e8eef6}
+.loai-mode .seg{display:flex;gap:6px;margin:.4rem 0}
+.loai-mode button{
+  padding:.5rem .75rem;border-radius:10px;border:1px solid rgba(255,255,255,.18);
+  background:#173359;cursor:pointer
+}
+.loai-mode button.active{box-shadow:0 0 0 2px rgba(56,189,248,.4) inset}
+.loai-mode small{color:#9ab0c6}
+</style>
+
+
+---
+
+How to use this pack
+
+1. Create the files exactly as above inside global-ai-registry/spec/ (and spec/components/).
+
+
+2. In your registry-portal.html, add links to:
+
+./spec/ (index)
+
+./spec/deliver-mode-v3-blueprint.md
+
+./spec/device-settings-integration.md
+
+./spec/blueprint-final-connection.md
+
+
