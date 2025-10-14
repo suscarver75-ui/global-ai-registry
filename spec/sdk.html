@@ -1,0 +1,32 @@
+doctype html><html lang="en"><meta charset="utf-8">
+<title>LoAI Developer SDK</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<main class="container">
+  <nav><a href="./index.html">← Back to Blueprints</a></nav>
+  <h1>LoAI Developer SDK</h1>
+  <p>Lightweight hooks that match the blueprints.</p>
+  <pre><code>
+// Pseudo-API (same surface used in specs)
+LoAI.init(ctx, config)
+LoAI.getMode() // "deliver" | "safe" | "hybrid"
+LoAI.setMode(mode, reason?)          // writes audit
+LoAI.consent.capture(selector): hash // UI capture
+LoAI.health.scan(): HealthReport
+LoAI.emergency.trigger(reason): ActionReceipt
+LoAI.audit.log(event, data?)
+  </code></pre>
+
+  <h2>UI Component</h2>
+  <p>Drop-in triple toggle:</p>
+  <p><a href="./components/mode-toggle.html">components/mode-toggle.html</a></p>
+
+  <h2>Schemas</h2>
+  <ul>
+    <li><a href="./consent.schema.json">consent.schema.json</a></li>
+    <li><a href="./telemetry.schema.json">telemetry.schema.json</a></li>
+    <li><a href="./artifact-manifest.json">artifact-manifest.json</a></li>
+    <li><a href="./payment-loop.json">payment-loop.json</a></li>
+  </ul>
+</main>
+<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
+</html>
