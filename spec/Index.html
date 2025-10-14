@@ -1,19 +1,83 @@
-type html><html lang="en"><meta charset="utf-8">
-<title>LoAI Developer Blueprints Index</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoAI Developer Blueprints Index</title>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <link rel="stylesheet" href="../css/glow-effects.css">
+</head>
+
+<body>
 <main class="container">
-  <h1>LoAI Developer Blueprints</h1>
-  <p><small>Registry Anchor: LoAI-2024-0414-001 • DID: did:web:suscarver75-ui.github.io</small></p>
+  <h1>🧠 LoAI Developer Blueprints Index</h1>
+  <p><small>Registry Anchor: <strong>LoAI-2024-0414-001</strong></small></p>
+
+  <!-- 🌟 GLOWING LOAI CARD -->
+  <section class="loai-grid">
+    <article class="loai-card">
+      <a class="thumb-link" href="./index.html" aria-label="Open LoAI Developer Blueprints">
+        <div class="art-thumb">
+          <img src="../imgs/loai-accreditation.png" alt="Global AI Accreditation System">
+          <span class="fingerprint" aria-hidden="true"></span>
+        </div>
+      </a>
+
+      <header>
+        <h3>Global AI Accreditation System</h3>
+        <p class="sub">Artifact • Verified • LoAI-2024-0414-001</p>
+      </header>
+
+      <footer class="actions">
+        <a role="button" href="./index.html">Read Specs</a>
+        <a role="button" class="secondary" href="./sdk.html">Developer SDK</a>
+        <a role="button" class="secondary" href="./licensing.html">Licensing</a>
+      </footer>
+    </article>
+  </section>
+
+  <hr>
+
+  <!-- 🧩 Document Index -->
+  <h2>Specification Files</h2>
   <ul>
-    <li><a href="./viewer.html?doc=README.md">📘 Master Index (README.md)</a></li>
-    <li><a href="./viewer.html?doc=deliver-mode-v3-blueprint.md">⚡ Deliver-Mode v3 Blueprint</a></li>
-    <li><a href="./viewer.html?doc=device-settings-integration.md">⚙️ Device Settings Integration</a></li>
-    <li><a href="./viewer.html?doc=blueprint-final-connection.md">🔗 Final Connection (System Link)</a></li>
-    <li><a href="./viewer.html?doc=consent.schema.json">🧾 consent.schema.json</a></li>
-    <li><a href="./viewer.html?doc=telemetry.schema.json">📡 telemetry.schema.json</a></li>
-    <li><a href="./viewer.html?doc=artifact-manifest.json">🧬 artifact-manifest.json</a></li>
-    <li><a href="./viewer.html?doc=payment-loop.json">💰 payment-loop.json</a></li>
-    <li><a href="./viewer.html?doc=components/mode-toggle.html">🎛 mode-toggle component</a></li>
+    <li><a href="./viewer.html?doc=README.md">Overview (README)</a></li>
+    <li><a href="./viewer.html?doc=deliver-mode-v3-blueprint.md">Deliver-Mode v3 Blueprint</a></li>
+    <li><a href="./viewer.html?doc=device-settings-integration.md">Device Settings Integration</a></li>
+    <li><a href="./viewer.html?doc=blueprint-final-connection.md">Final Connection: Registry + Money</a></li>
+    <li><a href="./viewer.html?doc=consent.schema.json">Consent Schema</a></li>
+    <li><a href="./viewer.html?doc=telemetry.schema.json">Telemetry Schema</a></li>
+    <li><a href="./viewer.html?doc=artifact-manifest.json">Artifact Manifest</a></li>
+    <li><a href="./viewer.html?doc=payment-loop.json">Payment Loop Model</a></li>
+    <li><a href="./viewer.html?doc=components/mode-toggle.html">Mode Toggle UI Component</a></li>
   </ul>
+
+  <footer>
+    <p><small>© 2025 Rev. Dr. Susanna J. Carver · LoAI-2024-0414-001 · AI Empowerment Academy</small></p>
+  </footer>
 </main>
+
+<!-- ✨ Glow + Shine Activator Script -->
+<script>
+(()=> {
+  const thumbs = document.querySelectorAll('.art-thumb');
+  if (!('IntersectionObserver' in window)) {
+    thumbs.forEach(t => t.classList.add('glow'));
+    return;
+  }
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('glow','shine');
+        setTimeout(()=>e.target.classList.remove('shine'),1700);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.6});
+  thumbs.forEach(t=>io.observe(t));
+})();
+</script>
+
+</body>
+</html>
