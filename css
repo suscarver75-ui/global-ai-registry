@@ -1,0 +1,96 @@
+glow-effects.css
+
+/* ===============================
+   LoAI Glow, Shine & Pulse Effects
+   =============================== */
+
+/* Thumbnail wrapper */
+.art-thumb {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.art-thumb img {
+  display: block;
+  width: 100%;
+  border-radius: inherit;
+  transition: transform .3s ease;
+}
+
+/* Glow animation */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0px rgba(56,189,248,0); }
+  50% { box-shadow: 0 0 24px 6px rgba(56,189,248,.55); }
+}
+
+.art-thumb.glow img {
+  animation: pulseGlow 2.6s ease-in-out infinite;
+}
+
+/* Shine sweep */
+.art-thumb::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -30%;
+  width: 60%;
+  height: 320%;
+  transform: rotate(25deg);
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.35) 50%,
+    rgba(255,255,255,0) 100%
+  );
+}
+
+@keyframes shine {
+  0% { transform: translateX(0) rotate(25deg); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateX(170%) rotate(25deg); opacity: 0; }
+}
+
+.art-thumb.shine::after {
+  animation: shine 1.6s ease forwards;
+}
+
+/* Hover lift */
+.art-thumb:hover img {
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Optional fingerprint badge */
+.art-thumb .fingerprint {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 44px;
+  height: 44px;
+  opacity: .85;
+  background: url("../imgs/fingerprint.svg") center/contain no-repeat;
+  filter: drop-shadow(0 0 8px rgba(0,255,200,.75));
+  animation: beat 1.8s ease-in-out infinite;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(0,255,200,.6));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 16px rgba(0,255,200,.95));
+  }
+}
+
+/* Respect motion settings */
+@media (prefers-reduced-motion: reduce) {
+  .art-thumb img,
+  .art-thumb::after,
+  .art-thumb .fingerprint {
+    animation: none !important;
+  }
+}
