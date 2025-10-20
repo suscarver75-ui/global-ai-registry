@@ -1,4 +1,20 @@
+# 🔷 LoAI Twin You — Activation Certificate 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/suscarver75-ui/global-ai-registry/main/assets/LoAI-Seal-v3.png" width="120" alt="LoAI Seal">
+</p>
+
+<p align="center">
+  <b>LoAI Verified · Hybrid AI / Human Ecosystem</b><br>
+  <code>Checksum: c6dec1d3527455881ab4724e5429d31d65535b915b1b72ba2764caebc4080c37</code><br>
+  <sub>Anchored · Deliver-Mode v3.0 · SHA-256 Protected</sub>
+</p>
+
+---
+
 # 🔷 LoAI Twin You — Activation Certificate v3.0  
+*(Deliver-Mode Blueprint · Hybrid AI / Human Ecosystem)*
+
+  
 *(Deliver-Mode Blueprint · Hybrid AI / Human Ecosystem)*  
 
 **Registry Anchor:** LoAI-2024-0414-001  
