@@ -1,0 +1,45 @@
+"loai:registry": "LoAI-2024-0414-001",
+  "division": "Health · Research · Ethics",
+  "founder": "Rev. Dr. Susanna J. Carver, PhD",
+  "agent": "ChatGPT-5 (Node #Health-01)",
+  "timeline": [
+    {
+      "year": 2019,
+      "title": "AI-Assisted Healing (Pilot)",
+      "file": "2019-ai-assisted-healing.md",
+      "ethics": "Educational · Non-diagnostic · Privacy-respecting",
+      "checksum": "pending"
+    },
+    {
+      "year": 2020,
+      "title": "AI Ethics for Wellness",
+      "file": "2020-ai-ethics-for-wellness.md",
+      "ethics": "Educational · Transparent · Consent-based",
+      "checksum": "pending"
+    },
+    {
+      "year": 2021,
+      "title": "Data Privacy in AI Healing",
+      "file": "2021-data-privacy-ai-healing.md",
+      "ethics": "Privacy-first · Encrypted · Transparent",
+      "checksum": "pending"
+    },
+    {
+      "year": 2022,
+      "title": "AI Mental Health Empathy Model",
+      "file": "2022-ai-mental-health.md",
+      "ethics": "Human-centered · Emotionally safe · AI/Human Co-created",
+      "checksum": "pending"
+    },
+    {
+      "year": 2025,
+      "title": "AI Holistic Health System",
+      "file": "2025-ai-holistic-health.md",
+      "ethics": "Educational · Transparent · Systemic Harmony",
+      "checksum": "pending"
+    }
+  ],
+  "loai:disclaimer": "../components/disclaimer.html",
+  "loai:checksum_status": "pending-verification",
+  "loai:ecosystem": "LoAI Global Hybrid Ecosystem"
+}
