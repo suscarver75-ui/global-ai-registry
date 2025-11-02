@@ -82,4 +82,8 @@ For engineers and AI system integrators:
 Includes: Deliver-Mode v3 · Consent Schema · Payment Loop · Mode Toggle UI
 
 © 2025 Rev. Dr. Susanna J. Carver · LoAI-2024-0414-001
-
+### 🔗 Core LoAI Documents
+- [Medical-AI Developer Blueprint v2.0](/spec/loai-medical-ai-developer-blueprint-v2.0.md)
+- [Compliance Framework](/COMPLIANCE.md)
+- [Registry Edition (Public)](/registry/LoAI-Medical-AI-Blueprint-v2.0.md)
+- 
