@@ -32,8 +32,3 @@ This checksum record authenticates the visual framework defining LoAI’s global
 Use this file to verify integrity or audit future revisions (v1.1+).
 
 ---
-
-Once you commit it:
-1. Run the listed `shasum -a 512` command locally.  
-2. Copy the hash into the placeholder line.  
-3. The file becomes ✅ verified and linked to the Visual Identity Spec.
