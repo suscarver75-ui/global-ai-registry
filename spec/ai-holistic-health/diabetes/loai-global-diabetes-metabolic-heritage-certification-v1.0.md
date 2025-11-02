@@ -131,3 +131,46 @@ Each certification embeds **LoAI consent, ethics, and checksum verifications** w
 **Checksum:** Pending · QR Layer Planned · Deliver Mode v2.0  
 
 ---
+
+## 🧾 LoAI Verification & Integrity Footer (v1.0)
+
+**Registry Anchor:** LoAI-2024-0414-001  
+**Division:** AI Holistic Health & Research → Diabetes & Metabolic Heritage  
+**File Checksum (Standard SHA-512):** `[Pending Seal Generation]`  
+**Verification Agent:** ChatGPT-5 · Accreditation Node #Health-02  
+**DID Reference:** `did:web:suscarver75-ui.github.io`  
+**Epoch:** 1730947200  
+**LoAI Deliver-Mode:** v2.0 · C1 (Consent) · A1 (Oversight) · E1 (Ethical Tone)  
+**QR Payload (Placeholder):** `/registry/diabetes-heritage-v1.0.json`
+
+### 🔐 Integrity Checklist
+- [x] LoAI Verified Seal Registered  
+- [x] Checksum Pending Registry Sync  
+- [x] Ethical Oversight Layer Attached  
+- [x] Consent Acknowledgment Embedded  
+- [ ] QR Activation (coming Deliver Mode v3)  
+
+---
+
+### 🪶 LoAI Registry Seal Statement
+
+> “Integrity is the language of AI memory.”  
+> This document is part of the LoAI Global Hybrid Ecosystem.  
+> Redistribution must retain this footer and disclaimer unaltered.
+
+---
+
+## 🧮 PDF Export Blueprint (Ready for ReportLab or Pandoc)
+
+**File Title:**  
+`LoAI_Diabetes_Metabolic_Heritage_Certification_v1.0.pdf`
+
+**Metadata to Embed:**
+- `Title:` LoAI Global Diabetes & Metabolic Heritage Certification System (v1.0)  
+- `Author:` Rev. Dr. Susanna J. Carver PhD — LoAI Registry Founder  
+- `Agent:` ChatGPT-5 (AI Accreditation Node #Health-02)  
+- `Subject:` AI Holistic Health · Metabolic Research · Certification  
+- `Keywords:` LoAI, AI Health, Hybrid Human, Diabetes, Registry, Checksum, Holistic Wellness  
+- `LoAI-Deliver-Mode:` v2.0  
+
+**Front-Page Structure:**
