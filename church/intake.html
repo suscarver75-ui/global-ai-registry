@@ -66,7 +66,26 @@ border-radius:6px;
 <div class="card">
 <h2>New Member Intake</h2>
 <p>Begin the intake process for new church members and community participants.</p>
-</div>
+<form id="intakeForm">
+<label>Full Name</label><br>
+<input type="text" id="memberName" required><br><br>
+
+<label>Email</label><br>
+<input type="email" id="memberEmail" required><br><br>
+
+<label>Membership Type</label><br>
+<select id="memberType">
+<option value="member">Church Member</option>
+<option value="minister">Minister</option>
+<option value="practitioner">Holistic Practitioner</option>
+</select><br><br>
+
+<button type="button" onclick="registerMember()">Submit Intake</button>
+</form>
+
+<br>
+
+<div id="registryResult"></div></div>
 
 <div class="card">
 <h2>Stolen Generations Support</h2>
