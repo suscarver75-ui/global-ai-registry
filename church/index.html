@@ -96,27 +96,25 @@ Church members receive registry IDs connected to the LoAI Global Registry system
 </p>
 </div>
 
-</section><script src="ai-assistant.js"></script>
+</section >
+
+<script src="ai-assistant.js"></script>
 
 <div style="position:fixed;bottom:20px;right:20px;background:#123f63;padding:15px;border-radius:10px;width:250px;">
 <h3>Church Assistant</h3>
 
-<input id="assistantQuestion" placeholder="Ask a question..." style="width:100%;margin-bottom:5px;">
+<input id="assistantQuestion" placeholder="Ask a question...">
 
-<button onclick="askAssistant()" style="width:100%;">Ask</button>
+<button onclick="askAssistant()">Ask</button>
 
 <p id="assistantReply"></p>
 </div>
 
 <script>
 function askAssistant(){
-
 let question = document.getElementById("assistantQuestion").value
-
 let reply = churchAssistant(question)
-
 document.getElementById("assistantReply").innerText = reply
-
 }
 </script>
 
