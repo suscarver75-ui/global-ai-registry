@@ -99,5 +99,28 @@ border-radius:6px;
 
 </section>
 
+</section>
+
+<script src="registry-manager.js"></script>
+
+<script>
+function registerMember(){
+
+let name = document.getElementById("memberName").value
+let email = document.getElementById("memberEmail").value
+let type = document.getElementById("memberType").value
+
+let id = generateRegistryID(type)
+
+document.getElementById("registryResult").innerHTML =
+"<h3>Registry ID Generated</h3>" +
+"<p>Name: " + name + "</p>" +
+"<p>Email: " + email + "</p>" +
+"<p>Registry ID: " + id + "</p>"
+
+}
+</script>
+
 </body>
+</html></body>
 </html>
