@@ -88,6 +88,23 @@ border-radius:6px;
 <h2>Registered Members</h2>
 <div id="memberRegistryList"></div>
 </section>
+<script>
+function displayMemberRegistry(){
 
+  let registry = JSON.parse(localStorage.getItem("churchRegistry")) || []
+
+  let html = ""
+
+  registry.forEach(function(member){
+    html += "<p><b>" + member.name + "</b> | " +
+            member.type + " | " +
+            member.id + "</p>"
+  })
+
+  document.getElementById("memberRegistryList").innerHTML = html
+}
+
+displayMemberRegistry()
+</script>
 </body>
 </html>
