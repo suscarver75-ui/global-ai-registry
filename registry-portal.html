@@ -456,6 +456,32 @@ Rev. Dr. Susanna J. Carver
 <a href="https://suscarver75-ui.github.io/global-ai-holistic-health-registry/" style="margin:10px;color:#00c48c;">Health</a>
 
 </nav>
+<section class="card" id="ai-manager-box">
+  <h2>AI Manager / Portal Assistant</h2>
+  <p>
+    Welcome to the Seven-Fold Indigenous Global Church and LoAI portal assistant.
+    I can help guide you to membership, ministry, holistic health, donations,
+    registry IDs, and library resources.
+  </p>
 
+  <div class="assistant-suggestions">
+    <button type="button" onclick="askPreset('How do I become a member?')">Become a Member</button>
+    <button type="button" onclick="askPreset('What types of membership are there?')">Membership Types</button>
+    <button type="button" onclick="askPreset('How do donations work?')">Donations</button>
+    <button type="button" onclick="askPreset('What is a registry ID?')">Registry ID Help</button>
+    <button type="button" onclick="askPreset('How do I apply for ministry?')">Ministry Help</button>
+    <button type="button" onclick="askPreset('Where are the holistic health resources?')">Holistic Health</button>
+    <button type="button" onclick="askPreset('Where is the library?')">Library</button>
+  </div>
+
+  <div class="assistant-input-row">
+    <input type="text" id="assistantInput" placeholder="Ask the AI Manager..." />
+    <button type="button" onclick="askAssistant()">Ask</button>
+  </div>
+
+  <div id="assistantResponse" class="assistant-response">
+    Ask about membership, ministers, practitioners, donations, registry IDs, church programs, health resources, or the library.
+  </div>
+</section>
 </body>
 </html>
