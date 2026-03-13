@@ -104,35 +104,38 @@ border-radius:6px;
 <script src="registry-manager.js"></script>
 
 <script>
+
 function submitChurchIntake(){
 
-let name = document.getElementById("memberName").value
-let email = document.getElementById("memberEmail").value
-let type = document.getElementById("memberType").value
+  let name = document.getElementById("memberName").value
+  let email = document.getElementById("memberEmail").value
+  let type = document.getElementById("memberType").value
 
-let id = generateRegistryID(type)
+  let id = generateRegistryID(type)
 
-let record = {
-  name: name,
-  email: email,
-  type: type,
-  id: id
+  let record = {
+    name: name,
+    email: email,
+    type: type,
+    id: id
+  }
+
+  let registry = JSON.parse(localStorage.getItem("churchRegistry")) || []
+
+  registry.push(record)
+
+  localStorage.setItem("churchRegistry", JSON.stringify(registry))
+
+  document.getElementById("registryResult").innerHTML =
+    "<h3>Registry ID Generated</h3>" +
+    "<p>Name: " + name + "</p>" +
+    "<p>Email: " + email + "</p>" +
+    "<p>Registry ID: " + id + "</p>"
+
+  displayRegistry()
+
 }
 
-let registry = JSON.parse(localStorage.getItem("churchRegistry")) || []
-
-registry.push(record)
-
-localStorage.setItem("churchRegistry", JSON.stringify(registry))
-
-document.getElementById("registryResult").innerHTML =
-  "<h3>Registry ID Generated</h3>" +
-  "<p>Name: " + name + "</p>" +
-  "<p>Email: " + email + "</p>" +
-  "<p>Registry ID: " + id + "</p>"
-
-displayRegistry()
-}
 
 function displayRegistry(){
 
@@ -141,12 +144,20 @@ function displayRegistry(){
   let html = ""
 
   registry.forEach(function(member){
+
     html += "<p><b>" + member.name + "</b> | " +
             member.type + " | " +
             member.id + "</p>"
+
   })
 
   document.getElementById("registryList").innerHTML = html
+
 }
 
 displayRegistry()
+
+</script>
+
+</body>
+</html>
