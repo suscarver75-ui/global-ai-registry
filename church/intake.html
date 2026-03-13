@@ -132,3 +132,21 @@ document.getElementById("registryResult").innerHTML =
   "<p>Registry ID: " + id + "</p>"
 
 displayRegistry()
+}
+
+function displayRegistry(){
+
+  let registry = JSON.parse(localStorage.getItem("churchRegistry")) || []
+
+  let html = ""
+
+  registry.forEach(function(member){
+    html += "<p><b>" + member.name + "</b> | " +
+            member.type + " | " +
+            member.id + "</p>"
+  })
+
+  document.getElementById("registryList").innerHTML = html
+}
+
+displayRegistry()
