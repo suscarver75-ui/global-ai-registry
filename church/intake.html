@@ -146,7 +146,10 @@ function displayRegistry(){
   registry.forEach(function(member){
 
     html += "<p><b>" + member.name + "</b> | " +
-            member.type + " | " +
+            (member.type === "member" ? "Church Member" :
+ member.type === "minister" ? "Minister" :
+ member.type === "practitioner" ? "Holistic Practitioner" :
+ member.type)
             member.id + "</p>"
 
   })
