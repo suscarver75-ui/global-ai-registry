@@ -512,9 +512,10 @@ function askAssistant(){
     response = "A Registry ID is generated through the intake system and connects membership records to the LoAI system."
   }
 
-  else if(input.includes("health")){
-    response = "Holistic health resources are available through the Health section of the portal."
-  }
+  else if(input.includes("health") || input.includes("dashboard")){
+response = "Opening the Holistic Health Dashboard..."
+window.location.href = "health.html"
+}
 
   else if(input.includes("library")){
     response = "The Library contains educational resources, research, and publications connected to the registry."
