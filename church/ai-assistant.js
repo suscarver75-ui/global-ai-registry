@@ -42,7 +42,9 @@ return "Opening Indigenous Wisdom..."
 }
 
 if(question.includes("education") || question.includes("learning")){
-return "Visit the Holistic Education section of the Church Library."
+window.location.href = "education.html";
+return "Opening Holistic Education..."
+
 }
 
 if(question.includes("publications") || question.includes("research")){
