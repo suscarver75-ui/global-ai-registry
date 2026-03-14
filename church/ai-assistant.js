@@ -30,7 +30,9 @@ if(question.includes("certificate")){
 return "Certificates and credentials connect to registry records and verification through the church registry."
 }
 if(question.includes("scripture") || question.includes("bible")){
-return "Visit the Scripture Study section of the Church Library."
+window.location.href = "scripture.html";
+return "Opening Scripture Study..."
+
 }
 
 if(question.includes("wisdom") || question.includes("indigenous")){
