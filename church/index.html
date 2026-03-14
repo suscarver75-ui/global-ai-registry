@@ -125,5 +125,14 @@ style="background:#00c48c;color:white;padding:10px 18px;border-radius:6px;text-d
 ⬅ Return to Main Portal
 </a>
 </div>
+<div id="aiToggle" onclick="toggleAI()">AI Guide</div>
+
+<div id="aiPanel">
+  <div id="chatWindow"></div>
+
+  <div class="ai-input-row">
+    <input type="text" id="assistantInput" placeholder="Ask the AI Guide..." />
+    <button onclick="askAssistant()">Ask</button>
+  </div>
 </body>
 </html>
