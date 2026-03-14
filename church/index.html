@@ -123,9 +123,21 @@ padding:10px 14px;
 border-radius:8px;
 font-weight:bold;
 cursor:pointer;
-}</style>
-</head>
+}
+/* AI button glow animation */
 
+@keyframes pulseAI{
+0%{
+box-shadow:0 0 0 0 rgba(0,196,140,0.7);
+}
+70%{
+box-shadow:0 0 0 12px rgba(0,196,140,0);
+}
+100%{
+box-shadow:0 0 0 0 rgba(0,196,140,0);
+}
+</style>
+</head>
 <body>
 
 <header>
