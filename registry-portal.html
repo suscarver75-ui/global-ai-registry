@@ -533,7 +533,21 @@ window.location.href = "library.html"
   document.getElementById("assistantResponse").innerHTML = response
   }
 
+document.getElementById("assistantResponse").innerHTML = response
+}
 
+// AI MANAGER AUTO WELCOME
+window.onload = function() {
+document.getElementById("assistantResponse").innerHTML =
+"Welcome to the Seven-Fold Indigenous Global Nation Portal.<br><br>Ask about membership, ministry, registry IDs, holistic health, or the research library.";
+}
+
+// ENTER KEY SUPPORT
+document.getElementById("assistantInput").addEventListener("keypress", function(event) {
+if (event.key === "Enter") {
+askAssistant();
+}
+});
 // ENTER KEY SUPPORT
 document.getElementById("assistantInput").addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
