@@ -236,7 +236,42 @@ function askAssistant(){
 
   inputBox.value = "";
 }
+function churchAssistant(question){
 
+question = question.toLowerCase()
+
+if(question.includes("member") || question.includes("join") || question.includes("membership")){
+window.location.href = "members.html";
+return "Opening the Members page."
+}
+
+if(question.includes("minister") || question.includes("ordination") || question.includes("ordain")){
+window.location.href = "ministers.html";
+return "Opening the Minister Portal."
+}
+
+if(question.includes("health") || question.includes("wellness") || question.includes("holistic")){
+window.location.href = "holistic-health.html";
+return "Opening Holistic Health."
+}
+
+if(question.includes("library") || question.includes("research") || question.includes("study")){
+window.location.href = "library.html";
+return "Opening Church Library."
+}
+
+if(question.includes("service") || question.includes("sunday")){
+window.location.href = "service.html";
+return "Opening Sunday Service."
+}
+
+if(question.includes("donate") || question.includes("donation")){
+window.location.href = "donations.html";
+return "Opening Donations."
+}
+
+return "Welcome to the Seven-Fold Indigenous Global Church assistant. Ask about membership, ministers, holistic health, donations, Sunday service, or the church library."
+}
 document.getElementById("assistantInput").addEventListener("keypress", function(event){
   if(event.key === "Enter"){
     askAssistant();
