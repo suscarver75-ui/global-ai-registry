@@ -29,7 +29,21 @@ return "Registry IDs identify members, ministers, and practitioners in the Hybri
 if(question.includes("certificate")){
 return "Certificates and credentials connect to registry records and verification through the church registry."
 }
+if(question.includes("scripture") || question.includes("bible")){
+return "Visit the Scripture Study section of the Church Library."
+}
 
+if(question.includes("wisdom") || question.includes("indigenous")){
+return "Visit the Indigenous Wisdom section of the Church Library."
+}
+
+if(question.includes("education") || question.includes("learning")){
+return "Visit the Holistic Education section of the Church Library."
+}
+
+if(question.includes("publications") || question.includes("research")){
+return "Visit the Publications and Research section of the Church Library."
+}
 return "Welcome to the Seven-Fold Indigenous Global Church assistant. Ask about membership, ministers, practitioners, donations, registry IDs, or church programs."
 
 }
