@@ -48,7 +48,9 @@ return "Opening Holistic Education..."
 }
 
 if(question.includes("publications") || question.includes("research")){
-return "Visit the Publications and Research section of the Church Library."
+window.location.href = "publications.html";
+return "Opening Research Publications..."
+
 }
 return "Welcome to the Seven-Fold Indigenous Global Church assistant. Ask about membership, ministers, practitioners, donations, registry IDs, or church programs."
 
