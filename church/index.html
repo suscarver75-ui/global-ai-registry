@@ -213,5 +213,43 @@ style="background:#00c48c;color:white;padding:10px 18px;border-radius:6px;text-d
     <input type="text" id="assistantInput" placeholder="Ask the AI Guide..." />
     <button onclick="askAssistant()">Ask</button>
   </div>
+<script>
+function toggleAI(){
+  const panel = document.getElementById("aiPanel");
+  panel.style.display = panel.style.display === "block" ? "none" : "block";
+}
+
+function displayMessage(text,type){
+  const chat = document.getElementById("chatWindow");
+  const msg = document.createElement("div");
+  msg.className = "message " + type;
+  msg.innerText = text;
+  chat.appendChild(msg);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function askAssistant(){
+  const inputBox = document.getElementById("assistantInput");
+  const question = inputBox.value.trim();
+  if(!question) return;
+
+  displayMessage(question,"user");
+
+  let response = churchAssistant(question);
+  displayMessage(response,"assistant");
+
+  inputBox.value = "";
+}
+
+document.getElementById("assistantInput").addEventListener("keypress", function(event){
+  if(event.key === "Enter"){
+    askAssistant();
+  }
+});
+
+window.onload = function(){
+  displayMessage("Welcome to the Seven-Fold Indigenous Global Church AI Guide. Ask about membership, ministry, scripture, wisdom, education, research, or health.","assistant");
+}
+</script>
 </body>
 </html>
