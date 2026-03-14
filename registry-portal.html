@@ -484,66 +484,59 @@ Rev. Dr. Susanna J. Carver
   </div>
 </section>
 <script>
-
 function askPreset(question){
-  document.getElementById("assistantInput").value = question
-  askAssistant()
+  document.getElementById("assistantInput").value = question;
+  askAssistant();
 }
 
 function askAssistant(){
+  let input = document.getElementById("assistantInput").value.toLowerCase().trim();
+  let response = "";
 
-  let input = document.getElementById("assistantInput").value.toLowerCase()
-  
-  let response = ""
-if(input.includes("membership") || input.includes("roles") || input.includes("levels")){
-response = "Membership roles include Church Member, Minister, Research Member, and Registry Participant."
+  if (input.includes("membership") || input.includes("roles") || input.includes("levels")) {
+    response = "Membership roles include Church Member, Minister, Research Member, and Registry Participant.";
   }
-  else if(input.includes("member") || input.includes("join") || input.includes("apply") || input.includes("signup")){
-    response = "To become a member, go to the Intake page and complete the New Member Intake form."
+  else if (input.includes("member") || input.includes("join") || input.includes("apply") || input.includes("signup")) {
+    response = "To become a member, go to the Intake page and complete the New Member Intake form.";
+  }
+  else if (input.includes("donate") || input.includes("donation") || input.includes("support")) {
+    response = "You can support the Church, Registry Infrastructure, Missions, and educational work through the Donations section.";
+  }
+  else if (input.includes("registry") || input.includes("id") || input.includes("record")) {
+    response = "A Registry ID is generated through the intake system and connects membership records to the LoAI system.";
+  }
+  else if (input.includes("health") || input.includes("clinic") || input.includes("wellness")) {
+    response = "Opening the Holistic Health Dashboard...";
+    document.getElementById("assistantResponse").innerHTML = response;
+    window.location.href = "health.html";
+    return;
+  }
+  else if (input.includes("library") || input.includes("books") || input.includes("research")) {
+    response = "Opening the Library...";
+    document.getElementById("assistantResponse").innerHTML = response;
+    window.location.href = "library.html";
+    return;
+  }
+  else if (input.includes("hello") || input.includes("hi")) {
+    response = "Welcome to the Seven-Fold Indigenous Global Church and LoAI portal assistant. I can help guide you to membership, ministry, holistic health, donations, registry IDs, and library resources.";
+  }
+  else {
+    response = "Try asking about membership, ministry, registry IDs, donations, health resources, or the library.";
   }
 
-  
-
-  else if(input.includes("donate") || input.includes("donation")){
-    response = "You can support the Church, Registry Infrastructure, Missions, and Digital Resources in the Donations section."
-  }
-
-  else if(input.includes("registry")){
-    response = "A Registry ID is generated through the intake system and connects membership records to the LoAI system."
-  }
-
-  else if(input.includes("health") || input.includes("clinic") || input.includes("wellness")){
-response = "Opening the Holistic Health Dashboard..."
-window.location.href = "health.html"
+  document.getElementById("assistantResponse").innerHTML = response;
 }
-else if(input.includes("library")){
-response = "Opening the Library..."
-window.location.href = "library.html"
-}
-  
 
-  else if(input.includes("hello") || input.includes("hi")){
-    response = "Welcome to the Seven-Fold Indigenous Global Church and LoAI portal. I can help guide you."
-  }
-
-  else{
-    response = "Try asking about membership, ministry, registry IDs, donations, health resources, or the library.
-          }
-document.getElementById("assistantResponse").innerHTML = response
-
-}
 window.onload = function() {
-document.getElementById("assistantResponse").innerHTML =
-"Welcome to the Seven-Fold Indigenous Global Nation Portal.<br><br>Ask about membership, ministry, registry IDs, holistic health, or the research library.";
-}
+  document.getElementById("assistantResponse").innerHTML =
+    "Welcome to the Seven-Fold Indigenous Global Church and LoAI portal assistant. I can help guide you to membership, ministry, holistic health, donations, registry IDs, and library resources.";
+};
 
-// ENTER KEY SUPPORT
 document.getElementById("assistantInput").addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-askAssistant();
-}
+  if (event.key === "Enter") {
+    askAssistant();
+  }
 });
-
 </script>
 </body>
 </html>
