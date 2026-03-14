@@ -36,7 +36,9 @@ return "Opening Scripture Study..."
 }
 
 if(question.includes("wisdom") || question.includes("indigenous")){
-return "Visit the Indigenous Wisdom section of the Church Library."
+window.location.href = "wisdom.html";
+return "Opening Indigenous Wisdom..."
+
 }
 
 if(question.includes("education") || question.includes("learning")){
