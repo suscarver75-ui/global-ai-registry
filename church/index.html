@@ -181,23 +181,7 @@ Church members receive registry IDs connected to the LoAI Global Registry system
 <script src="registry-manager.js"></script>
 <script src="certificate-generator.js"></script>
 
-<div style="position:fixed;bottom:20px;right:20px;background:#123f63;padding:15px;border-radius:10px;width:250px;">
-<h3>Church Assistant</h3>
 
-<input id="assistantQuestion" placeholder="Ask a question...">
-
-<button onclick="askAssistant()">Ask</button>
-
-<p id="assistantReply"></p>
-</div>
-
-<script>
-function askAssistant(){
-let question = document.getElementById("assistantQuestion").value
-let reply = churchAssistant(question)
-document.getElementById("assistantReply").innerText = reply
-}
-</script>
 <div style="text-align:center;margin:20px;">
 <a href="https://suscarver75-ui.github.io/global-ai-registry/"
 style="background:#00c48c;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:bold;">
