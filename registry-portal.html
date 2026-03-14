@@ -495,7 +495,7 @@ function askAssistant(){
   let input = document.getElementById("assistantInput").value.toLowerCase()
   
   let response = ""
-else if(input.includes("membership")){
+if(input.includes("membership")){
 response = "Membership roles include Church Member, Minister, Research Member, and Registry Participant."
   }
   else if(input.includes("member") || input.includes("join")){
