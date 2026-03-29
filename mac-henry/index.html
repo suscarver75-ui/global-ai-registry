@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Mac Henry Manager Assistant — LoAI System</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0a1422;
+  color:#e8f0ff;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:#111e35;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+}
+
+h1,h2{
+  color:#38f2b3;
+}
+
+button{
+  background:#38f2b3;
+  color:#000;
+  border:none;
+  padding:10px 15px;
+  margin:5px;
+  border-radius:6px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Mac Henry Manager Assistant</h1>
+<p>Powered by LoAI System — Registry Connected</p>
+
+<div class="card">
+<h2>System Purpose</h2>
+<p>
+Mac Henry is your AI-powered business, financial, and automation system.
+It connects your Academy, Church, and Registry into one working structure.
+</p>
+</div>
+
+<div class="card">
+<h2>Dashboards</h2>
+<button onclick="goOwner()">Owner Dashboard</button>
+<button onclick="goCustomer()">Customer Dashboard</button>
+<button onclick="goFinance()">Financial System</button>
+</div>
+
+<div class="card">
+<h2>Quick Actions</h2>
+<button onclick="alert('Build Course System')">Academy Build</button>
+<button onclick="alert('Open Registry System')">Registry</button>
+<button onclick="alert('Open Church System')">Church</button>
+</div>
+
+</div>
+
+<script>
+function goOwner(){
+  alert("Owner Dashboard (next step build)");
+}
+
+function goCustomer(){
+  alert("Customer Dashboard (next step build)");
+}
+
+function goFinance(){
+  alert("Financial System (next step build)");
+}
+</script>
+
+</body>
+</html>
