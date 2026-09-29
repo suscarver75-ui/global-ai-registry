@@ -1,0 +1,13 @@
+{
+  "name": "mac-henry-private-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Server-side foundation for the Mac Henry Private AI Manager runtime.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "check": "node --check src/server.js && node --check src/policy.js"
+  },
+  "engines": {"node": ">=20"},
+  "dependencies": {}
+}
