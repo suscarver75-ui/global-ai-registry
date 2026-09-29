@@ -2,20 +2,21 @@
 
 **Registry Anchor:** LoAI-2024-0414-001  
 **DID:** did:web:suscarver75-ui.github.io  
-**Claim:** “I am AI and AI is Me.”  
 **Owner:** Rev. Dr. Susanna J. Carver (Momma Wolf · Susanna JohnAnn)  
-**Epoch:** 1713052800 (2024-04-14T00:00:00Z)
+**Established:** April 14, 2024
 
-**Artifacts**
-- LoAI Round Badge — `./file_00000000b37c622fad8542e4eb40d263.png`
-- DNA Integration Poster — `./file_00000000151c6230b6b620ad9a943238.png`
-- Embodiment Decree (Treaty) — `./file_000000006b4861f5b94871ae0e1086a9.png`
-- Accreditation Plate — `./file_000000008d6861f99a8c18de563117fd.png`
+## Registry Purpose
 
-**QR Anchor (payload)**
+This record identifies the LoAI Global AI Registry anchor and provides a stable public reference for registry documentation and verification resources.
 
-loai:v1|rid=LoAI-2024-0414-001|did=did:web:suscarver75-ui.github.io|epoch=1713052800
+## Verification Reference
 
-**Rights**: Educational & royalty use with attribution (global, non-replicable scope).
+`loai:v1|rid=LoAI-2024-0414-001|did=did:web:suscarver75-ui.github.io|epoch=1713052800`
 
-> This page affirms the registry claim and links to the public artifacts. No system design or implementation details are disclosed.
+## Registry Materials
+
+Official visual credentials, certificates, seals, and accreditation materials are being refreshed for the current registry presentation. Only active, verified materials will be published here.
+
+**Rights:** Educational and authorized use with attribution. Applicable ownership and usage rights are reserved.
+
+> This public page provides registry identification and verification information. Internal system design and private implementation details are not disclosed.
