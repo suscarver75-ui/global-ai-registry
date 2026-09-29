@@ -1,99 +1,23 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>Church Library</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Church Library | Wisdom, Faith & Learning</title>
 <style>
-body{
-font-family:Arial;
-background:#0b2e4a;
-color:white;
-margin:0;
-}
-
-header{
-background:#123f63;
-padding:20px;
-text-align:center;
-}
-
-nav{
-background:#1f5f91;
-padding:10px;
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-background:#2b79b0;
-padding:10px 15px;
-border-radius:5px;
-}
-
-section{
-padding:20px;
-}
-
-.card{
-background:#153d5b;
-padding:15px;
-margin:10px 0;
-border-radius:6px;
-}
+:root{--bg:#071526;--panel:#102640;--panel2:#142f50;--ink:#f5f8fc;--muted:#b8c7d8;--accent:#42e6ad;--gold:#f3c969;--edge:rgba(130,180,220,.22)}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at 85% 5%,#17375c 0,transparent 35%),linear-gradient(180deg,#071526,#0b2035);color:var(--ink);min-height:100vh}.wrap{max-width:1000px;margin:auto;padding:28px 20px 60px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:42px}.brand{font-weight:800;letter-spacing:.03em}.home{color:var(--ink);text-decoration:none;border:1px solid var(--edge);border-radius:999px;padding:10px 14px}.eyebrow{display:inline-block;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.hero{padding:20px 0 36px}.hero h1{font-size:clamp(42px,9vw,74px);line-height:.98;margin:18px 0}.hero p{max-width:720px;color:var(--muted);font-size:clamp(18px,4vw,22px);line-height:1.65}.welcome{border-left:3px solid var(--gold);padding:4px 0 4px 18px;margin:16px 0 42px;color:#e5edf6;font-size:17px;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}.card{display:block;text-decoration:none;color:inherit;background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--edge);border-radius:22px;padding:26px;min-height:210px;box-shadow:0 16px 38px rgba(0,0,0,.18);transition:.2s}.card:hover,.card:focus{transform:translateY(-3px);border-color:var(--accent)}.icon{font-size:30px}.card h2{font-size:25px;margin:18px 0 10px}.card p{color:var(--muted);font-size:16px;line-height:1.55;margin:0}.explore{display:inline-block;color:var(--accent);font-weight:750;margin-top:20px}.footer{margin-top:42px;padding-top:24px;border-top:1px solid var(--edge);color:var(--muted);font-size:14px}@media(max-width:520px){.wrap{padding:22px 18px 48px}.top{margin-bottom:28px}.hero{padding-top:8px}.grid{grid-template-columns:1fr}.card{min-height:0}}
 </style>
 </head>
-
-<body>
-
-<header>
-<h1>Church Library</h1>
-<p>Wisdom • Teachings • Research</p>
-</header>
-
-<nav>
-<a href="index.html">Church Home</a>
-<a href="members.html">Members</a>
-<a href="ministers.html">Ministers</a>
-<a href="intake.html">Intake</a>
-<a href="holistic-health.html">Health</a>
-<a href="library.html">Library</a>
-</nav>
-
-<section>
-
-<a href="scripture.html">
-<div class="card">
-<h2>Scripture Study</h2>
-<p>Bible study resources and spiritual teachings.</p>
-</div>
-</a>
-
-<a href="wisdom.html">
-<div class="card">
-<h2>Indigenous Wisdom</h2>
-<p>Historical teachings, cultural respect, and ancestral knowledge.</p>
-</div>
-</a>
-
-<a href="education.html">
-<div class="card">
-<h2>Holistic Education</h2>
-<p>Educational research about natural living and community wellbeing.</p>
-</div>
-</a>
-
-<a href="publications.html">
-<div class="card">
-<h2>Publications</h2>
-<p>Church documents, research papers, and educational materials.</p>
-</div>
-</a>
-
+<body><main class="wrap">
+<div class="top"><div class="brand">Church & Resource Library</div><a class="home" href="index.html">Church Home</a></div>
+<section class="hero"><span class="eyebrow">Faith • Wisdom • Learning</span><h1>A place to explore, learn & grow.</h1><p>Discover spiritual study, cultural wisdom, holistic education, and publications gathered to support thoughtful learning, personal growth, community, and service.</p></section>
+<div class="welcome">Come as you are. Explore at your own pace, follow the subjects that speak to you, and return whenever you are ready to learn more.</div>
+<section class="grid">
+<a class="card" href="scripture.html"><div class="icon">✦</div><h2>Scripture & Spiritual Study</h2><p>Explore scripture, reflection, spiritual teachings, and study resources created to deepen understanding and encourage meaningful inquiry.</p><span class="explore">Explore study →</span></a>
+<a class="card" href="wisdom.html"><div class="icon">◈</div><h2>Indigenous Wisdom</h2><p>Explore historical teachings, cultural perspectives, ancestral knowledge, and materials presented with respect for the peoples and traditions they come from.</p><span class="explore">Explore wisdom →</span></a>
+<a class="card" href="education.html"><div class="icon">◎</div><h2>Holistic Education</h2><p>Educational resources connecting natural living, whole-person wellbeing, responsible research, community knowledge, and lifelong learning.</p><span class="explore">Explore education →</span></a>
+<a class="card" href="publications.html"><div class="icon">▤</div><h2>Library & Publications</h2><p>Browse church materials, educational publications, research, reference documents, and growing collections from across the organization.</p><span class="explore">Browse library →</span></a>
 </section>
-
-</body>
-</html>
+<div class="footer">Seven-Fold Indigenous Global Church • Resource and learning library</div>
+</main></body></html>
