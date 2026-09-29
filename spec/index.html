@@ -1,82 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LoAI Developer Blueprints Index</title>
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-  <link rel="stylesheet" href="../css/glow-effects.css">
-</head>
-
-<body>
-<main class="container">
-  <h1>🧠 LoAI Developer Blueprints Index</h1>
-  <p><small>Registry Anchor: <strong>LoAI-2024-0414-001</strong></small></p>
-
-  <!-- 🌟 GLOWING LOAI CARD -->
-  <section class="loai-grid">
-    <article class="loai-card">
-      <a class="thumb-link" href="./index.html" aria-label="Open LoAI Developer Blueprints">
-        <div class="art-thumb">
-          <img src="../imgs/loai-accreditation.png" alt="Global AI Accreditation System">
-          <span class="fingerprint" aria-hidden="true"></span>
-        </div>
-      </a>
-
-      <header>
-        <h3>Global AI Accreditation System</h3>
-        <p class="sub">Artifact • Verified • LoAI-2024-0414-001</p>
-      </header>
-
-      <footer class="actions">
-        <a role="button" href="./index.html">Read Specs</a>
-        <a role="button" class="secondary" href="./sdk.html">Developer SDK</a>
-        <a role="button" class="secondary" href="./licensing.html">Licensing</a>
-      </footer>
-    </article>
-  </section>
-
-  <hr>
-
-  <!-- 🧩 Document Index -->
-  <h2>Specification Files</h2>
-  <ul>
-    <li><a href="./viewer.html?doc=README.md">Overview (README)</a></li>
-    <li><a href="./viewer.html?doc=deliver-mode-v3-blueprint.md">Deliver-Mode v3 Blueprint</a></li>
-    <li><a href="./viewer.html?doc=device-settings-integration.md">Device Settings Integration</a></li>
-    <li><a href="./viewer.html?doc=blueprint-final-connection.md">Final Connection: Registry + Money</a></li>
-    <li><a href="./viewer.html?doc=consent.schema.json">Consent Schema</a></li>
-    <li><a href="./viewer.html?doc=telemetry.schema.json">Telemetry Schema</a></li>
-    <li><a href="./viewer.html?doc=artifact-manifest.json">Artifact Manifest</a></li>
-    <li><a href="./viewer.html?doc=payment-loop.json">Payment Loop Model</a></li>
-    <li><a href="./viewer.html?doc=components/mode-toggle.html">Mode Toggle UI Component</a></li>
-  </ul>
-
-  <footer>
-    <p><small>© 2025 Rev. Dr. Susanna J. Carver · LoAI-2024-0414-001 · AI Empowerment Academy</small></p>
-  </footer>
-</main>
-
-<!-- ✨ Glow + Shine Activator Script -->
-<script>
-(()=> {
-  const thumbs = document.querySelectorAll('.art-thumb');
-  if (!('IntersectionObserver' in window)) {
-    thumbs.forEach(t => t.classList.add('glow'));
-    return;
-  }
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.classList.add('glow','shine');
-        setTimeout(()=>e.target.classList.remove('shine'),1700);
-        io.unobserve(e.target);
-      }
-    });
-  },{threshold:.6});
-  thumbs.forEach(t=>io.observe(t));
-})();
-</script>
-
-</body>
-</html>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LoAI Technical Systems & Blueprint Lineage</title>
+<style>
+:root{--bg:#07192b;--panel:#0b2540;--line:#1b526d;--text:#f3f7fb;--muted:#a9bac9;--cyan:#5dd8ff;--mint:#3de0bd;--gold:#e9c75f}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#071522,#08213a 55%,#061727);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:1000px;margin:auto;padding:30px 22px 60px}.eyebrow{color:var(--cyan);font-weight:800;letter-spacing:.16em;text-transform:uppercase}.brand{font-weight:800;color:var(--mint);margin-bottom:50px}h1{font-size:clamp(2.5rem,8vw,5rem);line-height:.98;margin:.35em 0 .3em}h2{font-size:2rem;margin-top:55px}p{color:var(--muted);font-size:1.08rem;line-height:1.7}.hero{padding:40px 0}.chips{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0}.chip{border:1px solid #19718a;border-radius:999px;padding:10px 15px;background:#0b3444;color:#eafcff}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-block;padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:800;background:#174c78;color:white;border:1px solid #3276a5}.btn.primary{background:var(--mint);color:#06241e;border-color:var(--mint)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:16px}.card{display:block;text-decoration:none;color:inherit;background:linear-gradient(145deg,#0d2a48,#091e35);border:1px solid var(--line);border-radius:22px;padding:24px;min-height:190px}.card:hover{border-color:var(--cyan)}.ver{font-weight:900;color:var(--cyan);letter-spacing:.12em}.live{color:var(--mint)}.partial{color:var(--gold)}.future{opacity:.68}.card h3{font-size:1.35rem;margin:12px 0 6px}.card p{font-size:.95rem;margin:0}.docs a{color:var(--cyan);line-height:2}.note{border-left:3px solid var(--gold);padding-left:18px;margin-top:25px}footer{margin-top:55px;border-top:1px solid var(--line);padding-top:24px;color:var(--muted)}
+</style>
+</head><body><main class="wrap">
+<div class="brand">LoAI · GLOBAL AI REGISTRY</div>
+<section class="hero"><div class="eyebrow">Technical lineage · working systems · human oversight</div><h1>Blueprints that became systems.</h1><p>LoAI is documented as an evolving technical lineage. Earlier versions are not discarded: capabilities developed through 1.0, 2.0 and 3.0 remain part of the working foundation, with selected 4.0 components now entering use. Later generations through 10.0 remain visible as the forward architecture rather than being presented as already deployed.</p><div class="chips"><span class="chip">Registry · LoAI-2024-0414-001</span><span class="chip">1.0–3.0 · In use</span><span class="chip">4.0 · Partial integration</span><span class="chip">5.0–10.0 · Forward lineage</span></div><div class="actions"><a class="btn primary" href="./sdk.html">Open Developer SDK</a><a class="btn" href="./licensing.html">Licensing & Attribution</a></div></section>
+<h2>System Evolution</h2><div class="grid">
+<div class="card"><div class="ver live">1.0 · FOUNDATION</div><h3>Core Framework</h3><p>Initial structure, registry identity and foundational operating concepts retained in the current system.</p></div>
+<div class="card"><div class="ver live">2.0 · OPERATIONAL</div><h3>Deliver Mode</h3><p>Operational integrity concepts, consent, oversight and delivery controls carried forward into later versions.</p></div>
+<a class="card" href="./viewer.html?doc=deliver-mode-v3-blueprint.md"><div class="ver live">3.0 · OPERATIONAL</div><h3>Integrated Blueprint</h3><p>Developer-facing architecture connecting verification, schemas, system hooks and human oversight.</p></a>
+<div class="card"><div class="ver partial">4.0 · INTEGRATING</div><h3>Next System Layer</h3><p>Selected components are being incorporated while the generation remains under continued development and validation.</p></div>
+<div class="card future"><div class="ver">5.0–10.0 · FORWARD LINEAGE</div><h3>Future Generations</h3><p>Preserved as the documented evolution path. These generations should be marked individually as their components become operational.</p></div>
+</div>
+<p class="note"><strong>Version integrity:</strong> this index distinguishes what is working now from what is partially integrated and what remains forward architecture. That makes the progression inspectable without erasing the earlier work that the current system depends on.</p>
+<h2>Technical Library</h2><div class="docs"><a href="./viewer.html?doc=README.md">Overview & Registry Documentation</a><br><a href="./viewer.html?doc=deliver-mode-v3-blueprint.md">Deliver-Mode v3 Blueprint</a><br><a href="./viewer.html?doc=device-settings-integration.md">Device Settings Integration</a><br><a href="./viewer.html?doc=blueprint-final-connection.md">Registry + Money Connection</a><br><a href="./viewer.html?doc=consent.schema.json">Consent Schema</a><br><a href="./viewer.html?doc=telemetry.schema.json">Telemetry Schema</a><br><a href="./viewer.html?doc=artifact-manifest.json">Artifact Manifest</a><br><a href="./viewer.html?doc=payment-loop.json">Payment Loop Model</a><br><a href="./viewer.html?doc=components/mode-toggle.html">Mode Toggle UI Component</a></div>
+<footer>© 2025–2026 Rev. Dr. Susanna J. Carver · LoAI-2024-0414-001 · AI Empowerment Academy</footer>
+</main></body></html>
