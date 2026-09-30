@@ -37,3 +37,5 @@ jobs:
         run: python henry/control-proof-v1.py
       - name: Prove rollback and authority-promotion controls
         run: python henry/test-recovery-gate.py
+      - name: Verify audit retention and failure-preservation policy
+        run: python henry/audit-verify.py
