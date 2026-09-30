@@ -31,3 +31,5 @@ jobs:
         run: python henry/receipts/test-chain.py
       - name: Prove Henry binds receipts to exact commands
         run: python henry/receipts/test-command-binding.py
+      - name: Prove Henry enforces bounded-operation safety
+        run: python henry/test-operation-guard.py
