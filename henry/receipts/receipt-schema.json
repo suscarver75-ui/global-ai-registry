@@ -1,0 +1,17 @@
+{
+  "schema": "henry.receipt-schema.v1",
+  "registry": "LoAI-2024-0414-001",
+  "boundary": "PUBLIC_SAFE",
+  "authority": "NO_PRIVATE_AUTHORITY",
+  "required": ["receipt_id","command_id","contract_version","action","decision","target","started_at","completed_at","before_state_reference","after_state_reference","verification_status","evidence_references","error_code_if_any"],
+  "decision_values": ["ALLOW_PREVIEW","ALLOW_EXECUTE","DENY_UNKNOWN_ACTION","DENY_EXPIRED","DENY_PRIVATE_DATA","DENY_SECRET","DENY_SCOPE","DENY_MISSING_PREVIEW","DENY_PRECONDITION","DENY_REPLAY_CONFLICT","DENY_VERIFICATION_FAILURE"],
+  "verification_values": ["VERIFIED","FAILED","NOT_APPLICABLE"],
+  "rules": {
+    "immutable_result_history": true,
+    "failed_verification_cannot_be_relabelled_success": true,
+    "retry_requires_new_receipt": true,
+    "receipts_are_not_credentials": true,
+    "private_brain_content_prohibited": true,
+    "secrets_prohibited": true
+  }
+}
