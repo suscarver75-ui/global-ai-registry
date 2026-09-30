@@ -1,0 +1,30 @@
+{
+  "schema": "henry.learning-governance-public-contract.v1",
+  "artifact_id": "HNY-LEARNING-GOV-001",
+  "purpose": "Expose only public-safe proof that Mac Henry learning is governed; never expose private learning state or implementation.",
+  "private_owner": "Mac Henry Brain",
+  "public_verifier": "Henry",
+  "governance_invariants": {
+    "single_outcome_can_rewrite_strategy": false,
+    "unverified_evidence_can_change_weights": false,
+    "conflicting_outcomes_require_review": true,
+    "major_policy_change_requires_owner_approval": true,
+    "major_weight_change_requires_owner_approval": true,
+    "decision_versions_are_immutable": true,
+    "superseded_versions_remain_auditable": true,
+    "rollback_reference_required_for_major_change": true,
+    "public_henry_can_apply_private_learning": false,
+    "public_henry_can_view_private_learning_state": false
+  },
+  "public_safe_states": ["INSUFFICIENT_EVIDENCE", "STABLE", "CONFLICT_REVIEW", "OWNER_APPROVAL_REQUIRED", "SUPERSEDED"],
+  "public_safe_proof_fields": ["policy_version_ref", "evidence_count", "verification_count", "conflict_flag", "governance_state", "approval_required", "rollback_ref_present", "audit_ref"],
+  "prohibited_public_fields": ["private_learning_weights", "private_strategy", "private_decision_history", "private_business_context", "private_prompts", "hidden_reasoning", "credentials", "tokens", "private_keys", "seed_phrases"],
+  "rules": [
+    "Learning proposals are not authority grants.",
+    "Evidence must be verified before it contributes to a governed learning proposal.",
+    "Conflicting evidence is surfaced for review rather than silently averaged into strategy.",
+    "Major policy or weighting changes require explicit owner approval.",
+    "Every major approved change must preserve an auditable prior version and rollback reference.",
+    "Public Henry receives governance proof only, never private learning contents."
+  ]
+}
