@@ -1,0 +1,22 @@
+{
+  "schema": "henry.scenario-governance-public-contract.v1",
+  "artifact_id": "HNY-SCENARIO-GOV-001",
+  "purpose": "Prove that Mac Henry evaluates uncertainty across multiple futures without exposing private Brain strategy or forecasts.",
+  "required_scenarios": ["BEST_CASE", "EXPECTED_CASE", "WORST_CASE"],
+  "required_dimensions": ["scenario_id", "assumptions", "dependencies", "impact_band", "likelihood_band", "reversibility_band", "evidence_refs", "decision_change_triggers"],
+  "likelihood_bands": ["LOW", "MEDIUM", "HIGH", "UNKNOWN"],
+  "impact_bands": ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+  "reversibility_bands": ["EASY", "MODERATE", "DIFFICULT", "IRREVERSIBLE"],
+  "governance_rules": [
+    "A single forecast must not be represented as certainty.",
+    "Best, expected, and worst cases must be considered before confidence is elevated for a material decision.",
+    "Dependencies and assumptions must remain explicit and reviewable.",
+    "Decision-change triggers must identify what new evidence would alter the recommendation.",
+    "Critical worst-case impact requires owner review even when expected-case likelihood is favorable.",
+    "Irreversible material decisions require owner approval.",
+    "Scenario analysis is advisory and never grants execution authority.",
+    "Public Henry receives scenario proof only and never private Mac Henry forecasts, strategy weights, hidden reasoning, or private business context."
+  ],
+  "public_authority": {"execute_scenario": false, "change_private_forecast_weights": false, "select_private_strategy": false, "request_private_context": false},
+  "prohibited_public_fields": ["private_forecast_weights", "private_strategy", "private_business_context", "private_scenario_memory", "hidden_reasoning", "credentials", "tokens", "private_keys", "seed_phrases"]
+}
