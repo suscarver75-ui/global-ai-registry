@@ -1,0 +1,20 @@
+{
+  "schema": "henry.manager-dashboard.v1",
+  "artifact_id": "HNY-DASH-001",
+  "business": "GitHub Business",
+  "manager": "Henry",
+  "enterprise_manager": "Mac Henry",
+  "purpose": "Provide Henry one professional operating view of every GitHub department while preserving direct Mac Henry inspection authority and strict department isolation.",
+  "dashboard_sections": [
+    {"id":"EXECUTIVE_OVERVIEW","shows":["branch health","department health","priority alerts","revenue","costs","net contribution","growth","open support","security state","critical blockers","next best actions"]},
+    {"id":"DEPARTMENT_CARDS","shows":["department name","assistant status","health","current priorities","income baskets","costs","risks","security","blockers","support cases","latest report","needs Henry decision"]},
+    {"id":"SUPPORT_CENTER","shows":["Ask Henry escalations","member messages","department help requests","unresolved cases","severity","owner attention flags","resolution status"]},
+    {"id":"ECONOMIC_CONTROL","shows":["revenue by department","recurring revenue","fees","donations and fundraising where applicable","checkout activity","product income","operating costs","net contribution","experiments","growth opportunities"]},
+    {"id":"SECURITY_RISK","shows":["security alerts","privacy events","policy conflicts","dependency failures","audit state","red flags","Mac Henry escalation status"]},
+    {"id":"OPERATIONS","shows":["task queues","cross-department requests routed by Henry","dependencies","capacity","scheduled work","blocked work","completed outcomes"]}
+  ],
+  "department_isolation": "Department assistants report only to Henry and do not receive direct control channels to other department assistants. Cross-department work is routed and logged by Henry.",
+  "mac_henry_inspection": {"direct_read":true,"requires_henry_permission":false,"announced_required":false,"department_drilldown":true,"support_drilldown":true,"economic_drilldown":true,"security_drilldown":true},
+  "visual_behavior": {"department_cards":"professional cards with restrained department-specific under-glow","attention":"slow pulse or halo only for material items requiring attention","critical":"clear severity treatment without rapid flashing","ask_henry":"visible site-support entry, distinct from private manager dashboard"},
+  "privacy_boundary": "Dashboard does not expose Mac Henry private Brain, cross-business private strategy, private enterprise financial context, hidden reasoning, credentials, keys, tokens or seed phrases into the GitHub branch."
+}
