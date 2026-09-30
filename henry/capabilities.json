@@ -1,0 +1,78 @@
+{
+  "schema": "henry.capabilities.v1",
+  "artifact_id": "HNY-CAPABILITY-MANIFEST-001",
+  "registry": "LoAI-2024-0414-001",
+  "version": "1.0.0",
+  "issued_at": "2026-09-30T03:35:00Z",
+  "boundary": "PUBLIC_SAFE",
+  "authority": "NO_PRIVATE_AUTHORITY",
+  "status_vocabulary": ["VERIFIED", "PARTIAL", "BUILDING", "NOT_VERIFIED"],
+  "rule": "Capability status must reflect evidence, not intention.",
+  "capabilities": [
+    {
+      "id": "public-console",
+      "name": "Henry Public Site Operations console",
+      "status": "VERIFIED",
+      "evidence": ["henry/index.html", "henry/provenance.json"]
+    },
+    {
+      "id": "automated-provenance-verification",
+      "name": "Automated provenance and public-boundary verification",
+      "status": "VERIFIED",
+      "evidence": ["henry/verify-provenance.py", ".github/workflows/henry-provenance-verify.yml", "GitHub Actions successful runs"]
+    },
+    {
+      "id": "pages-deployment",
+      "name": "GitHub Pages build and deployment",
+      "status": "VERIFIED",
+      "evidence": ["successful GitHub Pages deployment runs"]
+    },
+    {
+      "id": "health-marker",
+      "name": "Public deployment health marker",
+      "status": "PARTIAL",
+      "evidence": ["henry/health.json", "repository verification and successful deployment"],
+      "remaining": "Independent served-endpoint content read-back has not yet been verified from the current execution environment."
+    },
+    {
+      "id": "image-provenance",
+      "name": "Representative SVG image provenance",
+      "status": "VERIFIED",
+      "evidence": ["henry/provenance-tests/HNY-IMAGE-TEST-001.svg"]
+    },
+    {
+      "id": "writing-provenance",
+      "name": "Representative text/writing provenance",
+      "status": "VERIFIED",
+      "evidence": ["henry/provenance-tests/HNY-DOCUMENT-TEST-001.md"]
+    },
+    {
+      "id": "digital-product-provenance",
+      "name": "Digital-product package provenance",
+      "status": "PARTIAL",
+      "evidence": ["henry/provenance-tests/HNY-PRODUCT-TEST-001.manifest.json"],
+      "remaining": "Complete packaged-product export, integrity hash and read-back remain to be verified."
+    },
+    {
+      "id": "video-provenance",
+      "name": "Rendered video provenance",
+      "status": "PARTIAL",
+      "evidence": ["henry/provenance-tests/HNY-VIDEO-TEST-001.manifest.json"],
+      "remaining": "Actual rendered-frame/container metadata survival has not yet been verified."
+    },
+    {
+      "id": "universal-artifact-stamping",
+      "name": "Automatic provenance application across all supported artifact pipelines",
+      "status": "BUILDING",
+      "evidence": ["policy active; representative format tests underway"],
+      "remaining": "Each supported artifact family must pass create, embed, export, read-back and verification before universal status can be VERIFIED."
+    },
+    {
+      "id": "private-main-brain-authority",
+      "name": "Private Mac Henry Main Brain authority exposed through Henry",
+      "status": "NOT_VERIFIED",
+      "evidence": [],
+      "remaining": "Intentionally prohibited: Henry is not designed to expose or inherit private Main Brain authority."
+    }
+  ]
+}
