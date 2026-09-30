@@ -59,3 +59,5 @@ jobs:
         run: python henry/outcomes/verify-private-learning-boundary.py
       - name: Prove governed learning preserves evidence, versioning, rollback and owner approval
         run: python henry/outcomes/verify-learning-governance-contract.py
+      - name: Prove evidence quality accounts for verification, recency, independence, contradictions and decay
+        run: python henry/evidence/verify-evidence-quality-contract.py
