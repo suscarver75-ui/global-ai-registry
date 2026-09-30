@@ -1,0 +1,13 @@
+{
+  "schema": "henry.web-visual-motion-standard.v1",
+  "artifact_id": "HNY-WEB-MOTION-001",
+  "department": "Professional Web Experience",
+  "purpose": "Give the visitor/member-facing GitHub business site a polished, modern wow factor using restrained glow, pulse, motion and department identity without becoming distracting or inaccessible.",
+  "principles": ["professional before flashy", "motion directs attention", "glow communicates hierarchy", "department identity remains consistent", "effects never obstruct reading or navigation", "accessibility and reduced-motion preferences are respected"],
+  "ask_henry": {"button_effect":"soft perimeter glow with occasional slow pulse", "attention_state":"brief halo pulse when contextual help is useful", "hover_state":"slight lift plus brighter edge", "avoid":"constant rapid flashing or strobing"},
+  "primary_actions": {"examples":["Ask Henry","Register","Academy","Support","Donate","Checkout","Member Entry"], "effect":"subtle breathing halo only when the action deserves attention", "rule":"Do not animate every button simultaneously."},
+  "department_cards": {"effect":"soft under-glow beneath card or department header", "hover":"gentle lift, edge illumination and shallow depth change", "identity":"Each department may have a restrained visual accent while sharing one enterprise design language."},
+  "page_details": ["soft illuminated dividers", "small status-light accents", "gentle reveal on first viewport entry", "subtle depth on important cards", "light sweep reserved for rare featured announcements", "micro-interaction acknowledgement after clicks"],
+  "motion_limits": ["no seizure-risk strobing", "no rapid repetitive flashing", "no effects that interfere with text contrast", "no motion required to understand content", "support prefers-reduced-motion", "pause decorative motion when appropriate", "keep mobile effects lightweight"],
+  "experience_goal": "Visitors should notice that the site feels advanced and alive without feeling like a gaming interface, advertisement wall or distracting light show."
+}
