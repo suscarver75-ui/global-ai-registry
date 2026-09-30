@@ -1,28 +1,45 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Mac Henry — Private Management Dashboard</title>
+<meta name="generator" content="Henry Public Operations Console">
+<meta name="artifact-id" content="HENRY-CONSOLE-V1-20260929">
+<meta name="registry" content="LoAI-2024-0414-001">
+<meta name="issued" content="2026-09-29T19:49:00-05:00">
+<title>Henry — Public Site Operations</title>
 <style>
-:root{--bg:#f4f6f8;--panel:#fff;--ink:#18212b;--muted:#66717d;--line:#dfe4e8;--accent:#126a5a;--gold:#a77719;--danger:#a23b3b;--shadow:0 12px 34px rgba(25,35,45,.09)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}.top{background:#fff;border-bottom:1px solid var(--line);padding:18px 5vw;display:flex;justify-content:space-between;gap:20px;align-items:center}.brand{font-weight:800;font-size:20px}.brand small{display:block;color:var(--muted);font-size:12px;font-weight:600}.owner{font-size:12px;color:var(--muted)}main{max-width:1240px;margin:auto;padding:34px 5vw 70px}.hero{display:grid;grid-template-columns:1.5fr .7fr;gap:22px;margin-bottom:24px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}h1{font-size:32px;line-height:1.1;margin:0 0 10px}.lead{color:var(--muted);max-width:700px}.status{display:inline-block;padding:6px 10px;border-radius:999px;background:#e6f3ef;color:var(--accent);font-weight:800;font-size:12px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.metric{font-size:28px;font-weight:850}.label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}.lane h3{margin:8px 0}.lane p{color:var(--muted);min-height:44px}.tag{font-size:11px;font-weight:800}.active{color:var(--accent)}.building{color:var(--gold)}.verify{color:var(--danger)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}button{border:0;border-radius:10px;padding:10px 14px;font-weight:750;cursor:pointer;background:#18212b;color:#fff}button.secondary{background:#eef1f3;color:#26313c}.notice{margin-top:24px;border-left:4px solid var(--gold);background:#fff8e9;padding:14px 16px;border-radius:8px;color:#59461e}.footer{margin-top:30px;color:var(--muted);font-size:12px}@media(max-width:850px){.hero,.grid{grid-template-columns:1fr}.lane p{min-height:0}}
+:root{--bg:#f5f3ed;--panel:#fff;--ink:#17202a;--muted:#66717d;--line:#ddd9cf;--accent:#176b5b;--gold:#9a711e;--blue:#315f83;--shadow:0 12px 32px rgba(20,30,40,.08)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}.provenance{height:8px;background:repeating-linear-gradient(90deg,#17202a 0 12px,#b6934c 12px 18px,#f5f3ed 18px 25px)}.top{background:#fff;border-bottom:1px solid var(--line);padding:18px 5vw;display:flex;justify-content:space-between;gap:20px;align-items:center}.brand{font-weight:850;font-size:22px}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:.09em}.mark{font:11px ui-monospace,monospace;color:var(--muted)}main{max-width:1240px;margin:auto;padding:34px 5vw 70px}.hero{display:grid;grid-template-columns:1.4fr .8fr;gap:20px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}h1{font-size:34px;line-height:1.08;margin:8px 0}.lead{color:var(--muted);max-width:760px}.status{display:inline-block;padding:5px 9px;border-radius:999px;background:#e7f2ee;color:var(--accent);font-size:11px;font-weight:850}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:18px}.label{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}.metric{font-size:23px;font-weight:850;margin-top:4px}.ok{color:var(--accent)}.public{color:var(--blue)}.light{margin:28px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}.light li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}.light b{color:var(--gold)}.notice{margin-top:22px;border-left:4px solid var(--gold);background:#fffaf0;padding:14px 16px;border-radius:8px}.footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:11px}.code{font-family:ui-monospace,monospace;word-break:break-all}@media(max-width:850px){.hero,.grid,.light{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header class="top"><div class="brand">MAC HENRY <small>PRIVATE AI MANAGER • OWNER CONTROL CENTER</small></div><div class="owner">Human-led • Evidence-based • Private-first</div></header>
+<div class="provenance" aria-hidden="true"></div>
+<header class="top"><div class="brand">HENRY <small>PUBLIC SITE OPERATIONS • GLOBAL AI REGISTRY</small></div><div class="mark">HNY•01 / LoAI-2024-0414-001</div></header>
 <main>
-<section class="hero"><div class="card"><span class="status">MANAGEMENT FOUNDATION ACTIVE</span><h1>Your business, projects and AI work — one control view.</h1><p class="lead">This dashboard is the private management surface for Mac Henry. It separates what is active, ready, building, blocked and awaiting verification so plans are never confused with completed work.</p><div class="actions"><button onclick="alert('Command routing will connect to the private Mac Henry brain in the next integration phase.')">Give Mac Henry a Command</button><button class="secondary" onclick="document.getElementById('lanes').scrollIntoView({behavior:'smooth'})">View Operating Lanes</button></div></div><div class="card"><div class="label">System principle</div><div class="metric">Owner → Mac Henry → Evidence</div><p class="lead">No task is marked done without a real result and verification.</p></div></section>
-<section class="grid"><div class="card"><div class="label">Private Brain</div><div class="metric active">ACTIVE</div><p>ChatGPT Project + private management records.</p></div><div class="card"><div class="label">Public Deployment</div><div class="metric active">ACTIVE</div><p>Global AI Registry, Church and Holistic Health surfaces.</p></div><div class="card"><div class="label">Dashboard Runtime</div><div class="metric building">BUILDING</div><p>Visual control surface exists; live private integrations come next.</p></div></section>
-<h2 id="lanes" style="margin-top:34px">Operating lanes</h2>
+<section class="hero"><div class="card"><span class="status">PUBLIC OPERATIONS LAYER</span><h1>Keep the public digital property clear, connected and verifiable.</h1><p class="lead">Henry is the public-safe operations surface for approved Registry websites and artifacts. It contains only information suitable for public inspection and is designed to remain harmless if copied or studied.</p></div><div class="card"><div class="label">Operating rule</div><div class="metric">Public by deliberate choice.</div><p class="lead">No credentials, private records, financial authority or confidential operational data belong in this layer.</p></div></section>
 <section class="grid">
-<div class="card lane"><span class="tag active">CONTROL • ACTIVE</span><h3>Owner Control</h3><p>Decisions, permissions, governance and architecture.</p></div>
-<div class="card lane"><span class="tag building">MONEY • READY</span><h3>Revenue & Money</h3><p>Products, sales, costs, profitability and transaction evidence.</p></div>
-<div class="card lane"><span class="tag building">BUILD • ACTIVE / BUILDING</span><h3>Projects & Execution</h3><p>Apps, sites, automations, integrations and implementation.</p></div>
-<div class="card lane"><span class="tag building">CONTENT • READY</span><h3>Content & Marketing</h3><p>Campaigns, education, product promotion and public communications.</p></div>
-<div class="card lane"><span class="tag active">SECURITY • ACTIVE STANDARD</span><h3>Security & Wellness</h3><p>Privacy, incidents, containment, recovery and agent health.</p></div>
-<div class="card lane"><span class="tag active">PUBLIC • ACTIVE</span><h3>Public Systems</h3><p>GitHub deployment and public-approved Mac Henry resources.</p></div>
+<div class="card"><div class="label">Registry</div><div class="metric ok">PUBLIC</div><p>Approved Registry pages, identifiers and public artifacts.</p></div>
+<div class="card"><div class="label">Departments</div><div class="metric public">SITE MAP</div><p>Public Church, Holistic Health and other approved department surfaces.</p></div>
+<div class="card"><div class="label">Site Quality</div><div class="metric ok">VERIFY</div><p>Navigation, broken links, public metadata, artifacts and release integrity.</p></div>
+<div class="card"><div class="label">Content</div><div class="metric public">APPROVED ONLY</div><p>Public descriptions, educational material, images and published records.</p></div>
+<div class="card"><div class="label">Provenance</div><div class="metric ok">LAYERED</div><p>Artifact IDs, Registry linkage, timestamps, versioning and integrity records.</p></div>
+<div class="card"><div class="label">Change State</div><div class="metric public">EVIDENCE</div><p>Public changes are versioned and can be checked against the intended release.</p></div>
 </section>
-<div class="notice"><strong>Private boundary:</strong> this page is a dashboard foundation, not an authentication system. No private Owner data, credentials, wallets, keys or confidential records belong in this public repository. Live private controls must connect through an authenticated private runtime.</div>
-<div class="footer">Mac Henry Private AI Manager • Foundation dashboard • 2026-09-29</div>
+<h2 style="margin:32px 0 10px">10 Light-Years-Ahead Public Standards</h2>
+<ul class="light">
+<li><b>01</b> Safe to inspect: public code assumes every line may be read.</li>
+<li><b>02</b> Secretless: credentials and private data never ship in the browser.</li>
+<li><b>03</b> Provenance-first: important artifacts carry origin and version identity.</li>
+<li><b>04</b> Integrity-aware: releases can be matched to recorded hashes/manifests.</li>
+<li><b>05</b> Minimum authority: public functions receive only the permissions required.</li>
+<li><b>06</b> Fail closed: unverified privileged requests do not gain authority.</li>
+<li><b>07</b> Copy-safe: copying Henry does not copy private operational capability.</li>
+<li><b>08</b> Supply-chain aware: dependencies and external code are reviewed.</li>
+<li><b>09</b> Evidence-native: release state and verification are separate from claims.</li>
+<li><b>10</b> Portable: public digital property remains maintainable without unnecessary lock-in.</li>
+</ul>
+<div class="notice"><strong>Public boundary:</strong> Henry is intentionally limited to public-safe site operations and provenance. Sensitive systems are not represented here and public artifacts grant no privileged authority.</div>
+<footer class="footer"><span>Supplied by Henry • Global AI Registry</span><span class="code">Artifact: HENRY-CONSOLE-V1-20260929 • Registry: LoAI-2024-0414-001 • Issued: 2026-09-29</span></footer>
 </main>
 </body></html>
