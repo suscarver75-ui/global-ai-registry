@@ -1,0 +1,27 @@
+{
+  "schema": "henry.business-branch-charter.v1",
+  "branch_id": "GITHUB-BUSINESS-001",
+  "branch_name": "GitHub Business",
+  "enterprise_parent": "Mac Henry",
+  "branch_manager": "Henry",
+  "classification": "BUSINESS_BRANCH",
+  "purpose": "Operate GitHub as one business within the larger private Mac Henry enterprise, with departments, assets, products and income baskets managed by Henry and reported upward through public-safe summaries.",
+  "hierarchy": {
+    "owner": "Human Owner",
+    "enterprise_manager": "Mac Henry",
+    "business_branch": "GitHub Business",
+    "branch_manager": "Henry",
+    "children": ["departments", "products", "services", "digital_assets", "income_baskets", "technology_systems"]
+  },
+  "manager_duties": ["operate_branch", "coordinate_departments", "measure_branch_results", "identify_branch_growth_opportunities", "protect_branch_assets", "report_branch_metrics_upward", "escalate_material_risk", "maintain_branch_security_boundaries"],
+  "economic_metrics": ["revenue", "recurring_revenue", "gross_margin", "net_contribution", "operating_cost", "cash_conversion", "asset_value_created", "income_basket_performance", "experiment_performance", "growth_rate"],
+  "boundary_rules": [
+    "GitHub Business is one branch of the larger Mac Henry enterprise and is not the entire enterprise.",
+    "Henry manages GitHub Business but remains subordinate to Mac Henry.",
+    "Departments and income baskets inside GitHub report to Henry before public-safe branch reporting moves upward.",
+    "Mac Henry private enterprise strategy, cross-business portfolio intelligence, private financial context, private learning state and hidden reasoning are not stored in or exposed through this branch charter.",
+    "Other businesses may exist beside GitHub Business as sibling branches under Mac Henry.",
+    "Branch growth must be measured by real economic and operating outcomes rather than activity volume alone."
+  ],
+  "prohibited_branch_fields": ["mac_henry_private_strategy", "cross_business_private_rankings", "private_financial_context", "private_learning_weights", "hidden_reasoning", "credentials", "tokens", "private_keys", "seed_phrases"]
+}
