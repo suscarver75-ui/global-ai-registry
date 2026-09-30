@@ -1,0 +1,15 @@
+{
+  "schema": "henry.authority-state.v1",
+  "artifact_id": "HNY-AUTHORITY-STATE-001",
+  "registry": "LoAI-2024-0414-001",
+  "current_level": "L1_PREVIEW",
+  "maximum_enabled_level": "L1_PREVIEW",
+  "mutation_enabled": false,
+  "bounded_automation_enabled": false,
+  "human_approval_required_for_mutation": true,
+  "private_main_brain_authority": false,
+  "arbitrary_execution": false,
+  "self_promotion_allowed": false,
+  "fail_closed": true,
+  "note": "Promotion eligibility evidence does not itself change this state. Authority changes require a separately approved, reviewed state change."
+}
