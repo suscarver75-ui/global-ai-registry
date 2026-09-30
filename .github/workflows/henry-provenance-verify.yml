@@ -43,3 +43,5 @@ jobs:
         run: python henry/verify-authority-state.py
       - name: Evaluate owner-facing manager readiness
         run: python henry/manager-readiness.py
+      - name: Verify owner executive status
+        run: python henry/owner-status.py
