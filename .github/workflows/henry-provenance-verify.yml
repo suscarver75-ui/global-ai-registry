@@ -27,3 +27,5 @@ jobs:
         run: python henry/verify-provenance.py
       - name: Prove Henry fails closed on prohibited commands
         run: python henry/test-policy-engine.py
+      - name: Prove Henry detects receipt-chain tampering
+        run: python henry/receipts/test-chain.py
