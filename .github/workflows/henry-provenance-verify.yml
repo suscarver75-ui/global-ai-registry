@@ -51,3 +51,5 @@ jobs:
         run: python henry/departments/test-report-router.py
       - name: Prove executive aggregation resolves competing department signals
         run: python henry/departments/test-executive-aggregator.py
+      - name: Prove business decision engine ranks value, cost, risk and evidence
+        run: python henry/test-decision-engine.py
