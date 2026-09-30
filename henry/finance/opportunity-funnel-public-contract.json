@@ -1,0 +1,22 @@
+{
+  "schema": "henry.opportunity-funnel-public-contract.v1",
+  "artifact_id": "HNY-OPPORTUNITY-FUNNEL-001",
+  "purpose": "Public-safe proof that Mac Henry systematically discovers, filters, tests and scales income opportunities while protecting capital and private strategy.",
+  "stages": ["DISCOVER", "QUALIFY", "ECONOMICS", "TEST_DESIGN", "VALIDATE", "SCALE_REVIEW", "COMPOUND_REVIEW", "RETIRE_OR_RECYCLE"],
+  "discovery_surfaces": ["existing_assets", "unfinished_products", "customer_problems", "retention_gaps", "pricing_gaps", "upsell_cross_sell", "recurring_revenue", "licensing_ip", "partnership_distribution", "automation_savings", "content_reuse", "service_productization", "underserved_niches", "technology_cost_reduction"],
+  "required_filters": ["demand_evidence", "time_to_first_cash", "gross_margin", "cash_requirement", "owner_attention", "delivery_capacity", "repeatability", "retention", "distribution_access", "competitive_differentiation", "legal_compliance", "security_privacy", "downside_limit", "reversibility", "opportunity_cost", "asset_compounding_value"],
+  "experiment_rules": [
+    "Prefer the smallest ethical test that can materially reduce uncertainty.",
+    "Define success, stop and review thresholds before a material test begins.",
+    "Do not scale solely from vanity metrics; require evidence tied to revenue, margin, retention, cash flow or validated demand.",
+    "Stop or redesign weak experiments before they consume disproportionate cash or owner attention.",
+    "Successful tests must pass capacity, downside, dependency and owner-review gates before material scaling.",
+    "When a winner is identified, evaluate repeatability, automation, reusable assets, recurring revenue, pricing power and distribution leverage for compounding.",
+    "Failed tests should preserve useful evidence and reusable assets when lawful and practical.",
+    "Public Henry never receives private opportunity rankings, private financial context, customer private data, credentials, account access or Mac Henry private strategy.",
+    "Opportunity analysis is advisory and never grants spending, contracting, transfer, investment, trading or execution authority."
+  ],
+  "public_safe_states": ["DISCOVERY", "NEEDS_EVIDENCE", "TEST_CANDIDATE", "VALIDATED_CANDIDATE", "SCALE_REVIEW", "COMPOUND_CANDIDATE", "REDESIGN", "STOP", "OWNER_REVIEW_REQUIRED"],
+  "public_authority": {"launch_paid_test": false, "spend_funds": false, "sign_contracts": false, "contact_customers": false, "publish_offer": false, "change_private_rankings": false, "request_private_financial_context": false},
+  "prohibited_public_fields": ["private_opportunity_rankings", "private_financial_context", "private_customer_data", "private_growth_weights", "private_strategy", "credentials", "tokens", "private_keys", "seed_phrases", "hidden_reasoning"]
+}
