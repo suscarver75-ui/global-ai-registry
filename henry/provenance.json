@@ -1,0 +1,20 @@
+{
+  "schema": "henry.public-provenance.v1",
+  "artifact_id": "HENRY-CONSOLE-V1-20260929",
+  "public_name": "Henry Public Site Operations",
+  "registry": "LoAI-2024-0414-001",
+  "version": "1.0.1",
+  "issued_at": "2026-09-29T20:51:00-05:00",
+  "supplier": "Henry / Global AI Registry",
+  "classification": "CURRENT_PUBLIC",
+  "symbol_family": "HNY-01",
+  "visual_mark": "HNY•01",
+  "artifact_path": "henry/index.html",
+  "boundary": "PUBLIC_SAFE",
+  "authority": "NO_PRIVATE_AUTHORITY",
+  "verification": {
+    "method": "git-versioned provenance record",
+    "status": "RECORDED",
+    "note": "This record establishes public release provenance. It is not a credential and grants no private-system authority. Cryptographic release signing may be added in a later verified release."
+  }
+}
