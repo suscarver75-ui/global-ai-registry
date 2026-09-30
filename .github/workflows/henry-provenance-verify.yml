@@ -33,3 +33,5 @@ jobs:
         run: python henry/receipts/test-command-binding.py
       - name: Prove Henry enforces bounded-operation safety
         run: python henry/test-operation-guard.py
+      - name: Prove Mac Henry to Henry end-to-end control flow
+        run: python henry/control-proof-v1.py
