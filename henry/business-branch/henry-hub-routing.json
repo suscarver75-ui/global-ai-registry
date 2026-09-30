@@ -1,0 +1,41 @@
+{
+  "schema": "henry.hub-routing.v1",
+  "artifact_id": "HNY-HUB-001",
+  "business": "GitHub Business",
+  "hub": "Henry",
+  "enterprise_manager": "Mac Henry",
+  "architecture": "HUB_AND_SPOKE",
+  "principle": "Every department assistant communicates operationally through Henry. Departments do not directly command, override, mutate, or privately coordinate with one another.",
+  "allowed_routes": [
+    "DEPARTMENT_ASSISTANT -> HENRY",
+    "HENRY -> DEPARTMENT_ASSISTANT",
+    "HENRY -> MAC_HENRY",
+    "MAC_HENRY -> HENRY",
+    "MAC_HENRY -> DIRECT_INSPECTION_READ"
+  ],
+  "prohibited_routes": [
+    "DEPARTMENT_ASSISTANT -> DEPARTMENT_ASSISTANT_COMMAND",
+    "DEPARTMENT_ASSISTANT -> DEPARTMENT_ASSISTANT_OVERRIDE",
+    "DEPARTMENT_ASSISTANT -> DEPARTMENT_ASSISTANT_STATE_MUTATION",
+    "DEPARTMENT_ASSISTANT -> PRIVATE_CROSS_DEPARTMENT_CHANNEL"
+  ],
+  "cross_department_workflow": "When Department A needs Department B, Department A sends a request to Henry. Henry checks authority, conflicts, dependencies, security and priority, then routes a bounded task or information request to Department B. The response returns to Henry before being routed onward.",
+  "ask_henry": {
+    "site_wide_entry": true,
+    "department_entry": true,
+    "label": "Ask Henry",
+    "uses": ["questions", "help", "navigation", "department_support", "member_support", "find_resources", "route_requests", "explain_site_services"],
+    "routing": "Ask Henry receives the request centrally, determines the relevant department or site resource, and returns the response without exposing department-to-department control channels.",
+    "department_context": "When opened from a department, Ask Henry may receive that department's public-safe context so the visitor does not need to repeat where they are.",
+    "site_context": "When opened site-wide, Ask Henry can route across the GitHub business based on the visitor's request and authorized access level."
+  },
+  "safety_rules": [
+    "Henry is the operational routing hub for GitHub Business.",
+    "A department assistant cannot override another department assistant.",
+    "A department assistant cannot grant itself or another department new authority.",
+    "Cross-department requests are logged and routed through Henry.",
+    "Material conflicts, security issues, financial anomalies and policy conflicts escalate to Henry and when required to Mac Henry.",
+    "Mac Henry retains direct read/inspection visibility across the GitHub branch without relying on Henry as a visibility gate.",
+    "Ask Henry is a visitor/member assistance surface and does not expose Mac Henry private Brain, private enterprise strategy, credentials, private keys, seed phrases or hidden reasoning."
+  ]
+}
