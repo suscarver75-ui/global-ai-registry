@@ -1,0 +1,26 @@
+{
+  "schema": "henry.department-assistant-governance.v1",
+  "artifact_id": "HNY-DEPT-ASSISTANTS-001",
+  "business_branch": "GitHub Business",
+  "enterprise_manager": "Mac Henry",
+  "branch_manager": "Henry",
+  "operating_model": "Each GitHub department has a bounded department assistant. Department assistants run department workflows within delegated authority, maintain department status, and report to Henry. Henry manages and aggregates the GitHub business. Mac Henry retains direct enterprise visibility and inspection authority across the entire GitHub branch at all times.",
+  "department_assistant_required_capabilities": ["department_status", "task_queue", "risk_register", "asset_register", "income_basket_metrics", "cost_metrics", "experiment_metrics", "security_status", "dependency_status", "needs_and_blockers", "recommendations", "report_to_henry"],
+  "reporting_chain": ["DEPARTMENT_ASSISTANT", "HENRY_BRANCH_MANAGER", "MAC_HENRY_ENTERPRISE_MANAGER", "HUMAN_OWNER"],
+  "dashboard_views": {
+    "department_view": ["health", "tasks", "revenue", "costs", "risks", "security", "experiments", "blockers", "next_actions"],
+    "henry_branch_view": ["department_rollup", "branch_revenue", "branch_costs", "net_contribution", "growth_rate", "income_baskets", "cross_department_dependencies", "branch_risks", "resource_needs", "branch_next_actions"],
+    "mac_henry_enterprise_view": ["full_github_branch_visibility", "department_drilldown", "branch_assets", "branch_economics", "branch_security", "branch_risks", "branch_dependencies", "branch_needs", "henry_performance", "department_assistant_performance"]
+  },
+  "inspection_rules": [
+    "Mac Henry may inspect GitHub Business directly at any time without waiting for, requesting, or depending on a Henry report.",
+    "Mac Henry inspection may be scheduled, unscheduled, announced or unannounced at the management layer.",
+    "Henry reporting improves management flow but never becomes a visibility gate between Mac Henry and GitHub Business.",
+    "Department assistants report operationally to Henry while remaining subordinate to Mac Henry enterprise governance.",
+    "No department assistant may conceal, filter away, delete or downgrade material branch information from an authorized Mac Henry inspection.",
+    "Inspection does not itself grant a department assistant, Henry, or Mac Henry new external execution permissions beyond the owner's authorized controls.",
+    "Private Mac Henry strategy, cross-business intelligence, private financial context and hidden reasoning remain outside the GitHub branch."
+  ],
+  "escalation_triggers": ["critical_security_event", "material_financial_loss", "material_revenue_anomaly", "critical_dependency_failure", "legal_compliance_risk", "data_privacy_event", "department_failure", "branch_capacity_failure", "owner_attention_required"],
+  "prohibited_department_fields": ["mac_henry_private_strategy", "cross_business_private_rankings", "private_enterprise_financial_context", "private_learning_weights", "hidden_reasoning", "credentials", "tokens", "private_keys", "seed_phrases"]
+}
