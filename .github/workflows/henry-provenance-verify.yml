@@ -29,3 +29,5 @@ jobs:
         run: python henry/test-policy-engine.py
       - name: Prove Henry detects receipt-chain tampering
         run: python henry/receipts/test-chain.py
+      - name: Prove Henry binds receipts to exact commands
+        run: python henry/receipts/test-command-binding.py
