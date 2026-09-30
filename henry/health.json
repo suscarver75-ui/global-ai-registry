@@ -1,0 +1,12 @@
+{
+  "schema": "henry.public-health.v1",
+  "service": "Henry Public Site Operations",
+  "artifact_id": "HENRY-HEALTH-20260929-001",
+  "registry": "LoAI-2024-0414-001",
+  "version": "1.0.0",
+  "issued_at": "2026-09-29T22:24:00-05:00",
+  "expected_state": "PUBLIC_SAFE",
+  "authority": "NO_PRIVATE_AUTHORITY",
+  "purpose": "Static deployment/read-back marker for end-to-end public availability verification.",
+  "contains_secrets": false
+}
