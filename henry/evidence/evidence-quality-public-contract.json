@@ -1,0 +1,24 @@
+{
+  "schema": "henry.evidence-quality-public-contract.v1",
+  "artifact_id": "HNY-EVIDENCE-QUALITY-001",
+  "purpose": "Expose public-safe proof that Mac Henry distinguishes evidence quality without exposing private Brain scoring or strategy.",
+  "public_dimensions": ["verification_state", "recency_band", "sample_size_band", "source_independence_band", "contradiction_state", "evidence_class", "decay_state"],
+  "evidence_classes": ["VERIFIED_RESULT", "OBSERVED_RESULT", "EXTERNAL_REFERENCE", "DEPARTMENT_ESTIMATE", "HYPOTHESIS"],
+  "verification_states": ["VERIFIED", "PARTIALLY_VERIFIED", "UNVERIFIED"],
+  "recency_bands": ["CURRENT", "AGING", "STALE"],
+  "sample_size_bands": ["INSUFFICIENT", "LIMITED", "MODERATE", "STRONG"],
+  "source_independence_bands": ["SINGLE_SOURCE", "CORRELATED", "MULTI_SOURCE_INDEPENDENT"],
+  "contradiction_states": ["NONE", "MATERIAL_CONFLICT", "UNRESOLVED"],
+  "decay_states": ["ACTIVE", "DECAYING", "EXPIRED"],
+  "governance_rules": [
+    "Unverified evidence cannot alone justify a major policy or weighting change.",
+    "Stale or expired evidence must not be treated as current evidence.",
+    "Correlated sources must not be counted as fully independent confirmations.",
+    "Material contradictions require review before confidence can be elevated.",
+    "Insufficient sample size must remain visible in the confidence proof.",
+    "Evidence classification is not execution authority.",
+    "Public Henry may verify evidence-quality labels but may not see private Brain scoring weights or strategy."
+  ],
+  "public_authority": {"change_private_confidence_weights": false, "resolve_conflicts_privately": false, "execute_from_confidence": false, "request_private_strategy": false},
+  "prohibited_public_fields": ["private_confidence_weights", "private_source_reputation_model", "private_strategy", "private_business_context", "hidden_reasoning", "credentials", "tokens", "private_keys", "seed_phrases"]
+}
