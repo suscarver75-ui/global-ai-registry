@@ -67,3 +67,7 @@ jobs:
         run: python henry/scenarios/verify-scenario-governance-contract.py
       - name: Prove dependency mapping checks downstream effects and future optionality
         run: python henry/dependencies/verify-dependency-impact-contract.py
+      - name: Prove GitHub branch growth decisions preserve capital controls
+        run: python henry/finance/verify-growth-capital-contract.py
+      - name: Prove GitHub opportunity funnel favors bounded tests and compounding winners
+        run: python henry/finance/verify-opportunity-funnel-contract.py
