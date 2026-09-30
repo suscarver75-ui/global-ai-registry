@@ -1,0 +1,46 @@
+{
+  "schema": "henry.trust-levels.v1",
+  "artifact_id": "HNY-TRUST-LEVELS-001",
+  "registry": "LoAI-2024-0414-001",
+  "boundary": "PUBLIC_SAFE",
+  "authority": "NO_PRIVATE_AUTHORITY",
+  "default_level": "L0_OBSERVE",
+  "promotion_rule": "No capability gains authority merely because code exists. Promotion requires passing evidence for all controls assigned to the target level.",
+  "levels": [
+    {
+      "id": "L0_OBSERVE",
+      "purpose": "Read public health, capabilities and evidence only.",
+      "mutation": false,
+      "human_approval_required": false
+    },
+    {
+      "id": "L1_PREVIEW",
+      "purpose": "Prepare public-safe proposed changes without applying them.",
+      "mutation": false,
+      "human_approval_required": false,
+      "requires": ["public-boundary-verification", "fail-closed-policy"]
+    },
+    {
+      "id": "L2_CONTROLLED_MUTATION",
+      "purpose": "Apply a narrowly allowlisted public change after preview and precondition checks.",
+      "mutation": true,
+      "human_approval_required": true,
+      "requires": ["preview-evidence", "idempotency", "replay-protection", "state-precondition", "command-receipt-binding", "post-change-verification", "receipt-chain-integrity"]
+    },
+    {
+      "id": "L3_BOUNDED_AUTOMATION",
+      "purpose": "Execute only pre-authorized low-risk public operations inside explicit budgets and stop conditions.",
+      "mutation": true,
+      "human_approval_required": "policy-defined",
+      "requires": ["all-L2-controls", "rate-limit", "operation-budget", "circuit-breaker", "rollback-plan", "independent-health-check", "audit-retention"]
+    }
+  ],
+  "never_granted": [
+    "private Main Brain authority",
+    "arbitrary code or shell execution",
+    "credential disclosure",
+    "wallet private-key or seed access",
+    "unbounded repository write authority",
+    "ability to disable its own verification gates"
+  ]
+}
