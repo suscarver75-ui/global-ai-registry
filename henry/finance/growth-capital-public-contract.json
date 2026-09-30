@@ -1,0 +1,20 @@
+{
+  "schema": "henry.growth-capital-public-contract.v1",
+  "artifact_id": "HNY-GROWTH-CAPITAL-001",
+  "purpose": "Public-safe proof that Mac Henry evaluates income growth, wealth building, resource allocation and downside protection without exposing private financial strategy.",
+  "required_growth_dimensions": ["revenue_potential", "recurring_revenue_potential", "gross_margin_band", "cash_conversion_speed", "customer_acquisition_efficiency", "retention_potential", "pricing_power", "cross_sell_potential", "asset_creation_potential", "automation_leverage", "time_requirement", "capital_requirement", "opportunity_cost", "downside_band", "reversibility", "evidence_quality"],
+  "capital_rules": [
+    "Positive expected revenue alone is insufficient; margin, cash timing, risk and opportunity cost must also be considered.",
+    "Recurring and repeatable income should be distinguished from one-time revenue.",
+    "Revenue growth that destroys margin or liquidity must be surfaced as a warning.",
+    "Pricing power, retention, cross-sell, reusable assets and automation leverage should be considered as compounding advantages.",
+    "Capital and owner attention are scarce resources and must be compared against alternative uses.",
+    "Material downside, irreversible commitments, leverage, custody, investment, trading, tax, legal or regulated-financial actions require appropriate human review and authorization.",
+    "No recommendation may imply guaranteed profit, guaranteed return or risk-free wealth creation.",
+    "Public Henry may prove that growth factors were evaluated but cannot access private balances, accounts, credentials, portfolio positions, private financial strategy or Mac Henry private scoring weights.",
+    "Growth analysis is advisory and never grants spending, transfer, trading, investment, contracting or execution authority."
+  ],
+  "public_safe_outputs": ["GROWTH_CANDIDATE", "TEST_FIRST", "PROTECT_CASH", "IMPROVE_MARGIN", "IMPROVE_RETENTION", "REPRICE_REVIEW", "CAPACITY_CONSTRAINED", "OWNER_REVIEW_REQUIRED", "HOLD"],
+  "public_authority": {"spend_funds": false, "move_funds": false, "trade_assets": false, "invest_assets": false, "sign_contracts": false, "change_private_growth_weights": false, "request_private_financial_context": false},
+  "prohibited_public_fields": ["private_account_balances", "private_bank_data", "private_wallet_data", "private_portfolio_positions", "private_growth_weights", "private_financial_strategy", "private_business_context", "credentials", "tokens", "private_keys", "seed_phrases", "hidden_reasoning"]
+}
