@@ -1,0 +1,20 @@
+{
+  "schema": "henry.dependency-impact-public-contract.v1",
+  "artifact_id": "HNY-DEPENDENCY-IMPACT-001",
+  "purpose": "Public-safe proof that material recommendations are checked for dependencies and downstream effects without exposing Mac Henry private strategy.",
+  "required_impact_domains": ["FINANCE", "WORKLOAD", "SECURITY", "CUSTOMER", "PRODUCT", "LEGAL_COMPLIANCE", "OPERATIONS", "REPUTATION", "DATA_PRIVACY", "FUTURE_OPTIONALITY"],
+  "required_fields": ["dependency_id", "domain", "relationship", "criticality", "failure_mode", "downstream_effects", "mitigation_ref", "evidence_refs", "owner_review_trigger"],
+  "criticality_bands": ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+  "relationship_types": ["REQUIRES", "BLOCKS", "ENABLES", "DEGRADES", "AMPLIFIES_RISK", "REDUCES_RISK", "CONFLICTS_WITH"],
+  "governance_rules": [
+    "Material recommendations must be checked across all required impact domains.",
+    "Critical dependencies and credible critical downstream effects require owner review.",
+    "A missing mitigation reference for a high or critical failure mode must fail closed.",
+    "Cross-department effects must remain explicit rather than being hidden inside one department recommendation.",
+    "Future optionality must be considered so a short-term gain does not silently remove important future choices.",
+    "Dependency analysis is advisory and never grants execution authority.",
+    "Public Henry receives dependency proof only and never private Mac Henry strategy, private business context, hidden reasoning, credentials, or private learning state."
+  ],
+  "public_authority": {"execute_dependency_change": false, "override_critical_dependency": false, "change_private_strategy": false, "request_private_context": false},
+  "prohibited_public_fields": ["private_strategy", "private_business_context", "private_dependency_memory", "private_learning_weights", "hidden_reasoning", "credentials", "tokens", "private_keys", "seed_phrases"]
+}
