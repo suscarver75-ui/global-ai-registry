@@ -39,3 +39,5 @@ jobs:
         run: python henry/test-recovery-gate.py
       - name: Verify audit retention and failure-preservation policy
         run: python henry/audit-verify.py
+      - name: Prove Henry authority remains preview-only
+        run: python henry/verify-authority-state.py
