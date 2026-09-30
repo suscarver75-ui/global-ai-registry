@@ -1,0 +1,25 @@
+{
+  "schema": "henry.audit-policy.v1",
+  "artifact_id": "HNY-AUDIT-POLICY-001",
+  "registry": "LoAI-2024-0414-001",
+  "boundary": "PUBLIC_SAFE",
+  "authority": "NO_PRIVATE_AUTHORITY",
+  "principles": [
+    "append evidence; do not rewrite history",
+    "preserve failures as failures",
+    "link retries to prior attempts",
+    "retain minimum public-safe evidence",
+    "never retain credentials or private Main Brain content",
+    "separate integrity evidence from identity claims"
+  ],
+  "retention_classes": {
+    "security_failure": {"minimum_days": 365, "reason": "forensic and regression evidence"},
+    "mutation_receipt": {"minimum_days": 365, "reason": "public change accountability"},
+    "preview_receipt": {"minimum_days": 90, "reason": "decision trace without indefinite low-value retention"},
+    "health_observation": {"minimum_days": 30, "reason": "operational trend evidence"}
+  },
+  "required_links": ["receipt_id", "command_id", "command_fingerprint", "previous_receipt_hash", "verification_status"],
+  "prohibited_content": ["credentials", "access tokens", "wallet secrets", "private Main Brain prompts", "hidden reasoning", "unnecessary personal data"],
+  "deletion_rule": "Retention expiry permits removal only under an explicit retention process; deletion must not rewrite surviving receipt-chain claims as if removed evidence never existed.",
+  "note": "Repository history and hashes provide useful evidence but are not by themselves a legal archive, digital signature, or proof of human identity."
+}
