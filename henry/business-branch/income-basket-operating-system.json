@@ -1,0 +1,25 @@
+{
+  "schema": "henry.income-basket-operating-system.v1",
+  "artifact_id": "HNY-INCOME-OS-001",
+  "business": "GitHub Business",
+  "manager": "Henry",
+  "enterprise_manager": "Mac Henry",
+  "purpose": "Give every GitHub department a common, measurable method to propose, test, operate, improve and scale legitimate income baskets without imposing an artificial earnings ceiling or making earnings claims.",
+  "basket_lifecycle": ["IDEA", "SCREEN", "BOUNDED_TEST", "VALIDATE", "OPERATE", "IMPROVE", "SCALE", "HOLD", "REPAIR", "RETIRE"],
+  "required_basket_record": ["basket_id", "department", "owner_or_responsible_assistant", "customer_or_supporter_value", "revenue_model", "price_or_fee_logic", "direct_costs", "operating_costs", "payment_path", "contract_or_terms_need", "security_risk", "legal_compliance_review_need", "success_metrics", "test_budget", "stop_loss_or_stop_condition", "results", "next_decision"],
+  "supported_models": ["sales", "subscriptions", "memberships", "fees", "licensing", "rent_or_space_use", "publishing_income", "education_and_course_fees", "registry_services", "approved_sponsorships", "fundraising", "donations", "gifts", "digital_products", "services", "other_reviewed_legitimate_models"],
+  "economics": ["gross_revenue", "refunds", "payment_fees", "direct_cost", "operating_cost", "net_contribution", "recurring_revenue", "conversion_rate", "retention_or_renewal", "support_load", "time_to_value", "growth_rate"],
+  "decision_rules": [
+    "Do not make or publish guaranteed earnings claims.",
+    "Do not impose an artificial maximum earnings target on a basket; scale is determined by lawful demand, capacity, economics, risk and owner-approved controls.",
+    "Prefer bounded low-cost tests before large irreversible commitments.",
+    "Scale baskets supported by real outcome evidence and sustainable unit economics.",
+    "Repair or retire baskets that repeatedly consume resources without sufficient value unless there is a documented strategic reason to continue.",
+    "Revenue alone is not success; net contribution, risk, support burden, sustainability and mission fit also matter.",
+    "Donations, fundraising, gifts and mission-support income must remain clearly distinguished from commercial sales and fees in records and visitor-facing language.",
+    "High-risk financial, medical, legal, privacy, security or culturally sensitive activity requires appropriate review before launch or material expansion."
+  ],
+  "department_flow": "A department assistant proposes or operates its basket and reports evidence to Henry. Henry compares basket performance across the GitHub business, coordinates shared services and escalates material issues. Mac Henry may inspect any basket directly and may compare GitHub performance with other enterprise businesses using private enterprise intelligence outside this repository.",
+  "dashboard_outputs": ["basket health", "current lifecycle stage", "revenue", "cost", "net contribution", "recurring component", "risk", "support burden", "evidence quality", "next action", "needs Henry decision", "needs Mac Henry escalation"],
+  "private_boundary": "No Mac Henry private cross-business rankings, private strategy, private enterprise financial context, hidden reasoning, credentials, wallet secrets, keys, tokens or seed phrases are stored in this GitHub artifact."
+}
