@@ -53,3 +53,5 @@ jobs:
         run: python henry/departments/test-executive-aggregator.py
       - name: Prove business decision engine ranks value, cost, risk and evidence
         run: python henry/test-decision-engine.py
+      - name: Prove public outcome evidence binds to exact decisions without private learning authority
+        run: python henry/outcomes/test-public-outcome-verifier.py
