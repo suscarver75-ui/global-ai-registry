@@ -45,3 +45,5 @@ jobs:
         run: python henry/manager-readiness.py
       - name: Verify owner executive status
         run: python henry/owner-status.py
+      - name: Verify department least-privilege boundaries
+        run: python henry/departments/verify-department-contract.py
