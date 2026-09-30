@@ -63,3 +63,5 @@ jobs:
         run: python henry/evidence/verify-evidence-quality-contract.py
       - name: Prove confidence requires sufficient current independent verified evidence
         run: python henry/evidence/test-confidence-gate.py
+      - name: Prove scenario reasoning preserves uncertainty, reversibility and owner control
+        run: python henry/scenarios/verify-scenario-governance-contract.py
