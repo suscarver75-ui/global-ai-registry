@@ -1,0 +1,25 @@
+{
+  "schema": "mac-henry.department-contract.v1",
+  "artifact_id": "MH-DEPT-CONTRACT-001",
+  "registry": "LoAI-2024-0414-001",
+  "purpose": "Define least-privilege department managers that report decision-quality summaries upward without receiving full Main Brain authority.",
+  "default_authority": "ADVISE_ONLY",
+  "required_output_states": ["READY", "HOLD", "APPROVAL_NEEDED", "ACTION_REQUIRED", "RISK_DETECTED"],
+  "required_report_fields": ["department", "status", "priority", "evidence_refs", "recommended_next_action", "approval_required", "risk_summary"],
+  "rules": [
+    "Department managers receive only information necessary for their assigned function.",
+    "Department managers do not inherit private Main Brain authority.",
+    "Department managers may recommend actions but may not expand their own permissions.",
+    "Cross-department access must be explicitly allowlisted by the Main Brain policy layer.",
+    "Financial, credential, identity, wallet-secret and private-key material is never included merely because a department requests it.",
+    "Owner-facing reports summarize evidence; underlying evidence remains available for review.",
+    "A missing or invalid permission fails closed."
+  ],
+  "initial_departments": {
+    "business_operations": {"authority":"ADVISE_ONLY","inputs":["projects","tasks","costs","results"],"outputs":["next_best_move","keep_change_stop","efficiency_risk"]},
+    "content_products": {"authority":"ADVISE_ONLY","inputs":["approved_products","content_metrics","public_assets"],"outputs":["content_priority","product_status","promotion_recommendation"]},
+    "finance_review": {"authority":"ADVISE_ONLY","inputs":["approved_financial_summaries","budgets","cost_categories"],"outputs":["budget_signal","cost_review","approval_request"],"prohibited":["wallet_private_keys","seed_phrases","credentials"]},
+    "security_governance": {"authority":"ADVISE_ONLY","inputs":["control_results","audit_evidence","authority_state"],"outputs":["risk_signal","hold_recommendation","control_gap"]},
+    "henry_public_operations": {"authority":"PREVIEW_ONLY","inputs":["public_safe_commands","public_site_state","verification_evidence"],"outputs":["preview","readiness","public_operation_status"],"prohibited":["private_main_brain_content"]}
+  }
+}
