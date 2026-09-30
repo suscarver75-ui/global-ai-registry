@@ -25,3 +25,5 @@ jobs:
           python-version: '3.12'
       - name: Verify Henry provenance and public boundary
         run: python henry/verify-provenance.py
+      - name: Prove Henry fails closed on prohibited commands
+        run: python henry/test-policy-engine.py
