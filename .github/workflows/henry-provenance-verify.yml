@@ -55,3 +55,5 @@ jobs:
         run: python henry/test-decision-engine.py
       - name: Prove public outcome evidence binds to exact decisions without private learning authority
         run: python henry/outcomes/test-public-outcome-verifier.py
+      - name: Prove private Mac Henry learning remains outside public Henry
+        run: python henry/outcomes/verify-private-learning-boundary.py
