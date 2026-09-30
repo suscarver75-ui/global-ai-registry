@@ -1,0 +1,15 @@
+{
+  "schema": "henry.public-provenance.v1",
+  "artifact_id": "HNY-VIDEO-TEST-001",
+  "artifact_type": "video_manifest",
+  "registry": "LoAI-2024-0414-001",
+  "version": "1.0.0",
+  "issued_at": "2026-09-29T21:17:00-05:00",
+  "supplier": "Henry / Global AI Registry",
+  "classification": "CURRENT_PUBLIC",
+  "boundary": "PUBLIC_SAFE",
+  "symbol_family": "HNY-01",
+  "intended_layers": ["visible opening-or-end provenance mark","container metadata when supported","companion provenance manifest","integrity hash after final render when verified"],
+  "verification_status": "MANIFEST_VERIFIED_ONLY",
+  "note": "The companion manifest is testable as text on GitHub. Actual video-container metadata and rendered-frame survival remain NOT YET VERIFIED until a real video file is produced, exported and read back."
+}
