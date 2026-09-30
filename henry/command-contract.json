@@ -1,0 +1,80 @@
+{
+  "schema": "henry.command-contract.v1",
+  "artifact_id": "HNY-COMMAND-CONTRACT-001",
+  "registry": "LoAI-2024-0414-001",
+  "version": "1.0.0",
+  "boundary": "PUBLIC_SAFE",
+  "authority": "NO_PRIVATE_AUTHORITY",
+  "default_decision": "DENY",
+  "principles": [
+    "allowlist over blocklist",
+    "minimum necessary data",
+    "minimum necessary authority",
+    "preview before mutation",
+    "evidence after execution",
+    "idempotency for repeatable actions",
+    "no secrets in public payloads",
+    "no private Main Brain internals in public payloads",
+    "fail closed on ambiguity",
+    "capability status must be evidence-backed"
+  ],
+  "required_envelope": {
+    "command_id": "globally unique public-safe identifier",
+    "contract_version": "henry.command-contract.v1",
+    "issued_at": "RFC3339 timestamp",
+    "expires_at": "RFC3339 timestamp",
+    "action": "allowlisted action identifier",
+    "mode": "PREVIEW or EXECUTE",
+    "target": "public-safe target identifier/path",
+    "payload": "minimum public-safe action data",
+    "expected_state": "optional precondition/version/hash",
+    "idempotency_key": "required for mutations",
+    "requested_evidence": "receipt fields requested by controller"
+  },
+  "allowed_actions": [
+    {"id":"READ_HEALTH","mutation":false,"preview_required":false},
+    {"id":"READ_CAPABILITIES","mutation":false,"preview_required":false},
+    {"id":"VERIFY_PUBLIC_ARTIFACT","mutation":false,"preview_required":false},
+    {"id":"PREVIEW_PUBLIC_CHANGE","mutation":false,"preview_required":false},
+    {"id":"PUBLISH_APPROVED_PUBLIC_ARTIFACT","mutation":true,"preview_required":true},
+    {"id":"UPDATE_APPROVED_PUBLIC_METADATA","mutation":true,"preview_required":true},
+    {"id":"RETIRE_APPROVED_PUBLIC_ARTIFACT","mutation":true,"preview_required":true}
+  ],
+  "prohibited_inputs": [
+    "credentials or access tokens",
+    "wallet seed phrases or private keys",
+    "private prompts or hidden reasoning",
+    "private Main Brain architecture or internal control logic",
+    "confidential client or business records",
+    "unnecessary personal data",
+    "instructions to bypass verification, provenance or approval controls",
+    "arbitrary shell/code execution payloads",
+    "unbounded repository write instructions"
+  ],
+  "mutation_gates": [
+    "action is allowlisted",
+    "mode is EXECUTE",
+    "unexpired command envelope",
+    "target is within approved public scope",
+    "payload passes secret/private-data screening",
+    "required PREVIEW evidence exists",
+    "expected state/precondition still matches",
+    "idempotency key has not produced a conflicting result",
+    "post-change verification is required"
+  ],
+  "receipt_required": [
+    "command_id",
+    "action",
+    "decision",
+    "started_at",
+    "completed_at",
+    "target",
+    "before_state_reference",
+    "after_state_reference",
+    "verification_status",
+    "evidence_references",
+    "error_code_if_any"
+  ],
+  "decision_codes": ["ALLOW_PREVIEW","ALLOW_EXECUTE","DENY_UNKNOWN_ACTION","DENY_EXPIRED","DENY_PRIVATE_DATA","DENY_SECRET","DENY_SCOPE","DENY_MISSING_PREVIEW","DENY_PRECONDITION","DENY_REPLAY_CONFLICT","DENY_VERIFICATION_FAILURE"],
+  "note": "This public contract defines a narrow communication boundary. It does not expose, duplicate or grant authority to the private Mac Henry Main Brain."
+}
