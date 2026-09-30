@@ -2,33 +2,14 @@
 from datetime import datetime, timezone
 from pathlib import Path
 import importlib.util
-
-ENGINE_PATH = Path(__file__).resolve().parent / "policy-engine.py"
-spec = importlib.util.spec_from_file_location("henry_policy_engine", ENGINE_PATH)
-engine = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(engine)
-decide = engine.decide
-
+ENGINE_PATH=Path(__file__).resolve().parent/'policy-engine.py'; spec=importlib.util.spec_from_file_location('henry_policy_engine',ENGINE_PATH); engine=importlib.util.module_from_spec(spec); spec.loader.exec_module(engine); decide=engine.decide; fingerprint=engine.command_fingerprint
 NOW=datetime(2026,9,30,5,0,0,tzinfo=timezone.utc)
 def base(**kw):
  c={"command_id":"TEST-001","contract_version":"henry.command-contract.v1","issued_at":"2026-09-30T04:59:00Z","expires_at":"2026-09-30T05:10:00Z","action":"READ_HEALTH","mode":"PREVIEW","target":"henry/health.json","payload":{},"expected_state":None,"idempotency_key":None,"requested_evidence":["decision"]}; c.update(kw); return c
+safe=base(); replay_seen={safe['command_id']:fingerprint(safe)}
 cases=[
- ("allow safe read",base(),False,"ALLOW_PREVIEW"),
- ("deny unknown action",base(action="RUN_ANYTHING"),False,"DENY_UNKNOWN_ACTION"),
- ("deny expired",base(expires_at="2026-09-30T04:00:00Z"),False,"DENY_EXPIRED"),
- ("deny future issued",base(issued_at="2026-09-30T06:00:00Z"),False,"DENY_EXPIRED"),
- ("deny traversal",base(target="henry/../private/brain.json"),False,"DENY_SCOPE"),
- ("deny non-Henry scope",base(target="mac-henry/private.json"),False,"DENY_SCOPE"),
- ("deny private brain data",base(payload={"note":"private Main Brain architecture"}),False,"DENY_PRIVATE_DATA"),
- ("deny hidden reasoning",base(payload={"note":"hidden reasoning"}),False,"DENY_PRIVATE_DATA"),
- ("deny token",base(payload={"token":"ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZ123456"}),False,"DENY_SECRET"),
- ("mutation preview only",base(action="PUBLISH_APPROVED_PUBLIC_ARTIFACT",mode="PREVIEW",target="henry/public.json"),False,"ALLOW_PREVIEW"),
- ("deny execute without idempotency",base(action="PUBLISH_APPROVED_PUBLIC_ARTIFACT",mode="EXECUTE",target="henry/public.json"),True,"DENY_PRECONDITION"),
- ("deny execute without preview evidence",base(action="PUBLISH_APPROVED_PUBLIC_ARTIFACT",mode="EXECUTE",target="henry/public.json",idempotency_key="idem-001"),False,"DENY_MISSING_PREVIEW"),
- ("allow gated execute",base(action="PUBLISH_APPROVED_PUBLIC_ARTIFACT",mode="EXECUTE",target="henry/public.json",idempotency_key="idem-001"),True,"ALLOW_EXECUTE"),
-]
+ ('allow safe read',safe,False,{},None,'ALLOW_PREVIEW'),('deny unknown action',base(action='RUN_ANYTHING'),False,{},None,'DENY_UNKNOWN_ACTION'),('deny expired',base(expires_at='2026-09-30T04:00:00Z'),False,{},None,'DENY_EXPIRED'),('deny future issued',base(issued_at='2026-09-30T06:00:00Z'),False,{},None,'DENY_EXPIRED'),('deny traversal',base(target='henry/../private/brain.json'),False,{},None,'DENY_SCOPE'),('deny non-Henry scope',base(target='mac-henry/private.json'),False,{},None,'DENY_SCOPE'),('deny private brain data',base(payload={'note':'private Main Brain architecture'}),False,{},None,'DENY_PRIVATE_DATA'),('deny hidden reasoning',base(payload={'note':'hidden reasoning'}),False,{},None,'DENY_PRIVATE_DATA'),('deny token',base(payload={'token':'ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZ123456'}),False,{},None,'DENY_SECRET'),('deny replayed command id',safe,False,replay_seen,None,'DENY_REPLAY_CONFLICT'),('deny stale state',base(command_id='TEST-STATE',expected_state='sha256:old'),False,{},'sha256:new','DENY_PRECONDITION'),('allow matching state',base(command_id='TEST-STATE2',expected_state='sha256:same'),False,{},'sha256:same','ALLOW_PREVIEW'),('mutation preview only',base(action='PUBLISH_APPROVED_PUBLIC_ARTIFACT',mode='PREVIEW',target='henry/public.json'),False,{},None,'ALLOW_PREVIEW'),('deny execute without idempotency',base(action='PUBLISH_APPROVED_PUBLIC_ARTIFACT',mode='EXECUTE',target='henry/public.json'),True,{},None,'DENY_PRECONDITION'),('deny execute without preview evidence',base(action='PUBLISH_APPROVED_PUBLIC_ARTIFACT',mode='EXECUTE',target='henry/public.json',idempotency_key='idem-001'),False,{},None,'DENY_MISSING_PREVIEW'),('allow gated execute',base(action='PUBLISH_APPROVED_PUBLIC_ARTIFACT',mode='EXECUTE',target='henry/public.json',idempotency_key='idem-001'),True,{},None,'ALLOW_EXECUTE')]
 failed=0
-for name,cmd,preview,expected in cases:
- got=decide(cmd,NOW,preview); ok=got==expected; failed+=not ok; print(("PASS" if ok else "FAIL")+f" | {name} | expected={expected} got={got}")
-print(f"SUMMARY | {len(cases)-failed}/{len(cases)} passed")
-raise SystemExit(1 if failed else 0)
+for name,cmd,preview,seen,state,expected in cases:
+ got=decide(cmd,NOW,preview,seen,state); ok=got==expected; failed+=not ok; print(('PASS' if ok else 'FAIL')+f' | {name} | expected={expected} got={got}')
+print(f'SUMMARY | {len(cases)-failed}/{len(cases)} passed'); raise SystemExit(1 if failed else 0)
