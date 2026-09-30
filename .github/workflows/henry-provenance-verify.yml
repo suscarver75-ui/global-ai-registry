@@ -57,3 +57,5 @@ jobs:
         run: python henry/outcomes/test-public-outcome-verifier.py
       - name: Prove private Mac Henry learning remains outside public Henry
         run: python henry/outcomes/verify-private-learning-boundary.py
+      - name: Prove governed learning preserves evidence, versioning, rollback and owner approval
+        run: python henry/outcomes/verify-learning-governance-contract.py
