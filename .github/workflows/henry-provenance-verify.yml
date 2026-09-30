@@ -41,3 +41,5 @@ jobs:
         run: python henry/audit-verify.py
       - name: Prove Henry authority remains preview-only
         run: python henry/verify-authority-state.py
+      - name: Evaluate owner-facing manager readiness
+        run: python henry/manager-readiness.py
