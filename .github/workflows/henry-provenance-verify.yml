@@ -61,3 +61,5 @@ jobs:
         run: python henry/outcomes/verify-learning-governance-contract.py
       - name: Prove evidence quality accounts for verification, recency, independence, contradictions and decay
         run: python henry/evidence/verify-evidence-quality-contract.py
+      - name: Prove confidence requires sufficient current independent verified evidence
+        run: python henry/evidence/test-confidence-gate.py
