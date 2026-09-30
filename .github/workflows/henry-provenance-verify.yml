@@ -49,3 +49,5 @@ jobs:
         run: python henry/departments/verify-department-contract.py
       - name: Prove department reports fail closed at routing boundary
         run: python henry/departments/test-report-router.py
+      - name: Prove executive aggregation resolves competing department signals
+        run: python henry/departments/test-executive-aggregator.py
