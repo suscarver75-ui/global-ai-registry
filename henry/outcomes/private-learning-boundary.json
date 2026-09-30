@@ -1,0 +1,45 @@
+{
+  "schema": "henry.private-learning-boundary.v1",
+  "artifact_id": "HNY-PRIVATE-LEARNING-BOUNDARY-001",
+  "public_component": "Henry",
+  "private_component": "Mac Henry Brain",
+  "public_may_receive": [
+    "opaque_decision_id",
+    "decision_fingerprint",
+    "public_safe_metric_name",
+    "baseline",
+    "target",
+    "observed",
+    "measurement_window",
+    "public_evidence_reference",
+    "verification_status"
+  ],
+  "public_must_never_receive": [
+    "private_decision_history",
+    "private_business_context",
+    "private_learning_weights",
+    "private_strategy",
+    "private_main_brain_prompts",
+    "hidden_reasoning",
+    "credentials",
+    "access_tokens",
+    "wallet_private_keys",
+    "seed_phrases",
+    "private_identity_records"
+  ],
+  "public_authority": {
+    "learn_from_outcomes": false,
+    "change_learning_weights": false,
+    "change_strategy": false,
+    "execute_recommendations": false,
+    "request_private_context": false,
+    "promote_own_authority": false
+  },
+  "boundary_rules": [
+    "Public Henry verifies public-safe outcome evidence but does not own the private learning model.",
+    "Only explicitly allowlisted public-safe fields may cross from the private system toward Henry.",
+    "Private learning state is represented publicly only by opaque references or approved verification results.",
+    "A missing, unknown, or extra field fails closed.",
+    "Public verification results never grant execution or learning authority."
+  ]
+}
