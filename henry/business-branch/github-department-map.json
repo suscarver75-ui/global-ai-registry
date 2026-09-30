@@ -1,0 +1,23 @@
+{
+  "schema": "henry.github-department-map.v1",
+  "business": "GitHub Business",
+  "manager": "Henry",
+  "enterprise_manager": "Mac Henry",
+  "principle": "GitHub is a substantial multi-department business branch under private Mac Henry. Henry manages branch operations; each department has a bounded assistant; Mac Henry retains direct inspection visibility.",
+  "departments": [
+    {"id":"RESEARCH_RESOURCES","name":"Research & Resources","assistant":"Research Assistant","areas":["research","resource library","source verification","emerging technology","opportunity intelligence","educational resources"]},
+    {"id":"HOLISTIC_HEALTH","name":"Holistic Health Practitioner & Natural Resources","assistant":"Holistic Health Assistant","areas":["natural resource information","health education","holistic practitioner resources","wellness education"],"safety":"Educational information must distinguish wellness education from medical diagnosis/treatment and escalate medical claims for appropriate review."},
+    {"id":"BAREFOOT","name":"Barefoot Natural Holistic Health Program","assistant":"Barefoot Program Assistant","areas":["life practice","movement is life / life is movement","barefoot practice","holistic wellbeing","spiritual perspectives","educational programs"]},
+    {"id":"REGISTRY_PORTAL","name":"Registry Portal & Technology","assistant":"Registry Assistant","areas":["registrations","records","portal technology","verification","identity/provenance","certificates","registry services"]},
+    {"id":"PUBLISHING_AI_HOUSE","name":"Publishing AI House","assistant":"Publishing Assistant","areas":["books","digital publishing","educational publishing","AI-assisted production","rights/provenance","catalogs","distribution"]},
+    {"id":"BLUEPRINT_DEVELOPER","name":"Blue Footprint & Developer 1.0-10.0","assistant":"Developer Assistant","areas":["blueprints","developer systems","versions 1.0-10.0","software","architecture","testing","deployment","technical documentation"]},
+    {"id":"CHURCH","name":"Church & Ministry","assistant":"Church Assistant","areas":["ministry","spiritual resources","community","programs","services","outreach","church education","giving"]},
+    {"id":"DIGITAL_PRODUCTS_FINANCE","name":"Digital Products & Finance","assistant":"Commerce & Finance Assistant","areas":["digital products","pricing","income baskets","revenue reporting","fees","financial operations","growth metrics"]},
+    {"id":"COMMERCE_GIVING","name":"Checkout, Giving & Support","assistant":"Checkout & Giving Assistant","areas":["checkout","cart","fees","gifts","fundraisers","donations","where-to-help","receipts","payment routing"],"safety":"Payment credentials, private keys and unrestricted financial authority are never stored in department reports."},
+    {"id":"WEB_EXPERIENCE","name":"Professional Web Experience","assistant":"Web Experience Assistant","areas":["visitor-facing site","member entry","navigation","accessibility","professional visual design","content discovery","conversion paths","member experience"]},
+    {"id":"ACADEMY","name":"Academy","assistant":"Academy Assistant","areas":["spiritual courses and studies","Native American heritage and Indigenous studies","AI technology and medical systems education","AI technology and education systems","AI technology and law systems","special-needs AI technology systems","AI security technology systems","AI technology banking and financial systems"],"safety":"Courses must use qualified sourcing, clearly distinguish education from professional advice, respect Indigenous communities and cultural/IP rights, and route high-stakes medical/legal/financial claims through appropriate review."}
+  ],
+  "cross_department_services": ["security","analytics","accessibility","legal_compliance_review","content_provenance","member_identity","payments_and_receipts","audit","growth_measurement"],
+  "reporting": {"department_assistant_to":"Henry","henry_to":"Mac Henry","mac_henry_direct_inspection":true,"owner_final_authority":true},
+  "private_boundary": "Mac Henry private Brain, cross-business strategy, private enterprise financial context, private learning state, credentials and hidden reasoning remain outside the GitHub business branch."
+}
