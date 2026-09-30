@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 from datetime import datetime, timezone
-from policy_engine import decide
+from pathlib import Path
+import importlib.util
+
+ENGINE_PATH = Path(__file__).resolve().parent / "policy-engine.py"
+spec = importlib.util.spec_from_file_location("henry_policy_engine", ENGINE_PATH)
+engine = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(engine)
+decide = engine.decide
 
 NOW=datetime(2026,9,30,5,0,0,tzinfo=timezone.utc)
 def base(**kw):
