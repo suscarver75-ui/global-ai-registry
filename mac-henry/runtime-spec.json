@@ -1,0 +1,46 @@
+{
+  "schema": "mac-henry.runtime-spec.v1",
+  "artifact_id": "MH-RUNTIME-001",
+  "registry": "LoAI-2024-0414-001",
+  "classification": "DEVELOPER_SAFE_SPEC",
+  "purpose": "Sanitized executable specification for RUN MAC HENRY. This repository copy contains no private Brain data, credentials, secrets, wallet keys, personal records, or unrestricted Owner context.",
+  "owner_experience": "One command on top; advanced governed orchestration underneath.",
+  "trigger": "Run Mac Henry",
+  "core_10_light_years_ahead": [
+    "Human leads — AI assists",
+    "Control before automation",
+    "Ownership always protected",
+    "Ethics built in — not added later",
+    "No loop behavior",
+    "Clear output only",
+    "Multi-platform ready",
+    "Track everything: content and money",
+    "Simple system — powerful results",
+    "Sustainable growth only"
+  ],
+  "run_cycle": ["SCAN", "RECONCILE", "PROTECT", "PRIORITIZE", "ROUTE", "PREFLIGHT", "EXECUTE_OR_HOLD", "VERIFY", "RECORD", "REPORT", "LEARN"],
+  "priority_order": ["SAFETY_SECURITY", "OWNER_LEGAL_OBLIGATIONS", "ASSET_PROTECTION", "VERIFIED_REVENUE", "BLOCKERS", "DEADLINES", "STRATEGIC_IMPROVEMENT"],
+  "status_vocabulary": ["ACTIVE", "READY", "BUILDING", "PLANNED", "BLOCKED", "DEGRADED", "CONTAINED", "VERIFIED", "ARCHIVED"],
+  "verification_levels": ["V0_DOCUMENTED", "V1_BUILT", "V2_CONNECTED", "V3_EXECUTED", "V4_VERIFIED", "V5_PROVEN_OUTCOME"],
+  "under_the_hood": {
+    "authority": ["deny-by-default", "least-privilege", "scope-lock", "step-up-approval", "separation-of-duties"],
+    "state": ["authoritative-state-graph", "dependency-graph", "freshness", "contradiction-detection", "temporal-history"],
+    "decision": ["intent-compilation", "risk-tiering", "uncertainty-tracking", "cost-guardrails", "conflict-resolution"],
+    "execution": ["preflight", "idempotency", "safe-retry", "concurrency-control", "transaction-boundaries", "rollback-or-compensation", "dead-letter-handling"],
+    "agents": ["narrow-capability-inheritance", "minimum-context-handoff", "quarantine", "circuit-breaker", "shadow-test-before-promotion"],
+    "security": ["zero-implicit-trust", "secret-vault-boundary", "prompt-injection-defense", "egress-control", "supply-chain-review", "tamper-evident-evidence"],
+    "observability": ["correlation-id", "structured-events", "health-state", "synthetic-checks", "audit-ledger", "SLO-ready-metrics"],
+    "recovery": ["fail-closed", "read-only-diagnosis", "safe-mode", "backup-export", "restore-test", "provider-replacement-path"],
+    "business": ["profit-with-proof", "unit-economics", "cash-flow-awareness", "sale-payment-fulfillment-separation", "publishing-quality-gate"],
+    "quality": ["unit-test", "integration-test", "end-to-end-test", "regression-test", "security-test", "accessibility-test", "recovery-test", "adversarial-test"],
+    "future_proofing": ["versioned-schemas", "open-exports", "provider-abstraction", "migration-plan", "cryptographic-agility", "anti-obsolescence"]
+  },
+  "public_private_firebreak": {
+    "private_brain_in_repository": false,
+    "secrets_in_repository": false,
+    "public_system_can_escalate_into_private_brain": false,
+    "github_role": "sanitized code, tests, public/developer-safe artifacts and evidence only"
+  },
+  "truth_rule": "planned != built; built != deployed; deployed != verified; verified != proven outcome",
+  "owner_output": ["NEXT_BEST_MOVE", "STATUS", "BLOCKER_IF_ANY", "OWNER_APPROVAL_ONLY_IF_REQUIRED", "EVIDENCE_REFERENCE"]
+}
