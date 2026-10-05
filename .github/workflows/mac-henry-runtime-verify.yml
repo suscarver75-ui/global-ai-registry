@@ -1,0 +1,30 @@
+name: Mac Henry Runtime Verify
+
+on:
+  push:
+    paths:
+      - 'mac-henry/**'
+      - '.github/workflows/mac-henry-runtime-verify.yml'
+  pull_request:
+    paths:
+      - 'mac-henry/**'
+      - '.github/workflows/mac-henry-runtime-verify.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile runtime
+        run: python -m py_compile mac-henry/run-mac-henry.py mac-henry/test-run-mac-henry.py
+      - name: Validate runtime specification JSON
+        run: python -m json.tool mac-henry/runtime-spec.json >/dev/null
+      - name: Verify RUN MAC HENRY
+        run: python mac-henry/test-run-mac-henry.py
