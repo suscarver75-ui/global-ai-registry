@@ -1,0 +1,54 @@
+{
+  "system":"Seven-Fold Church Full Body",
+  "manager":"Mac Henry",
+  "version":"2026.10-v1",
+  "principles":["Human leads — AI assists","Control before automation","Ownership always protected","Ethics built in — not added later","No loop behavior","Clear output only","Multi-platform ready","Track everything: learning, credentials, documents, operations and money","Simple experience — powerful system underneath","Sustainable growth only","Consent is granular and revocable where applicable","Privacy by architecture, not by promise","Least privilege and zero-trust access","Every credential is independently verifiable","Every policy and consent is versioned","Every important administrative action is auditable","Cultural provenance stays attached to knowledge","Public examples are separated from protected curriculum","AI recommends and routes; authorized humans decide spiritual and credential matters","Resilience, accessibility, portability and recovery are designed in from day one"],
+  "access_roles":["PUBLIC","MEMBER","ORDINATION_CANDIDATE","ORDAINED_FOUNDATIONAL","MINISTER_STUDENT","CHRISTIAN_MINISTER","PLANT_MINISTER","HOLY_PERSON_MINISTER","CHARTER_LEADER","TRAINER","MODERATOR","CHURCH_ADMIN","OWNER"],
+  "zones":{
+    "public":["home","beliefs","public library previews","membership information","ordination information","minister pathways","charter information","newsletter","verify minister","verify church or ministry"],
+    "member":["dashboard","digital membership card","private account","user-controlled profile","friends","friend requests","member messages","Mac Henry notices","community feeds","weekly Bible verse","member library","newsletter preferences","privacy and consent center"],
+    "leadership":["leadership dashboard","private minister record","training tracker","assignments","practicums","exams","certificates","credentials","good-standing letters","official messages","ministry profile","charter center","leadership library"],
+    "admin":["member registry","credential registry","ordination registry","charter registry","training administration","policy versions","consent ledger","moderation queue","document fulfillment","communications","audit logs","business intelligence"]
+  },
+  "privacy":{
+    "private_identity":["legal name","home address","private phone","private email","authentication data","identity documents","payment records","internal notes","training record","private messages"],
+    "member_profile":"Member controls what is entered and whether the basic profile is public or private.",
+    "ministry_profile":"Minister controls optional public-facing ministry description subject to church policy.",
+    "verification":"Separate minimum-data official record; never exposes account or private profile data.",
+    "security":["MFA-ready","session expiry","device/session management","rate limiting","encryption in transit and at rest when backend is implemented","field-level access rules","backup and restore","breach response","data export/correction/deletion workflow where applicable"]
+  },
+  "community":{
+    "areas":["Christian Faith","Plant Ministry","Holy Person Ministry","Prayer & Fellowship","Study & Education"],
+    "features":["friends","posts","comments","direct messages","report","block","mute","topic tags","privacy audience controls"],
+    "moderation":["respectful conduct","on-topic guidance","anti-harassment","anti-spam","appeal path","human review for consequential actions","audit trail"]
+  },
+  "training":{
+    "public_content":"Examples and previews only unless specifically designated public.",
+    "tracks":["Foundational Ordination","Christian Minister/Pastor","Holy Person Minister","Plant Minister","Church Leadership","Circle Leadership","Ceremony Leadership","Sweat Lodge Leadership","Spirit/Vision Quest Leadership","Ethics & Safeguarding","Continuing Education"],
+    "progress_states":["not_started","in_study","assignment_due","under_review","practicum","assessment","completed","credential_issued"],
+    "source_domains":["Christian leadership and discipleship","Bible study","Medicine Wheel comparative study","global Indigenous traditions with provenance","Earth and ecological knowledge","botanical identification and safety","ceremonial leadership","community leadership","youth and family education","research and AI literacy"]
+  },
+  "ordination":{
+    "ordination_fee":0,
+    "annual_ordination_renewal_fee":0,
+    "optional_paid_documents":["digital ordination credential","digital ordination certificate"],
+    "scope":"Foundational recognition of calling with limited practice under church/site name according to church policy; does not equal completion of an advanced minister track.",
+    "recommendation":"Continue into Christian Minister/Pastor, Holy Person Minister or Plant Minister training."
+  },
+  "charter":{
+    "application_fee":0,
+    "optional_paid_documents":["digital charter document","digital support/good-standing letter"],
+    "annual_good_standing_renewal":"small fee set by church administration",
+    "states":["draft","submitted","review","approved","active","renewal_due","expired","not_in_good_standing"]
+  },
+  "verification":{
+    "minister_fields":["approved public name","credential/title","verification ID","approved affiliation","standing","valid/verified date"],
+    "organization_fields":["church/ministry name","recognition or charter ID","type","standing","valid/verified date"],
+    "statuses":["verified_active","good_standing","expired","not_currently_in_good_standing","unable_to_verify"],
+    "qr_ready":true
+  },
+  "policies":{"versioned":true,"separate_acceptance":true,"categories":["privacy","terms","community conduct","membership","training","minister leadership","charter","ceremony","safeguarding","communications/newsletter"]},
+  "communications":{"member_messages":true,"leadership_messages":true,"Mac_Henry_notices":true,"renewal_reminders":true,"training_reminders":true,"newsletter_opt_in":true,"transactional_notices_separate":true},
+  "business_under_hood":{"purpose":"Support church sustainability without turning the spiritual experience into a storefront.","baskets":["optional digital documents","charter good-standing renewals","education and continuing study","original publications and resources","events and gatherings","voluntary donations and designated support","approved merchandise or future church resources"],"controls":["money never grants a credential","free spiritual recognition remains separate from optional paid documentation","track revenue and cost by basket","one-time vs recurring","fulfillment status","refund/exception records","monthly trend and net position"]},
+  "AI_governance":{"Mac_Henry":["navigation","study support","reminders","administrative routing","moderation assistance","business analytics","document workflow","policy retrieval"],"human_only":["ordination approval","credential award","good-standing disciplinary decisions","charter approval","consequential moderation appeals","spiritual authority decisions"],"safety":"Health, legal and controlled-substance material is educational/policy content and must not be converted into autonomous diagnosis, prescribing, dosing, sourcing or legal guarantees."}
+}
