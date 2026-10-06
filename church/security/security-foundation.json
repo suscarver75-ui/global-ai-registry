@@ -1,0 +1,114 @@
+{
+  "schema": "seven-fold-church.security-foundation.v1",
+  "classification": "PUBLIC_DEVELOPER_SAFE_POLICY",
+  "identity": {
+    "primary_name": "Seven-Fold Church",
+    "expanded_name": "Seven-Fold Church — Inspired Indigenous Global Church"
+  },
+  "hierarchy": [
+    "OWNER",
+    "MAC_HENRY_PRIVATE_MAIN_BRAIN",
+    "HENRY_BOUNDED_ASSISTANT_MANAGER",
+    "CHURCH_DEPARTMENT_ASSISTANTS"
+  ],
+  "zones": [
+    "PUBLIC",
+    "MEMBER",
+    "MINISTER_STUDENT",
+    "CREDENTIALED_LEADER",
+    "ADMIN",
+    "HENRY",
+    "MAC_HENRY_OWNER"
+  ],
+  "invariants": {
+    "authentication_is_authorization": false,
+    "default_access": "DENY",
+    "least_privilege": true,
+    "minimum_context": true,
+    "private_brain_in_github": false,
+    "secrets_in_github": false,
+    "payment_grants_credential": false,
+    "browser_claims_training_completion": false,
+    "public_verification_reads_private_profile": false,
+    "subordinate_self_escalation": false
+  },
+  "protected_domains": [
+    "identity",
+    "membership",
+    "messages",
+    "training-records",
+    "assessments",
+    "credentials",
+    "good-standing",
+    "charters",
+    "moderation",
+    "consent",
+    "payments",
+    "audit-evidence"
+  ],
+  "controls": {
+    "identity": [
+      "unique-subject-id",
+      "verified-contact-channel",
+      "session-expiration",
+      "session-revocation",
+      "step-up-auth-for-sensitive-actions",
+      "account-recovery-with-audit"
+    ],
+    "authorization": [
+      "server-side-enforcement",
+      "role-plus-attribute-checks",
+      "object-level-authorization",
+      "deny-cross-zone-access",
+      "no-client-side-authority"
+    ],
+    "credentials": [
+      "prerequisite-check",
+      "assessment-integrity",
+      "issue",
+      "verify-minimum-data",
+      "suspend",
+      "expire",
+      "renew",
+      "revoke",
+      "appeal"
+    ],
+    "privacy": [
+      "data-minimization",
+      "purpose-binding",
+      "consent-receipts",
+      "retention-rules",
+      "export-path",
+      "deletion-path",
+      "redacted-logs"
+    ],
+    "security": [
+      "rate-limit",
+      "anti-enumeration",
+      "csrf-defense",
+      "xss-output-encoding",
+      "injection-defense",
+      "upload-validation",
+      "secret-firebreak",
+      "dependency-review"
+    ],
+    "operations": [
+      "correlation-id",
+      "idempotency-key",
+      "immutable-critical-event-history",
+      "backup",
+      "restore-test",
+      "incident-response",
+      "safe-mode",
+      "rollback"
+    ],
+    "ai": [
+      "prompt-injection-boundary",
+      "retrieval-permission-filter",
+      "tool-scope-lock",
+      "no-authority-from-user-content",
+      "human-escalation-for-consequential-actions"
+    ]
+  },
+  "truth_rule": "DOCUMENTED != BUILT != CONNECTED != EXECUTED != VERIFIED != PROVEN"
+}
