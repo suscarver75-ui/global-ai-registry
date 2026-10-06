@@ -1,0 +1,17 @@
+name: MEGA BASE Runtime Persistence
+on:
+  pull_request:
+    paths:
+      - 'mega-base/runtime/**'
+      - '.github/workflows/mega-base-runtime-persistence.yml'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify persistent runtime
+        working-directory: mega-base/runtime
+        run: python -m unittest -v test-runtime.py
