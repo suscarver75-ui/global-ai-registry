@@ -1,0 +1,62 @@
+{
+  "schema": "mega-base.rebuild-blueprint.v1",
+  "classification": "DEVELOPER_SAFE_BLUEPRINT",
+  "current_use": "PRIVATE_ONLY",
+  "independence": {
+    "future_build_must_not_require_private_instance": true,
+    "no_shared_production_trust_root": true,
+    "no_shared_keys": true,
+    "no_shared_secrets": true,
+    "no_shared_private_data": true,
+    "architecture_reusable": true
+  },
+  "protected_domains": {
+    "mac_henry_brain": "COMPARTMENTALIZED_NEVER_PUBLIC",
+    "henry_github": "SANITIZED_SCOPED_EVIDENCE_ONLY",
+    "seven_fold_members": "PURPOSE_BOUND_LEAST_PRIVILEGE_OBJECT_OWNED"
+  },
+  "required_catalog": [
+    "architecture_contracts",
+    "canonical_schema_lineage",
+    "migrations_checksums_rollback",
+    "identity_sessions_recovery",
+    "authorization_capabilities_purpose",
+    "api_event_contracts",
+    "storage_lifecycle",
+    "jobs_queues_fencing",
+    "secrets_keys_crypto_agility",
+    "audit_evidence_genesis",
+    "privacy_rights_residency",
+    "observability_slo_anomaly",
+    "backup_restore_dr",
+    "network_edge_egress",
+    "supply_chain_sbom_attestation",
+    "environment_release_canary",
+    "test_matrix",
+    "ai_safety",
+    "operations_runbooks",
+    "portability_exit",
+    "documentation_manifest"
+  ],
+  "per_component_definition": [
+    "inputs",
+    "outputs",
+    "trust_boundary",
+    "permissions",
+    "data_classification",
+    "dependencies",
+    "failure_modes",
+    "timeouts_retries",
+    "observability",
+    "evidence",
+    "backup_recovery",
+    "migration",
+    "rollback",
+    "tests",
+    "capacity",
+    "cost_envelope",
+    "privacy_retention",
+    "decommission"
+  ],
+  "truth": "BLUEPRINT_OR_TESTS_DO_NOT_EQUAL_PRODUCTION_CONNECTED"
+}

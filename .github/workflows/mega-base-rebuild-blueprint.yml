@@ -1,0 +1,15 @@
+name: Mega Base Rebuild Blueprint Verify
+on:
+  push:
+    paths: ["mega-base/**",".github/workflows/mega-base-rebuild-blueprint.yml"]
+  pull_request:
+    paths: ["mega-base/**",".github/workflows/mega-base-rebuild-blueprint.yml"]
+permissions: {contents: read}
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python mega-base/test-rebuild-blueprint.py
