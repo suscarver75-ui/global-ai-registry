@@ -1,0 +1,16 @@
+name: Run Mega Base Advanced Controls Verify
+on:
+  push:
+    paths: ["mac-henry/runtime/**",".github/workflows/run-megabase-advanced.yml"]
+  pull_request:
+    paths: ["mac-henry/runtime/**",".github/workflows/run-megabase-advanced.yml"]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python mac-henry/runtime/test-advanced-controls.py
