@@ -1,0 +1,29 @@
+{
+  "name": "MEGA BASE",
+  "classification": "DEVELOPER_SAFE",
+  "role": "SOVEREIGN_BACKEND_LAYER_NOT_MAIN_BRAIN",
+  "architecture": [
+    "edge_api_shield",
+    "identity_session",
+    "authorization_policy",
+    "tenant_department_isolation",
+    "object_ownership",
+    "data_integrity",
+    "encryption_keys",
+    "secret_vault",
+    "events_jobs",
+    "audit_evidence",
+    "privacy_retention",
+    "observability",
+    "backup_restore",
+    "safe_mode_recovery",
+    "sanitized_manager_health"
+  ],
+  "commercial_boundary": {
+    "private_runtime_separate": true,
+    "future_commercial_basket_separate_trust_domain": true,
+    "private_brain_shared": false,
+    "church_data_shared": false
+  },
+  "first_consumer": "SEVEN_FOLD_CHURCH"
+}
