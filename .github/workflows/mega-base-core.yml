@@ -1,0 +1,17 @@
+name: Mega Base Core Verify
+on:
+  push:
+    paths: ["mega-base/**",".github/workflows/mega-base-core.yml"]
+  pull_request:
+    paths: ["mega-base/**",".github/workflows/mega-base-core.yml"]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python mega-base/test-core.py
