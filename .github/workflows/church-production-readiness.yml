@@ -1,0 +1,17 @@
+name: Church Production Readiness Verify
+on:
+  push:
+    paths: ["church/runtime/production-readiness.py","church/runtime/test-production-readiness.py",".github/workflows/church-production-readiness.yml"]
+  pull_request:
+    paths: ["church/runtime/production-readiness.py","church/runtime/test-production-readiness.py",".github/workflows/church-production-readiness.yml"]
+permissions:
+  contents: read
+jobs:
+  static-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python church/runtime/test-production-readiness.py
