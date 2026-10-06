@@ -1,0 +1,28 @@
+name: Church Runtime Access Verify
+on:
+  push:
+    paths: ['church/runtime/**','.github/workflows/church-runtime-access.yml']
+  pull_request:
+    paths: ['church/runtime/**','.github/workflows/church-runtime-access.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Compile authorization runtime
+        run: python -m py_compile church/runtime/access-control.py church/runtime/test-access-control.py
+      - name: Run authorization tests
+        run: python church/runtime/test-access-control.py
+      - name: Exercise real CLI allow path
+        run: |
+          printf '%s' '{"zone":"MEMBER","domain":"membership","action":"READ","authenticated":true}' > /tmp/allow.json
+          python church/runtime/access-control.py /tmp/allow.json | grep '"decision": "ALLOW"'
+      - name: Exercise real CLI deny path
+        run: |
+          printf '%s' '{"zone":"MEMBER","domain":"membership","action":"READ","authenticated":false}' > /tmp/deny.json
+          if python church/runtime/access-control.py /tmp/deny.json; then exit 1; fi
