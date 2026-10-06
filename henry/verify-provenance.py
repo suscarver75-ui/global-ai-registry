@@ -25,11 +25,11 @@ for t in ['HNY-IMAGE-TEST-001',REGISTRY,'PUBLIC_SAFE','henry.public-provenance.v
 product=json.loads(load(TESTS/'HNY-PRODUCT-TEST-001.manifest.json')); check('product artifact',product.get('artifact_id')=='HNY-PRODUCT-TEST-001'); check('product registry',product.get('registry')==REGISTRY); check('product boundary',product.get('boundary')=='PUBLIC_SAFE'); check('product no private authority',product.get('package_policy',{}).get('private_authority') is False)
 video=json.loads(load(TESTS/'HNY-VIDEO-TEST-001.manifest.json')); check('video artifact',video.get('artifact_id')=='HNY-VIDEO-TEST-001'); check('video registry',video.get('registry')==REGISTRY); check('video boundary',video.get('boundary')=='PUBLIC_SAFE'); check('video honesty state',video.get('verification_status')=='MANIFEST_VERIFIED_ONLY')
 # Secret hygiene scans deployable/public artifacts. Security test fixtures intentionally contain fake attack strings and are tested separately.
-EXCLUDED_SECURITY_FIXTURES={'test-policy-engine.py','verify-provenance.py','policy-engine.py'}
-public=[p for p in ROOT.rglob('*') if p.is_file() and p.suffix.lower() in {'.html','.json','.md','.svg','.py'} and p.name not in EXCLUDED_SECURITY_FIXTURES]
+EXCLUDED_SECURITY_FIXTURES={'test-policy-engine.py','verify-provenance.py','policy-engine.py','security/test-firebreak-guard.py'}
+public=[p for p in ROOT.rglob('*') if p.is_file() and p.suffix.lower() in {'.html','.json','.md','.svg','.py'} and str(p.relative_to(ROOT)) not in EXCLUDED_SECURITY_FIXTURES and p.name not in EXCLUDED_SECURITY_FIXTURES]
 patterns=[re.compile(r'(?i)(api[_-]?key|secret|password|private[_-]?key)\s*[=:]\s*[\'\"][^\'\"]{8,}'),re.compile(r'gh[pousr]_[A-Za-z0-9]{20,}')]
 for p in public: check(f'secret hygiene {p.relative_to(ROOT)}',not any(x.search(load(p)) for x in patterns))
-check('security fixtures explicitly excluded from deployable secret scan',EXCLUDED_SECURITY_FIXTURES=={'test-policy-engine.py','verify-provenance.py','policy-engine.py'})
+check('security fixtures explicitly excluded from deployable secret scan',EXCLUDED_SECURITY_FIXTURES=={'test-policy-engine.py','verify-provenance.py','policy-engine.py','security/test-firebreak-guard.py'})
 failed=[c for c in checks if not c[1]]
 for n,o,d in checks: print(('PASS' if o else 'FAIL')+' | '+n+(' | '+d if d else ''))
 print(f'SUMMARY | {len(checks)-len(failed)}/{len(checks)} passed'); sys.exit(1 if failed else 0)

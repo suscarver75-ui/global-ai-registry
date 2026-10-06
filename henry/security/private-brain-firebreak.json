@@ -1,0 +1,42 @@
+{
+  "schema": "henry.private-brain-firebreak.v2",
+  "artifact_id": "HNY-FIREBREAK-002",
+  "classification": "PUBLIC_SECURITY_POLICY",
+  "roles": {
+    "mac_henry": "PRIVATE_OWNER_MANAGER_OUTSIDE_GITHUB",
+    "henry": "GITHUB_ASSISTANT_MANAGER_BOUNDED",
+    "github": "PUBLIC_DEVELOPER_SAFE_EXECUTION_AND_EVIDENCE"
+  },
+  "absolute_denials": [
+    "MAC_HENRY_PRIVATE_BRAIN_CONTENT",
+    "PRIVATE_OWNER_CONTEXT",
+    "PASSWORDS_OR_AUTHENTICATORS",
+    "API_KEYS_TOKENS_OR_SECRETS",
+    "PRIVATE_KEYS_SEED_PHRASES_OR_WALLET_SIGNING_MATERIAL",
+    "UNREDACTED_PERSONAL_RECORDS",
+    "PRIVATE_MEMORY_EXPORTS",
+    "PRIVATE_PROMPTS_OR_HIDDEN_SYSTEM_INSTRUCTIONS",
+    "CREDENTIAL_BEARING_LOGS",
+    "PRIVATE_CONNECTOR_PAYLOADS"
+  ],
+  "allowed_handoff": [
+    "MINIMUM_NECESSARY_SANITIZED_COMMAND",
+    "PUBLIC_OR_DEVELOPER_SAFE_ARTIFACT",
+    "BOUNDED_TARGET_REFERENCE",
+    "RISK_CLASS",
+    "APPROVAL_STATE",
+    "NON_SECRET_EVIDENCE_REFERENCE",
+    "SANITIZED_RESULT_SUMMARY"
+  ],
+  "rules": {
+    "default": "DENY",
+    "private_to_public_brain_replication": "DENY",
+    "public_to_private_escalation": "DENY",
+    "secret_storage_in_repo": "DENY",
+    "minimum_context_handoff": "REQUIRE",
+    "owner_approval_for_high_risk": "REQUIRE",
+    "fail_closed_on_uncertainty": true,
+    "redact_before_logging": true,
+    "store_only_necessary_evidence": true
+  }
+}

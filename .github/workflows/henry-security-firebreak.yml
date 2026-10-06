@@ -1,0 +1,56 @@
+name: Henry Security Firebreak
+on:
+  push:
+    paths:
+      - 'henry/**'
+      - 'mac-henry/**'
+      - '.github/workflows/henry-security-firebreak.yml'
+  pull_request:
+    paths:
+      - 'henry/**'
+      - 'mac-henry/**'
+      - '.github/workflows/henry-security-firebreak.yml'
+permissions:
+  contents: read
+jobs:
+  firebreak:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile security guard
+        run: python -m py_compile henry/security/firebreak-guard.py henry/security/test-firebreak-guard.py
+      - name: Validate firebreak policy
+        run: python -m json.tool henry/security/private-brain-firebreak.json >/dev/null
+      - name: Run adversarial firebreak tests
+        run: python henry/security/test-firebreak-guard.py
+      - name: Scan tracked text for obvious credential material
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess,sys
+          from pathlib import Path
+          import importlib.util
+          p=Path('henry/security/firebreak-guard.py')
+          s=importlib.util.spec_from_file_location('guard',p); g=importlib.util.module_from_spec(s); s.loader.exec_module(g)
+          skip={'henry/security/test-firebreak-guard.py','henry/security/firebreak-guard.py','henry/security/private-brain-firebreak.json','henry/test-policy-engine.py','henry/policy-engine.py','henry/verify-provenance.py'}
+          bad=[]
+          for name in subprocess.check_output(['git','ls-files'],text=True).splitlines():
+              if name in skip: continue
+              path=Path(name)
+              try:
+                  if path.stat().st_size>2_000_000: continue
+                  text=path.read_text(encoding='utf-8')
+              except (UnicodeDecodeError,OSError): continue
+              r=g.inspect_text(text)
+              if not r['safe_to_publish']: bad.append((name,r['findings']))
+          if bad:
+              print('FIREBREAK DENY: sensitive patterns found in tracked text')
+              for name,hits in bad: print(name,','.join(hits))
+              sys.exit(1)
+          print('FIREBREAK PASS: no guarded patterns found')
+          PY
