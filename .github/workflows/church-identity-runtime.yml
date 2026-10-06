@@ -4,7 +4,8 @@ on:
     paths: ['church/runtime/identity-runtime.py','church/runtime/test-identity-runtime.py','.github/workflows/church-identity-runtime.yml']
   pull_request:
     paths: ['church/runtime/identity-runtime.py','church/runtime/test-identity-runtime.py','.github/workflows/church-identity-runtime.yml']
-permissions: {contents: read}
+permissions:
+  contents: read
 jobs:
   verify:
     runs-on: ubuntu-latest
