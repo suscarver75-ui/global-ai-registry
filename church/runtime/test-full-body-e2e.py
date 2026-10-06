@@ -16,6 +16,6 @@ cs=credential.CredentialStore(); cid=cs.issue(admin,'member1','MINISTER',True,20
 assert cs.set_good_standing(admin,'member1','GOOD',1009)
 safe=community.CommunitySafety(); rid=safe.report(student,'post:1','HARASSMENT',1010); assert rid and safe.resolve(admin,rid,'WARNING',1011)
 chs=charter.CharterStore(); chid=chs.apply(student,'Integration Fellowship',1012); assert chid and chs.decide(admin,chid,'APPROVED',1013)
-pay=payment.payment_receipt({'payment_ref':'p1','purpose':'DONATION','amount_minor':100,'currency':'USD','status':'SETTLED'}); assert pay['authority_granted'] is False
+ledger=payment.PaymentLedger(); pay_id=ledger.record_provider_event('DONATION',100,'p1','CONFIRMED'); pay=ledger.authority_projection(pay_id); assert pay and not pay['grants_role'] and not pay['grants_credential'] and not pay['grants_good_standing'] and not pay['grants_charter']
 checks=[ops.Check(n,True,'e2e:'+n) for n in ops.REQUIRED]; assert ops.assess(checks)['promotion_allowed']
 print('CHURCH FULL BODY E2E PASS')
