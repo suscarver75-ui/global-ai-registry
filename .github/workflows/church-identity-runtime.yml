@@ -1,11 +1,20 @@
 name: Church Identity Runtime Verify
+
 on:
   push:
-    paths: ['church/runtime/identity-runtime.py','church/runtime/test-identity-runtime.py','.github/workflows/church-identity-runtime.yml']
+    paths:
+      - "church/runtime/identity-runtime.py"
+      - "church/runtime/test-identity-runtime.py"
+      - ".github/workflows/church-identity-runtime.yml"
   pull_request:
-    paths: ['church/runtime/identity-runtime.py','church/runtime/test-identity-runtime.py','.github/workflows/church-identity-runtime.yml']
+    paths:
+      - "church/runtime/identity-runtime.py"
+      - "church/runtime/test-identity-runtime.py"
+      - ".github/workflows/church-identity-runtime.yml"
+
 permissions:
   contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -13,8 +22,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: '3.12'}
-      - run: python -m py_compile church/runtime/identity-runtime.py church/runtime/test-identity-runtime.py
-      - run: python church/runtime/test-identity-runtime.py
-      - name: Verify runtime advertises no production secret storage
-        run: python church/runtime/identity-runtime.py | grep '"stores_production_secrets": false'
+        with:
+          python-version: "3.12"
+      - name: Compile identity runtime
+        run: python -m py_compile church/runtime/identity-runtime.py church/runtime/test-identity-runtime.py
+      - name: Exercise identity lifecycle
+        run: python church/runtime/test-identity-runtime.py
+      - name: Verify no production secret storage claim
+        run: |
+          python church/runtime/identity-runtime.py > /tmp/identity-status.json
+          python -c "import json; d=json.load(open('/tmp/identity-status.json')); assert d['stores_production_secrets'] is False"
