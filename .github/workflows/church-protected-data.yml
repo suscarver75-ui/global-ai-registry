@@ -1,0 +1,27 @@
+name: Church Protected Data Verify
+on:
+  push:
+    paths:
+      - "church/runtime/protected-data.py"
+      - "church/runtime/test-protected-data.py"
+      - ".github/workflows/church-protected-data.yml"
+  pull_request:
+    paths:
+      - "church/runtime/protected-data.py"
+      - "church/runtime/test-protected-data.py"
+      - ".github/workflows/church-protected-data.yml"
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile church/runtime/protected-data.py church/runtime/test-protected-data.py
+      - name: Ownership, consent, audit, backup and restore checks
+        run: python church/runtime/test-protected-data.py
