@@ -1,0 +1,54 @@
+{
+  "schema": "mac-henry.sovereign-backend.v1",
+  "classification": "DEVELOPER_SAFE_SPEC",
+  "upgrade_mode": "IN_PLACE_NEVER_RESTART",
+  "principles": [
+    "Human leads — AI assists",
+    "Control before automation",
+    "Ownership always protected",
+    "Ethics built in — not added later",
+    "No loop behavior",
+    "Clear output only",
+    "Multi-platform ready",
+    "Track everything that matters, including content and money",
+    "Simple system — powerful results",
+    "Sustainable growth only"
+  ],
+  "services": [
+    "identity",
+    "authorization",
+    "data",
+    "api_gateway",
+    "events",
+    "object_storage",
+    "jobs",
+    "secrets_keys",
+    "audit_evidence",
+    "observability",
+    "recovery",
+    "privacy_rights",
+    "release_supply_chain",
+    "ai_safety"
+  ],
+  "invariants": {
+    "private_brain_in_repo": false,
+    "production_secrets_in_repo": false,
+    "deny_by_default": true,
+    "provider_independent": true,
+    "open_exports": true,
+    "no_autonomous_privilege_escalation": true,
+    "destructive_upgrade_requires_owner_approval": true
+  },
+  "completion": [
+    "SPECIFIED",
+    "EXECUTABLE",
+    "TESTED",
+    "INTEGRATED",
+    "CONNECTED",
+    "E2E_EXERCISED",
+    "MONITORED_RECOVERABLE",
+    "VERIFIED_OPERATIONAL",
+    "PROVEN_OUTCOME"
+  ],
+  "first_consumer": "SEVEN_FOLD_CHURCH"
+}
