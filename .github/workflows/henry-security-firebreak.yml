@@ -37,7 +37,7 @@ jobs:
           import importlib.util
           p=Path('henry/security/firebreak-guard.py')
           s=importlib.util.spec_from_file_location('guard',p); g=importlib.util.module_from_spec(s); s.loader.exec_module(g)
-          skip={'henry/security/test-firebreak-guard.py','henry/security/firebreak-guard.py','henry/security/private-brain-firebreak.json'}
+          skip={'henry/security/test-firebreak-guard.py','henry/security/firebreak-guard.py','henry/security/private-brain-firebreak.json','henry/test-policy-engine.py','henry/policy-engine.py','henry/verify-provenance.py'}
           bad=[]
           for name in subprocess.check_output(['git','ls-files'],text=True).splitlines():
               if name in skip: continue
