@@ -1,0 +1,17 @@
+name: Church Through Mega Base E2E Verify
+on:
+  push:
+    paths: ["church/runtime/**","mega-base/**",".github/workflows/church-megabase-e2e.yml"]
+  pull_request:
+    paths: ["church/runtime/**","mega-base/**",".github/workflows/church-megabase-e2e.yml"]
+permissions: {contents: read}
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python church/runtime/test-megabase-e2e.py
+      - run: python mega-base/test-core.py
+      - run: python church/runtime/test-megabase-training-credential.py
