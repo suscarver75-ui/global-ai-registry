@@ -2,7 +2,7 @@
 import importlib.util
 from pathlib import Path
 P=Path(__file__).resolve().parent/'access-control.py'
-s=importlib.util.spec_from_file_location('authz',P); a=importlib.util.module_from_spec(s); s.loader.exec_module(a)
+s=importlib.util.spec_from_file_location('authz',P); a=importlib.util.module_from_spec(s); import sys; sys.modules[s.name]=a; s.loader.exec_module(a)
 def expect(name,req,decision,reason=None):
  r=a.authorize(req); assert r.decision==decision,(name,r)
  if reason: assert r.reason==reason,(name,r)
