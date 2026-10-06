@@ -1,0 +1,29 @@
+name: Church Member E2E Verify
+on:
+  push:
+    paths:
+      - "church/runtime/test-member-e2e.py"
+      - "church/runtime/identity-runtime.py"
+      - "church/runtime/protected-data.py"
+      - ".github/workflows/church-member-e2e.yml"
+  pull_request:
+    paths:
+      - "church/runtime/test-member-e2e.py"
+      - "church/runtime/identity-runtime.py"
+      - "church/runtime/protected-data.py"
+      - ".github/workflows/church-member-e2e.yml"
+permissions:
+  contents: read
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile integrated runtime
+        run: python -m py_compile church/runtime/identity-runtime.py church/runtime/protected-data.py church/runtime/test-member-e2e.py
+      - name: Exercise member runtime end to end
+        run: python church/runtime/test-member-e2e.py
